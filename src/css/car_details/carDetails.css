@@ -1,0 +1,34 @@
+.p{
+    border: 3px solid #dd9210;
+    box-shadow:5px 3px 4px 2px #cc890d;
+    display: block;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    max-width: 100%;
+   
+
+}
+#po{
+    width: 120px;
+    height: 80px;
+    opacity:0.5;
+}
+.clicked{
+    opacity: 1 !important;
+    border: 10px solid rgb(5, 4, 10);
+  }
+
+.main{
+    text-align: center;
+    margin-top:30px ;
+  }
+  .flex_row{
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+  }
+  
+.thumbnail{
+  padding-left: 20px;
+}
