@@ -1,0 +1,9 @@
+.brands img {
+  width: 80px;
+  height: 80px;
+  opacity: 0.5;
+}
+
+.brands img:hover {
+  opacity: 1;
+}

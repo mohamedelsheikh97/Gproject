@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import Figure from "react-bootstrap/Figure";
 import "../../css/car_details/carDetails.css";
 
 export default function CarDetails() {

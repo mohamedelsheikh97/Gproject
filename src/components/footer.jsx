@@ -2,7 +2,7 @@ import React from "react";
 import "../css/Footer.css";
 const Footer = () => {
   return (
-    <footer class="section bg-footer mt-1">
+    <footer class="section bg-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
@@ -66,7 +66,6 @@ const Footer = () => {
                 Contact Us
               </h5>
               <p class="contact-info mt-4">Contact Us If You Need Any Help</p>
-              <p class="contact-info">+20/1010591158</p>
             </div>
           </div>
         </div>
