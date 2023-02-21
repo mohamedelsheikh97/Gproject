@@ -1,18 +1,19 @@
-import React from 'react'
-import '../css/Header.css';
+import React from "react";
+import "../css/Header.css";
+import CarSlider from "./carSlider";
+import { Brands } from "./brands";
+import Welcome from "./welcome";
+import { Cards } from "./cards";
+
 const Header = () => {
   return (
     <header>
-      <div className="image">
-        
-        <h2>Say hello to your next 
-          <span className="next"><h3> awesome vehicle</h3></span>
-        </h2>
-
-        
-      </div>
+      <CarSlider></CarSlider>
+      <Brands></Brands>
+      <Welcome></Welcome>
+      <Cards></Cards>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

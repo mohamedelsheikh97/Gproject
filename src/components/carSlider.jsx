@@ -35,7 +35,6 @@ export default function CarSlider() {
             <div className="slider__content ">
               <h4 className="text-light mb-3">Are You a Classic Driver?</h4>
               <h1 className="text-light mb-4">Buy Your Dream Vehicle Now</h1>
-
               <button className="btn reserve__btn mt-4">
                 <Link to="/cars">Shop Now</Link>
               </button>
@@ -47,7 +46,6 @@ export default function CarSlider() {
             <div className="slider__content ">
               <h4 className="text-light mb-3">Are You a Classic Driver?</h4>
               <h1 className="text-light mb-4">Buy Your Dream Vehicle Now</h1>
-
               <button className="btn reserve__btn mt-4">
                 <Link to="/cars">Shop Now</Link>
               </button>
