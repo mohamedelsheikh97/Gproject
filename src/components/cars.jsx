@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/cars.css";
 import CarListing from "./carListing";
+import "../css/Cars.css";
 
 export default function Cars() {
   return (
