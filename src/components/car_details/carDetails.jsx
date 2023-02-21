@@ -1,29 +1,31 @@
 import React, { useState } from "react";
 import "../../css/car_details/carDetails.css";
+import Details from "./details";
+
 
 export default function CarDetails() {
   const imgs = [
-    { id: 0, value: "https://wallpaperaccess.com/full/2637581.jpg" },
-    { id: 1, value: "https://source.unsplash.com/user/c_v_r/1900x800" },
+    { id: 0, value: "https://c4.wallpaperflare.com/wallpaper/392/133/116/car-bmw-bmw-m4-wallpaper-preview.jpg" },
+    { id: 1, value: "https://c4.wallpaperflare.com/wallpaper/412/867/691/car-bmw-bmw-i8-cyan-wallpaper-preview.jpg" },
     {
       id: 2,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/910/24/10/night-artwork-futuristic-city-cyberpunk-wallpaper-thumb.jpg",
+        "https://c4.wallpaperflare.com/wallpaper/78/498/401/bmw-m3-car-bmw-e30-wallpaper-preview.jpg",
     },
     {
       id: 3,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/910/24/10/night-artwork-futuristic-city-cyberpunk-wallpaper-thumb.jpg",
+        "https://c4.wallpaperflare.com/wallpaper/643/74/422/nissan-turbo-white-drift-wallpaper-preview.jpg",
     },
     {
       id: 4,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/663/947/813/oldboy-japanese-digital-art-artwork-wallpaper-thumb.jpg",
+        "https://c4.wallpaperflare.com/wallpaper/839/17/210/nissan-skyline-gt-r-r34-nissan-gtr-r34-nissan-skyline-gt-r-r34-nismo-nissan-wallpaper-preview.jpg",
     },
     {
       id: 5,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/910/24/10/night-artwork-futuristic-city-cyberpunk-wallpaper-thumb.jpg",
+        "https://c4.wallpaperflare.com/wallpaper/299/200/8/car-nissan-nissan-gt-r-nissan-gtr-wallpaper-preview.jpg",
     },
   ];
   const [wordData, setWordData] = useState(imgs[0]);
@@ -33,7 +35,10 @@ export default function CarDetails() {
     setWordData(wordSlider);
   };
   return (
-    <div className="main">
+    <div className="container">
+      <div className="row">
+      <div className="col-6"> <Details>  </Details></div>
+    <div className="main col-6">
       <img src={wordData.value} className="p" />
       <div className="flex_row">
         {imgs.map((data, i) => (
@@ -48,5 +53,8 @@ export default function CarDetails() {
         ))}
       </div>
     </div>
+    </div>
+    </div>
+    
   );
 }
