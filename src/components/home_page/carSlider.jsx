@@ -38,7 +38,7 @@ export default function CarSlider() {
                 You Got It Right Here For Best School
               </h1>
               <button className="btn reserve__btn mt-4">
-                <Link to="/cars">Practice Now</Link>
+                <Link to="/school">Practice Now</Link>
               </button>
             </div>
           </Container>
@@ -51,7 +51,7 @@ export default function CarSlider() {
                 Reach The Best Car Repair Services{" "}
               </h1>
               <button className="btn reserve__btn mt-4">
-                <Link to="/cars">From Here</Link>
+                <Link to="/maintain">From Here</Link>
               </button>
             </div>
           </Container>

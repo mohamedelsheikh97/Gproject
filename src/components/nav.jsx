@@ -91,6 +91,9 @@ const Navs = () => {
             <NavLink id="lastnav" to="/login">
               <i class="fas fa-user-circle"></i>
             </NavLink>
+            <NavLink id="lastnav" to="/cart">
+              <i class="fas fa-cart"></i>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
