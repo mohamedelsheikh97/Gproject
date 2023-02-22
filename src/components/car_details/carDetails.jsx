@@ -37,8 +37,9 @@ export default function CarDetails() {
   return (
     <div className="container">
       <div className="row">
-      <div className="col-6"> <Details>  </Details></div>
-    <div className="main col-6">
+ 
+    <div className="main col-12">
+      
       <img src={wordData.value} className="p" />
       <div className="flex_row">
         {imgs.map((data, i) => (
@@ -53,6 +54,7 @@ export default function CarDetails() {
         ))}
       </div>
     </div>
+    <div className="col-12"> <Details>  </Details></div>
     </div>
     </div>
     
