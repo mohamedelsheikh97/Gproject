@@ -1,3 +1,7 @@
+body{
+  background: linear-gradient(rgba(236, 168, 42, 0.6), rgba(236, 168, 42, 0.6)),
+  
+}
 .p {
   border: 1px solid #dd9210;
   object-fit: cover;

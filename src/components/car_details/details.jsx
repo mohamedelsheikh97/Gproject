@@ -73,7 +73,7 @@ export default function Details() {
                       <br /> <br />
                       <li>
                         <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Shop Name:</strong> ElQersh
+                        <strong>Shop Name:</strong> ElKersh
                       </li>
                       <br /> <br />
                       <div class="google-map">

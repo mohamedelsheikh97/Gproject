@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/car_page/carCards.css";
 export default function CarCards() {
   return (
+    
     <div class="container">
       <div class="row">
         <div class="col-12">

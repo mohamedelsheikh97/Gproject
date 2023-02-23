@@ -5,27 +5,27 @@ import Details from "./details";
 
 export default function CarDetails() {
   const imgs = [
-    { id: 0, value: "https://c4.wallpaperflare.com/wallpaper/392/133/116/car-bmw-bmw-m4-wallpaper-preview.jpg" },
-    { id: 1, value: "https://c4.wallpaperflare.com/wallpaper/412/867/691/car-bmw-bmw-i8-cyan-wallpaper-preview.jpg" },
+    { id: 0, value: "https://wallpaperaccess.com/full/1602665.jpg" },
+    { id: 1, value: "https://wallpaperaccess.com/full/1602661.jpg" },
     {
       id: 2,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/78/498/401/bmw-m3-car-bmw-e30-wallpaper-preview.jpg",
+        "https://wallpaperaccess.com/full/1602667.jpg",
     },
     {
       id: 3,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/643/74/422/nissan-turbo-white-drift-wallpaper-preview.jpg",
+        "https://wallpaperaccess.com/full/1602658.jpg",
     },
     {
       id: 4,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/839/17/210/nissan-skyline-gt-r-r34-nissan-gtr-r34-nissan-skyline-gt-r-r34-nismo-nissan-wallpaper-preview.jpg",
+        "https://images.pexels.com/photos/105296/pexels-photo-105296.jpeg",
     },
     {
       id: 5,
       value:
-        "https://c4.wallpaperflare.com/wallpaper/299/200/8/car-nissan-nissan-gt-r-nissan-gtr-wallpaper-preview.jpg",
+        "https://images.pexels.com/photos/14825003/pexels-photo-14825003.jpeg",
     },
   ];
   const [wordData, setWordData] = useState(imgs[0]);
@@ -36,6 +36,17 @@ export default function CarDetails() {
   };
   return (
     <div className="container">
+    {/* <body>
+    {imgs.map((data, i)=>(
+          <div className="thumbnail" key={i}>
+            <img
+              className={wordData.id == i ? "clicked" : ""}
+              id="po"
+              src={data.value}
+              onClick={() => handleClick(i)}
+            />
+          </div> )) }
+    </body> */}
       <div className="row">
  
     <div className="main col-12">
@@ -51,6 +62,7 @@ export default function CarDetails() {
               onClick={() => handleClick(i)}
             />
           </div>
+          
         ))}
       </div>
     </div>

@@ -5,8 +5,12 @@ import CarCards from "./carCards";
 import CarDrive from "./carDrive";
 
 export default function Cars() {
+
   return (
+    
+
     <>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"></input>
       {/* <section>
         <div id="main">
           <div id="d1"></div>
@@ -19,6 +23,8 @@ export default function Cars() {
       <CarListing></CarListing>
       <CarCards></CarCards>
       <CarDrive></CarDrive>
+      {/* <SearchBar></SearchBar> */}
+      
     </>
   );
 }

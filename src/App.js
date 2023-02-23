@@ -10,6 +10,7 @@ import School from "./components/schools_page/school";
 import Notfound from "./components/notfound_page/notfound";
 import Login from "./components/login_page/login";
 import Accessories from "./components/accessories_page/accessories";
+import Carshop from "./components/carShop/carshop";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Header />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cardetails" element={<CarDetails />} />
+        <Route path="/carshop" element={<Carshop/>} />
         <Route path="/maintenance" element={<Maintenance />} />
         <Route path="/schools" element={<School />} />
         <Route path="/accessories" element={<Accessories />} />
