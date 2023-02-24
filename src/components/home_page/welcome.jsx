@@ -19,7 +19,7 @@ export default function Welcome() {
           <div className="d-flex old">
             <div className="looking">
               <h4>
-                <span>Looking</span> Old Car?
+                <span>Looking for</span> Old Car?
               </h4>
               <div>
                 <p>
@@ -37,7 +37,7 @@ export default function Welcome() {
           <div className="d-flex old">
             <div className="looking">
               <h4>
-                <span>Looking</span> New Car?
+                <span>Looking for</span> New Car?
               </h4>
               <div>
                 <p>

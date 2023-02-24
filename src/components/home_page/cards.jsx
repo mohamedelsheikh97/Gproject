@@ -21,7 +21,7 @@ export function Cards() {
   return (
     <div className="featured mt-5">
       <div className="container">
-        <h5> Featured cars</h5>
+        <h4 className="text-center"> Featured Cars</h4>
         <div className="row ">
           {cars.map((card) => {
             return (

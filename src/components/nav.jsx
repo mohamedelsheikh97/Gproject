@@ -86,7 +86,6 @@ const Navs = () => {
               Maintenance
             </NavLink>
           </Nav>
-          <hr />
           <Nav>
             <NavLink id="lastnav" to="/login">
               <i class="fas fa-user-circle"></i>

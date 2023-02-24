@@ -1,5 +1,7 @@
 #error-page {
-  position: absolute;
+  /* position: absolute; */
+  margin: 50px 200px;
+  padding: 100px;
   top: 10%;
   left: 15%;
   right: 15%;
