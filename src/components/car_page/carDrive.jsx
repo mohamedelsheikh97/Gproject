@@ -19,7 +19,7 @@ export default function CarDrive() {
             </h2>
 
             <button className="btn become__driver-btn mt-4">
-              <Link className="nav-link" to="/school">
+              <Link className="nav-link" to="/schools">
                 Become a Driver
               </Link>
             </button>

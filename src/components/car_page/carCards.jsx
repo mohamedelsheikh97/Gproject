@@ -1,335 +1,116 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/car_page/carCards.css";
+
+const Car = [
+  {
+    category: "new",
+    name: "MERCEDES BENZ R3",
+    image: "/car-rent-1.png",
+    year: "2020",
+    transmission: "auto",
+    price: "EG 850.000",
+  },
+  {
+    category: "used",
+    name: "BMW X5",
+    image: "/car-rent-2.png",
+    year: "2021",
+    transmission: "auto",
+    price: "EG 1.200.000",
+  },
+  {
+    category: "new",
+    name: "Audi R8",
+    image: "/car-rent-3.png",
+    year: "2023",
+    transmission: "auto",
+    price: "EG 1.100.000",
+  },
+  {
+    category: "used",
+    name: "Audi Q3",
+    image: "/car-rent-4.png",
+    year: "2022",
+    transmission: "auto",
+    price: "EG 1.300.000",
+  },
+  {
+    category: "new",
+    name: "MERCEDES R2",
+    image: "/car-rent-5.png",
+    year: "2017",
+    transmission: "auto",
+    price: "EG 1.750.000",
+  },
+  {
+    category: "used",
+    name: "Audi RS7",
+    image: "/car-rent-6.png",
+    year: "2018",
+    transmission: "auto",
+    price: "EG 1.950.000",
+  },
+];
+
 export default function CarCards() {
+  const [cars, setCars] = useState(Car);
+
+  const filterItem = (categItem) => {
+    const updatedItems = Car.filter((curElem) => {
+      return curElem.category === categItem;
+    });
+    setCars(updatedItems);
+  };
   return (
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <article class="card car-details label-info sponsored">
-            <div class="card-body">
-              <div class="d-flex flex-md-row align-items-md-start align-items-center flex-column">
-                <div class="thumbnail position-relative mb-md-0 mb-3">
-                  <img src="https://images.pexels.com/photos/1519192/pexels-photo-1519192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                </div>
-                <div class="w-100">
-                  <div class="d-flex flex-md-row flex-column">
-                    <h3 class="mr-3"> Hyundai </h3>
-                    <div class="ml-auto text-right">
-                      <h3>EG 900.000</h3>
-                      <ul class="rating">
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-grey"></i>
-                        </li>
-                      </ul>
+    <div class="container-fluid">
+      <div class="container pt-1 pb-1">
+        <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
+        <div class="btns mt-1 mb-5 d-flex justify-content-center">
+          <button class="btn btn-warning m-1 px-3" onClick={() => setCars(Car)}>
+            All
+          </button>
+          <button
+            class="btn btn-warning m-1 px-3"
+            onClick={() => filterItem("new")}
+          >
+            New
+          </button>
+          <button
+            class="btn btn-warning m-1 px-3"
+            onClick={() => filterItem("used")}
+          >
+            Used
+          </button>
+        </div>
+        <div class="row">
+          {cars.map((item) => {
+            const { name, image, year, transmission, price } = item;
+            return (
+              <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                  <img class="img-fluid mb-4" src={image} alt="" />
+                  <h4 class="text-uppercase mb-4">{name}</h4>
+                  <div class="d-flex justify-content-center mb-4">
+                    <div class="px-2">
+                      <i class="fa fa-car text-warning mr-1"></i>
+                      <span>{year}</span>
+                    </div>
+                    <div class="px-2 border-left">
+                      <i class="fa fa-cogs text-warning mr-1"></i>
+                      <span>{transmission}</span>
+                    </div>
+                    <div class="px-2 border-left">
+                      <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
+                      <span>{price}</span>
                     </div>
                   </div>
-                  <hr />
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-4 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-users"></i> <strong>Model:</strong>{" "}
-                            Suv
-                          </li>
-                          <li>
-                            <i class="fas fa-calendar"></i>{" "}
-                            <strong>Transmission:</strong> Automatic
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Motor:</strong> 1,390
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-8 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Color:</strong> Black
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Year:</strong> 2020{" "}
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Shop Name:</strong> ElQersh
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex flex-md-row flex-column align-items-center justify-content-end">
-                          <button class="btn btn-warning w-100 mb-md-0 mb-3 mr-md-3 mr-0">
-                            <i class="fas fa-car"></i> Car Details
-                          </button>
-                          <button class="btn btn-secondary w-100">
-                            <i class="fas fa-star"></i> Add To Favourite
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <a class="btn btn-warning px-3" href="">
+                    CAR DETAILS
+                  </a>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="card car-details label-primary new">
-            <div class="card-body">
-              <div class="d-flex flex-md-row align-items-md-start align-items-center flex-column">
-                <div class="thumbnail position-relative mb-md-0 mb-3">
-                  <img src="https://images.pexels.com/photos/3457780/pexels-photo-3457780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                </div>
-                <div class="w-100">
-                  <div class="d-flex flex-md-row flex-column">
-                    <h3 class="mr-3">Mercedes</h3>
-                    <div class="ml-auto text-right">
-                      <h3>EG 1.500.000</h3>
-                      <ul class="rating">
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-4 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-users"></i> <strong>Model:</strong>{" "}
-                            AMG G63
-                          </li>
-                          <li>
-                            <i class="fas fa-calendar"></i>{" "}
-                            <strong>Transmission:</strong> Automatic
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Motor:</strong> 1,500
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-8 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Color:</strong> Black
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Year:</strong> 2022{" "}
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Shop Name:</strong> ElQersh
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex flex-md-row flex-column align-items-center justify-content-end">
-                          <button class="btn btn-warning w-100 mb-md-0 mb-3 mr-md-3 mr-0">
-                            <i class="fas fa-car"></i> Car Details
-                          </button>
-                          <button class="btn btn-secondary w-100">
-                            <i class="fas fa-star"></i> Add To Favourite
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="card car-details label-success new">
-            <div class="card-body">
-              <div class="d-flex flex-md-row align-items-md-start align-items-center flex-column">
-                <div class="thumbnail position-relative mb-md-0 mb-3">
-                  <img src="https://images.pexels.com/photos/15253379/pexels-photo-15253379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                </div>
-                <div class="w-100">
-                  <div class="d-flex flex-md-row flex-column">
-                    <h3 class="mr-3">Jeep</h3>
-                    <div class="ml-auto text-right">
-                      <h3>EG 1.200.000</h3>
-                      <ul class="rating">
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-grey"></i>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-4 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-users"></i> <strong>Model:</strong>{" "}
-                            Wrangler
-                          </li>
-                          <li>
-                            <i class="fas fa-calendar"></i>{" "}
-                            <strong>Transmission:</strong> Manual
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Motor:</strong> 2,000
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-8 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Color:</strong> Blue
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Year:</strong> 2021{" "}
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Shop Name:</strong> ElQersh
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex flex-md-row flex-column align-items-center justify-content-end">
-                          <button class="btn btn-warning w-100 mb-md-0 mb-3 mr-md-3 mr-0">
-                            <i class="fas fa-car"></i> Car Details
-                          </button>
-                          <button class="btn btn-secondary w-100">
-                            <i class="fas fa-star"></i> Add To Favourite
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="card car-details label-warning new">
-            <div class="card-body">
-              <div class="d-flex flex-md-row align-items-md-start align-items-center flex-column">
-                <div class="thumbnail position-relative mb-md-0 mb-3">
-                  <img src="https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                </div>
-                <div class="w-100">
-                  <div class="d-flex flex-md-row flex-column">
-                    <h3 class="mr-3">Cooper</h3>
-                    <div class="ml-auto text-right">
-                      <h3>EG 950.000</h3>
-                      <ul class="rating">
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-warning"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-grey"></i>
-                        </li>
-                        <li>
-                          <i class="fas fa-star text-grey"></i>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-4 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-users"></i> <strong>Model:</strong>{" "}
-                            Suv
-                          </li>
-                          <li>
-                            <i class="fas fa-calendar"></i>{" "}
-                            <strong>Transmission:</strong> Manual
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Motor:</strong> 1,800
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-8 col-12">
-                        <ul>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Color:</strong> Black
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Year:</strong> 2020{" "}
-                          </li>
-                          <li>
-                            <i class="fas fa-info-circle"></i>{" "}
-                            <strong>Shop Name:</strong> ElQersh
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex flex-md-row flex-column align-items-center justify-content-end">
-                          <button class="btn btn-warning w-100 mb-md-0 mb-3 mr-md-3 mr-0">
-                            <i class="fas fa-car"></i> Car Details
-                          </button>
-                          <button class="btn btn-secondary w-100">
-                            <i class="fas fa-star"></i> Add To Favourite
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
+            );
+          })}
         </div>
       </div>
     </div>
