@@ -5,10 +5,12 @@ import Details from "./details";
 import { NavLink } from "react-router-dom";
 
 export default function CarDetails() {
-  const baseURL="http://localhost:5000/newcars";
-  const id="63f924c078bbebf42e1d8a97"
-  const [imgs, setimgs] = useState([])
-  const [car, setcar] = useState({})
+  const baseURL = "http://localhost:5000/newcars";
+  const carsURL = "http://localhost:5000/newcars/";
+  const id = "63f957883afcbccd71a5ef78";
+  const [imgs, setimgs] = useState([]);
+  const [car, setcar] = useState({});
+  const [nextcars, setnextcars] = useState([]);
   const [wordData, setWordData] = useState("");
   const handleClick = (index) => {
     setWordData(imgs[index]);
@@ -30,16 +32,36 @@ export default function CarDetails() {
       });
   }, []);
 
+  useEffect(() => {
+    setWordData(imgs[0]);
+    console.log(car);
+  }, [imgs]);
+  return (
+    <div className="container">
+      <div className="d-flex flex-md-row flex-column justify-content-between mm ">
+        {" "}
+        <h3 class="">{car.name} </h3>
+        <hr />
+        <NavLink to="/carshop">
+          {" "}
+          <img
+            src={`http://localhost:5000/${car.owner?.image}`}
+            width={"150px"}
+            className="d-flex "
+          />
+        </NavLink>
+      </div>
 
 useEffect(()=>{
   setWordData(imgs[0])
   console.log(car);
+  console.log(car.owner?.image)
 },[imgs])
   return (
     <div className="container">
          <div className='d-flex flex-md-row flex-column justify-content-between mm '>      <h3 class="">{car.name} </h3>
             <hr /> 
-            <NavLink to="/carshop"> <img src= {`http://localhost:5000/${car.owner?.image}`} width={"150px"} className='d-flex '  /></NavLink>
+            <NavLink to="/carshop"> <img src= {`http://localhost:5000/${car.owner?.image}`} width={"100px"} className='d-flex '  /></NavLink>
            
             
         
