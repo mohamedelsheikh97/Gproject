@@ -51,21 +51,6 @@ export default function CarDetails() {
           />
         </NavLink>
       </div>
-
-useEffect(()=>{
-  setWordData(imgs[0])
-  console.log(car);
-  console.log(car.owner?.image)
-},[imgs])
-  return (
-    <div className="container">
-         <div className='d-flex flex-md-row flex-column justify-content-between mm '>      <h3 class="">{car.name} </h3>
-            <hr /> 
-            <NavLink to="/carshop"> <img src= {`http://localhost:5000/${car.owner?.image}`} width={"100px"} className='d-flex '  /></NavLink>
-           
-            
-        
-              </div>
       <div className="row">
         <div className="main col-7 no">
           <img src={`http://localhost:5000/${wordData}`} className="p" />
