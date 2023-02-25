@@ -23,21 +23,21 @@ console.log(x)
                     <ul>
                     <li>
                       <i class="fas fa-dollar-sign"></i> {" "}
-                        <strong>Price:</strong>     {car.price}   EGP
+                        <strong>Price: </strong>     {car.price}   EGP
                       </li>
                       <br />
                       <li>
-                        <i  class="fas fa-users "></i> <strong>Model:</strong> {car.model}
+                        <i  class="fas fa-users "></i> <strong>Model: </strong> {car.model}
                       </li>
                       <br /> 
                       <li>
-                        <i class="fas fa-calendar"></i> <strong>Transmission:</strong> {car.transmission}  {" "}
+                        <i class="fas fa-calendar"></i> <strong>Transmission: </strong> {car.transmission}  {" "}
                         
                       </li>
                       <br /> 
                       <li>
                         <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Motor:</strong> 1,500
+                        <strong>Motor: </strong> {car.transmission}
                       </li>
                       <br /> 
                  
@@ -50,12 +50,12 @@ console.log(x)
                     <ul>
                       <li>
                         <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Color:</strong> {car.color}
+                        <strong>Color: </strong> {car.color}
                       </li>
                       <br />
                       <li>
                         <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Year:</strong> {car.year}
+                        <strong>Year: </strong> {car.year}
                       </li>
                 
                       <div class="google-map">
