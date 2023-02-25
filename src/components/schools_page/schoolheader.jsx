@@ -6,7 +6,9 @@ const Schoolhead = () => {
     <header>
       <div className="img">
         <span className="school">
-          <h2> Driving Schools</h2>
+          <h1 class="display-4 text-uppercase text-center text-light">
+            Driving Schools
+          </h1>{" "}
         </span>
       </div>
     </header>

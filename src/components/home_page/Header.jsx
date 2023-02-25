@@ -71,9 +71,9 @@ const Header = () => {
     <header>
       <CarSlider></CarSlider>
       <Brands></Brands>
+      <Servives></Servives>
       <Welcome></Welcome>
       <Cards></Cards>
-      <Servives></Servives>
       <ReactCardSlider slides={slides} />
     </header>
   );

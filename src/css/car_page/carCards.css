@@ -1,80 +1,3 @@
-/* article.card.car-details {
-  border: 1px solid #cfcfcf;
-  box-shadow: 0 0 20px 0px #dee2e6;
-  overflow: hidden;
-  -webkit-transition: 0.3s all;
-  -moz-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  -o-transition: 0.3s all;
-  transition: 0.3s all;
-}
-article.card.car-details h3 {
-  font-size: 1.3rem !important;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-article.card.car-details ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-article.card.car-details ul li {
-  margin-bottom: 1rem;
-}
-article.card.car-details ul li i {
-  width: 24px;
-}
-article.card.car-details ul.rating {
-  display: flex;
-  font-size: 0.95rem;
-  margin-top: 1rem;
-}
-article.card.car-details ul.rating li {
-  margin-bottom: 0;
-}
-article.card.car-details ul.rating li:not(:last-child) {
-  margin-right: 0.25rem;
-}
-article.card.car-details .thumbnail {
-  width: 50%;
-  height: 540px;
-  background: none;
-  margin-right: 1rem;
-}
-
-article.card.car-details:not(:last-child) {
-  margin-bottom: 2rem;
-}
-article.card.car-details:hover {
-  background: #f8f9fa;
-}
-
-.text-grey {
-  color: #bbbbbb;
-}
-
-.btn-default {
-  background: #fff;
-  border: 1px solid #e9ecef;
-}
-.btn-default i {
-  color: #8e6c06;
-}
-img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.big {
-  width: 60% !important;
-}
-hr {
-  width: 100% !important;
-}
- */
-
 .rent-item {
   padding: 30px;
   text-align: center;
@@ -92,7 +15,9 @@ hr {
 .rent-item h4 {
   transition: 0.5s;
 }
-
+.rent-item .img-fluid {
+  margin: 0 !important;
+}
 .rent-item:hover h4,
 .rent-item.active h4 {
   color: var(--light);

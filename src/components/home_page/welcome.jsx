@@ -4,8 +4,8 @@ export default function Welcome() {
   return (
     <div className="container">
       <p className="text-center head">
-        <span className="welcome">Welcome</span> to{" "}
-        <span className="kalaks">Kalaks</span>
+        <h1 class="display-4 text-uppercase text-center">Welcome</h1>
+        <span className="kalaks">TO KALAKS</span>
       </p>
       <p className="desc">
         There are many variations of passages of Lorem Ipsum available, but the

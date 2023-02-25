@@ -6,7 +6,9 @@ const Maintenanceheader = () => {
     <header>
       <div className="ima">
         <span className="maintain">
-          <h2> Maintenance Centers</h2>
+          <h1 class="display-4 text-uppercase text-center text-light">
+            Maintenance Centers
+          </h1>{" "}
         </span>
       </div>
       <br />
