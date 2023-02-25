@@ -1,12 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "../../css/car_shop/carshop.css";
 
 export default function Carshop() {
+  const baseURL="http://localhost:5000/carsshops";
+  const carsURL="http://localhost:5000/newcars/";
+  const id = "63f933d46e7b4a9331c31ab4";
+  const [shop, setshop] = useState([])
+  const [cars, setcars] = useState([])
+
+  useEffect(()=>{
+    axios.get(`${baseURL}/${id}`)
+    .then((res)=>{
+        setshop(res.data);
+        console.log(res.data);})
+      .catch(err=>{console.log(err);});
+      console.log(shop);
+  //   axios.get(`${carsURL}`)
+  //   .then((res)=>{console.log(res.data);})
+  //   .catch(err=>{console.log(err);})
+  },[])
   return (
     <div className="kk">
       <section>
         <div class="container-fluid intro">
-          <img src="/kersh.png" id="c-wrench" />
+          <img src={`http://localhost:5000/${shop.image}`} id="c-wrench" />
           <ul>
             <li className="big">
               <a

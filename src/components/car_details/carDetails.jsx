@@ -17,15 +17,22 @@ export default function CarDetails() {
   useEffect(() => {
     axios.get(`${baseURL}/${id}`).then((res) => {
       setcar(res.data);
-
       setimgs(res.data.image);
     });
+    axios
+      .get(carsURL)
+      .then((res) => {
+        console.log(res.data);
+        setnextcars(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   useEffect(() => {
     setWordData(imgs[0]);
     console.log(car);
-    console.log(car.owner?.image);
   }, [imgs]);
   return (
     <div className="container">
@@ -37,7 +44,7 @@ export default function CarDetails() {
           {" "}
           <img
             src={`http://localhost:5000/${car.owner?.image}`}
-            width={"100px"}
+            width={"150px"}
             className="d-flex "
           />
         </NavLink>
@@ -60,117 +67,50 @@ export default function CarDetails() {
             })}
           </div>
         </div>
-
         <div className="col-5">
           <Details car={car}> </Details>
         </div>
-        <div class="row">
-          <div className="col-4">
-            {" "}
-            <div class="wrapper  ">
-              <div class="card front-face">
-                <img
-                  src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06"
-                  alt="Flip Card"
-                />
-              </div>
-              <div class="card back-face">
-                <img
-                  src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06"
-                  alt="Flip Card"
-                />
-                <div class="info">
-                  <div class="title">BMW X8</div>
-                  <h4> 2023 </h4> <br />
-                  <br />
+        <h3 className="text-"> Related cars</h3>
+      </div>
+      <div class="row">
+        {nextcars.map((car) => {
+          return (
+            <div className="col-4">
+              <div class="wrapper  ">
+                <div class="card front-face">
+                  <img
+                    src={`http://localhost:5000/${car.image[0]}`}
+                    alt="Flip Card"
+                  />
                 </div>
-                <button class="button accept-btn">More Details</button>
-                <br /> <br />
-                <ul>
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-                </ul>
+                <div class="card back-face">
+                  <img
+                    src={`http://localhost:5000/${car.owner?.image}`}
+                    alt="Flip Card"
+                  />
+                  <div class="info">
+                    <div class="title">{car.name}</div>
+                    <h4> 2023 </h4> <br />
+                    <br />
+                  </div>
+                  <button class="button accept-btn">More Details</button>
+                  <br /> <br />
+                  <ul>
+                    <a href="#">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-4">
-            {" "}
-            <div class="wrapper  ">
-              <div class="card front-face">
-                <img
-                  src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06"
-                  alt="Flip Card"
-                />
-              </div>
-              <div class="card back-face">
-                <img
-                  src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06"
-                  alt="Flip Card"
-                />
-                <div class="info">
-                  <div class="title">BMW X8</div>
-                  <h4> 2023 </h4> <br />
-                  <br />
-                </div>
-                <button class="button accept-btn">More Details</button>
-                <br /> <br />
-                <ul>
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            {" "}
-            <div class="wrapper  ">
-              <div class="card front-face">
-                <img
-                  src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06"
-                  alt="Flip Card"
-                />
-              </div>
-              <div class="card back-face">
-                <img
-                  src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06"
-                  alt="Flip Card"
-                />
-                <div class="info">
-                  <div class="title">BMW X8</div>
-                  <h4> 2023 </h4> <br />
-                  <br />
-                </div>
-                <button class="button accept-btn">More Details</button>
-                <br /> <br />
-                <ul>
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );
