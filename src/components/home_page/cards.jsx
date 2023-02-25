@@ -26,6 +26,7 @@ export function Cards() {
         <div className="row ">
           {cars.map((card) => {
             return (
+<<<<<<< HEAD
               <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item1 mb-4">
                   <img
@@ -38,6 +39,25 @@ export function Cards() {
                     <div class="card-price px-2">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
                       <span class="font-weight-bold">${card.price}</span>
+=======
+              <Card className="cardItem col-lg-4 col-mg-6 col-sm-12 g-2 mx-2">
+                <Card.Img
+                  variant="top"
+                  class="owner-img"
+                  src={`http://localhost:5000/${card.image}`}
+                />
+                <Card.Body>
+                  <Card.Title>{`${card.name} ${card.model}`}</Card.Title>
+                  <div className="provider d-flex align-items-center">
+                    <img
+                      src={`http://localhost:5000/${card.owner.image}`}
+                      alt=""
+                      width="50px"
+                    /> */}
+                    <div className="m-2">
+                      <p className="m-0">{card.owner.name}</p>
+                      <span>seller</span>
+>>>>>>> d9e577c6bb20d91f4b80b28eeb877a22985b728e
                     </div>
                   </div>
                   <div className="m-2">
