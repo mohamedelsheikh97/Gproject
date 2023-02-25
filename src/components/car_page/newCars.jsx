@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 export default function NewCars() {
   let baseURL = "http://localhost:5000/newcars";
@@ -49,7 +50,7 @@ export default function NewCars() {
                     </div>
                   </div>
                   <a class="btn btn-warning px-3" href="">
-                    CAR DETAILS
+                    <NavLink to="/newcars">CAR DETAILS</NavLink>
                   </a>
                 </div>
               </div>
