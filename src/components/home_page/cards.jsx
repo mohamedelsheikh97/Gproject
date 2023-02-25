@@ -34,11 +34,11 @@ export function Cards() {
                   <Card.Title>{`${card.name} ${card.model}`}</Card.Title>
                   <div className="provider d-flex align-items-center">
                     <img
-                      src={`http://localhost:5000/${card.owner.image}`}
+                      src={`http://localhost:5000/${card.owner?.image}`}
                       alt=""
                     />
                     <div className="m-2">
-                      <p className="m-0">{card.owner.name}</p>
+                      <p className="m-0">{card.owner?.name}</p>
                       <span>seller</span>
                     </div>
                   </div>
