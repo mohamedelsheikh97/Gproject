@@ -97,7 +97,7 @@ export default function CarDetails() {
                       <h4> 2023 </h4> <br />
                       <br />
                     </div>
-                    <button class="button accept-btn">More Details</button>
+                    <button class="button accept-btn" >More Details</button>
                     <br /> <br />
                     <ul>
                       <a href="#">
