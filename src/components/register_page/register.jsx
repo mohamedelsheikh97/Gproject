@@ -4,57 +4,79 @@ import "../../css/register_page/register.css";
 
 export default function Register() {
   return (
-    <section className="register-section1 flex-center">
-      <div className="register-container flex-center">
-        <h1 class="display-4 text-uppercase text-center">Sign Up</h1>
-        <form className="register-form">
-          <input
-            type="text"
-            name="first-name"
-            className="form-input"
-            placeholder="Enter Your First Name"
-          />
-          <input
-            type="text"
-            name="last-name"
-            className="form-input"
-            placeholder="Enter Your Last Name"
-          />
-          <input
-            type="email"
-            name="email"
-            className="form-input"
-            placeholder="Enter Your Email"
-          />
-          <input
-            type="password"
-            name="password"
-            className="form-input"
-            placeholder="Enter Your Password"
-          />
-          <input
-            type="text"
-            name="mobile"
-            className="form-input"
-            placeholder="Enter Your Mobile Number"
-          />
-          <input
-            type="text"
-            name="address"
-            className="form-input"
-            placeholder="Enter Your Address"
-          />
-          <button type="submit" className="btn form-btn">
-            Sign Up
-          </button>
-        </form>
-        <p>
-          Already a user?{" "}
-          <NavLink className="login-link" to={"/login"}>
-            Log in
-          </NavLink>
-        </p>
+    <div class="login-container">
+      <div class="row login-row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card my-2">
+            <form class="card-body cardbody-color p-lg-5">
+              <div class="text-center">
+                <img
+                  src="/login.png"
+                  class="img-fluid profile-image-pic img-thumbnail rounded-circle my-2"
+                  width="200px"
+                  alt="profile"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="FirstName"
+                  aria-describedby="emailHelp"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="LastName"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Address"
+                  placeholder="Address"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-color px-5 mb-5 w-100">
+                  Register
+                </button>
+              </div>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">
+                Have Account?{" "}
+                <a href="#" class="text-dark fw-bold">
+                  {" "}
+                  <NavLink class="c-a" to="/login">
+                    Login
+                  </NavLink>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

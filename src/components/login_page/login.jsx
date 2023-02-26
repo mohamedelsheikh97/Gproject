@@ -4,33 +4,55 @@ import "../../css/login_page/login.css";
 
 export default function Login() {
   return (
-    <section className="register-section flex-center">
-      <div className="register-container flex-center">
-        <h1 class="display-4 text-uppercase text-center">Login </h1>
-        <form className="register-form">
-          <input
-            type="email"
-            name="email"
-            className="form-input"
-            placeholder="Enter Your Email"
-          />
-          <input
-            type="password"
-            name="password"
-            className="form-input"
-            placeholder="Enter Your Password"
-          />
-          <button type="submit" className="btn form-btn">
-            Sign In
-          </button>
-        </form>
-        <p>
-          Not a user?{" "}
-          <NavLink className="login-link" to={"/register"}>
-            Register
-          </NavLink>
-        </p>
+    <div class="login-container">
+      <div class="row login-row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card my-2">
+            <form class="card-body cardbody-color p-lg-5">
+              <div class="text-center">
+                <img
+                  src="/login.png"
+                  class="img-fluid profile-image-pic img-thumbnail rounded-circle my-2"
+                  width="200px"
+                  alt="profile"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Username"
+                  aria-describedby="emailHelp"
+                  placeholder="User Name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="password"
+                />
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-color px-5 mb-5 w-100">
+                  Login
+                </button>
+              </div>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">
+                Not Registered?{" "}
+                <a href="#" class="text-dark fw-bold">
+                  {" "}
+                  <NavLink class="c-a" to="/register">
+                    Create an Account
+                  </NavLink>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
