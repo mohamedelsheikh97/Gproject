@@ -18,7 +18,7 @@ export default function Login() {
                 />
               </div>
 
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="text"
                   class="form-control"
@@ -27,7 +27,7 @@ export default function Login() {
                   placeholder="User Name"
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="password"
                   class="form-control"
@@ -35,7 +35,7 @@ export default function Login() {
                   placeholder="password"
                 />
               </div>
-              <div class="text-center">
+              <div class="text-center input-1">
                 <button type="submit" class="btn btn-color px-5 mb-5 w-100">
                   Login
                 </button>

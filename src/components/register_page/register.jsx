@@ -11,14 +11,14 @@ export default function Register() {
             <form class="card-body cardbody-color p-lg-5">
               <div class="text-center">
                 <img
-                  src="/login.png"
+                  src="/sign.png"
                   class="img-fluid profile-image-pic img-thumbnail rounded-circle my-2"
                   width="200px"
                   alt="profile"
                 />
               </div>
 
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="text"
                   class="form-control"
@@ -27,7 +27,7 @@ export default function Register() {
                   placeholder="First Name"
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="text"
                   class="form-control"
@@ -35,7 +35,7 @@ export default function Register() {
                   placeholder="Last Name"
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="email"
                   class="form-control"
@@ -43,7 +43,7 @@ export default function Register() {
                   placeholder="Email"
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="text"
                   class="form-control"
@@ -51,7 +51,7 @@ export default function Register() {
                   placeholder="Address"
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 input-1">
                 <input
                   type="text"
                   class="form-control"
@@ -59,7 +59,7 @@ export default function Register() {
                   placeholder="Phone Number"
                 />
               </div>
-              <div class="text-center">
+              <div class="text-center input-1">
                 <button type="submit" class="btn btn-color px-5 mb-5 w-100">
                   Register
                 </button>
