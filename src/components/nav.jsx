@@ -7,6 +7,7 @@ const Navs = () => {
   return (
     <Navbar bg="light" expand="lg" sticky="top" fixed="top">
       <Container>
+        <NavLink className="nav-link" to="/">
         <Navbar.Brand href="#home" className="logoo">
           {" "}
           <div class="loader">
@@ -67,6 +68,7 @@ const Navs = () => {
             <span className="name p-2">KALAKS</span>
           </div>
         </Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
