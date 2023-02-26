@@ -48,6 +48,7 @@ export default function CarDetails() {
             src={`http://localhost:5000/${car.owner?.image}`}
             width={"150px"}
             className="d-flex "
+            alt="img"
           />
         </NavLink>
       </div>

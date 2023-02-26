@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/home_page/Cars.css";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Container } from "reactstrap";
 
 const settings = {
@@ -10,9 +10,9 @@ const settings = {
   autoplaySpeed: 4000,
   infinite: true,
   autoplay: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  pauseOnHover: false,
+  slidesToShow: 10,
+  slidesToScroll: 10,
+  pauseOnHover: true,
 };
 
 export default function CarSlider() {
@@ -22,10 +22,10 @@ export default function CarSlider() {
         <div className="slider__item slider__item-01 mt0">
           <Container>
             <div className="slider__content ">
-              <h4 className="text-light mb-3">Are You a Classic Driver?</h4>
-              <h1 className="text-light mb-4">Buy Your Dream Vehicle Now</h1>
+              <h1 class="display-3 q-1">Are You a Classic Driver?</h1>
+              <h1 class="display-3 q-2">Buy Your Dream Vehicle Now</h1>
               <button className="btn reserve__btn mt-4">
-                <Link to="/cars">Buy Now</Link>
+                <NavLink to="cars">Buy Now</NavLink>
               </button>
             </div>
           </Container>
@@ -33,12 +33,10 @@ export default function CarSlider() {
         <div className="slider__item slider__item-02 mt0">
           <Container>
             <div className="slider__content ">
-              <h4 className="text-light mb-3">Look Forward To Driving?</h4>
-              <h1 className="text-light mb-4">
-                You Got It Right Here For Best School
-              </h1>
+              <h1 class="display-3 q-1">Look Forward To Driving?</h1>
+              <h1 class="display-3 q-2">You Got It Right Here</h1>
               <button className="btn reserve__btn mt-4">
-                <Link to="/school">Practice Now</Link>
+                <NavLink to="/school">Practice Now</NavLink>
               </button>
             </div>
           </Container>
@@ -46,12 +44,10 @@ export default function CarSlider() {
         <div className="slider__item slider__item-03 mt0">
           <Container>
             <div className="slider__content ">
-              <h4 className="text-light mb-3">Any Problem With Your Car?</h4>
-              <h1 className="text-light mb-4">
-                Reach The Best Car Repair Services{" "}
-              </h1>
+              <h1 class="display-3 q-1">Problem With Your Car?</h1>
+              <h1 class="display-3 q-2">Best Car Repair Services</h1>
               <button className="btn reserve__btn mt-4">
-                <Link to="/maintain">From Here</Link>
+                <NavLink to="maintain">From Here</NavLink>
               </button>
             </div>
           </Container>

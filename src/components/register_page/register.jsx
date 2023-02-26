@@ -66,7 +66,7 @@ export default function Register() {
               </div>
               <div id="emailHelp" class="form-text text-center mb-5 text-dark">
                 Have Account?{" "}
-                <a href="#" class="text-dark fw-bold">
+                <a class="text-dark fw-bold">
                   {" "}
                   <NavLink class="c-a" to="/login">
                     Login

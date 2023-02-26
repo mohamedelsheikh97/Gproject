@@ -42,7 +42,7 @@ export default function Login() {
               </div>
               <div id="emailHelp" class="form-text text-center mb-5 text-dark">
                 Not Registered?{" "}
-                <a href="#" class="text-dark fw-bold">
+                <a class="text-dark fw-bold">
                   {" "}
                   <NavLink class="c-a" to="/register">
                     Create an Account
