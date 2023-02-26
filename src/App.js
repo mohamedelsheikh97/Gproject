@@ -15,6 +15,7 @@ import Payment from "./components/payment_page/payment";
 import Dashboard from "./components/dashboard_page/dashboard";
 import NewCars from "./components/car_page/newCars";
 import UsedCars from "./components/car_page/usedCars";
+import Register from "./components/register_page/register";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Navs></Navs>
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="/:id" element={<Carshop/>}/>
+        <Route path="/:id" element={<Carshop />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/newcars" element={<NewCars />} />
         <Route path="/usedcars" element={<UsedCars />} />
@@ -32,6 +33,7 @@ function App() {
         <Route path="/schools" element={<School />} />
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<Notfound />} />

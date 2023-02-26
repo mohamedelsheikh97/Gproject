@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 export default function CarDetails() {
   const baseURL = "http://localhost:5000/newcars";
   const carsURL = "http://localhost:5000/newcars/";
-  const id = "63f95927dd86aab718790504";
+  const id = "63f95e8c60697da048490d5a";
   const [imgs, setimgs] = useState([]);
   const [car, setcar] = useState({});
   const [nextcars, setnextcars] = useState([]);
