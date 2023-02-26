@@ -1,16 +1,23 @@
 import React from "react";
 import "../../css/home_page/slider.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 const ReactCardSlider = (props) => {
+  let navigate = useNavigate();
   const slideLeft = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 500;
   };
-
+  console.log(props.shops);
   const slideRight = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft + 500;
   };
+
+ const sliderClick =(shopId)=>{
+    navigate(`/${shopId}`)
+  }
+
 
   return (
     <div className="container">
@@ -22,15 +29,15 @@ const ReactCardSlider = (props) => {
           onClick={slideLeft}
         />
         <div id="slider">
-          {props.slides.map((slide, index) => {
+          {props.shops.map((slide, index) => {
             return (
               <div
                 className="slider-card"
                 key={index}
-                onClick={() => slide.clickEvent()}
+                onClick={()=>sliderClick(slide._id)}
               >
-                <img class="shop-slider" src={slide.image} alt="" />
-                <p className="text-center m-0">{slide.title}</p>
+                <img class="shop-slider" src={`http://localhost:5000/${slide.image}`} alt="" />
+                <p className="text-center m-0">{slide.name}</p>
               </div>
             );
           })}

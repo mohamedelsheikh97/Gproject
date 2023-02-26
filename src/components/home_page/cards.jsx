@@ -12,13 +12,13 @@ export function Cards() {
       .get(baseURL)
       .then((response) => {
         setcars(response.data);
-        console.log(response.data);
-        console.log(response.data[0].image[0]);
+        
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
+  console.log(cars);
   return (
     <div className="featured mt-5">
       <div className="container">

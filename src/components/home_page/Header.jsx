@@ -6,8 +6,26 @@ import Welcome from "./welcome";
 import { Cards } from "./cards";
 import ReactCardSlider from "./reactCardSlider";
 import Servives from "./services";
+import {useEffect , useState} from "react";
+import axios from "axios" ;
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+   let baseURL = "http://localhost:5000/carsshops";
+  let [shops, setshops] = useState([]);
+  let navigate = useNavigate();
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setshops(response.data);
+        console.log(response.data);
+        console.log(response.data[0].image[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   const sliderClick = (slider) => {
     alert("hello world");
   };
@@ -74,7 +92,7 @@ const Header = () => {
       <Servives></Servives>
       <Welcome></Welcome>
       <Cards></Cards>
-      <ReactCardSlider slides={slides} />
+      <ReactCardSlider shops={shops} />
     </header>
   );
 };
