@@ -1,32 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "../../css/car_page/carCards.css";
 import axios from "axios";
-
 import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-export default function CarCards() {
-  let baseURL1 = "http://localhost:5000/newcars";
-  let baseURL2 = "http://localhost:5000/usedcars";
+export default function UsedCars() {
+  let baseURL = "http://localhost:5000/usedcars";
   let [cars, setcars] = useState([]);
-  let [newcars, setNewcars] = useState([]);
-  let [usedcars, setUsedcars] = useState([]);
-
   useEffect(() => {
     axios
-      .get(baseURL1)
+      .get(baseURL)
       .then((response) => {
-        setNewcars(response.data);
-        console.log(response.data);
-        console.log(response.data[0].image[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    axios
-      .get(baseURL2)
-      .then((response) => {
-        setUsedcars(response.data);
+        setcars(response.data);
         console.log(response.data);
         console.log(response.data[0].image[0]);
       })
@@ -34,41 +17,17 @@ export default function CarCards() {
         console.log(error);
       });
   }, []);
-  useEffect(() => {
-    let x = [...newcars, ...usedcars];
-    setcars(x);
-  }, [newcars, usedcars]);
   return (
     <div class="container-fluid">
       <div class="container pt-1 pb-1">
-        <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
-        <div class="btns mt-1 mb-5 d-flex justify-content-center">
-          <button
-            class="btn btn-warning m-1 px-3"
-            onClick={() => {
-              let x = [...newcars, ...usedcars];
-              setcars(x);
-            }}
-          >
-            All
+        <h1 class="display-4 text-uppercase text-center mb-5">
+          Used Cars{" "}
+          <button class="btn btn-warning m-1 px-3">
+            <NavLink class="cardet" to="/usedcars">
+              Browse More{" "}
+            </NavLink>
           </button>
-          <button
-            class="btn btn-warning m-1 px-3"
-            onClick={() => {
-              setcars(newcars);
-            }}
-          >
-            New
-          </button>
-          <button
-            class="btn btn-warning m-1 px-3"
-            onClick={() => {
-              setcars(usedcars);
-            }}
-          >
-            Used
-          </button>
-        </div>
+        </h1>
         <div class="row">
           {cars.map((card) => {
             return (
@@ -94,10 +53,8 @@ export default function CarCards() {
                       <span>EG {card.price}</span>
                     </div>
                   </div>
-                  <a class="btn btn-warning px-3" href="">
-                    <NavLink to="/cardetails" id="car-det">
-                      CAR DETAILS
-                    </NavLink>
+                  <a class="btn btn-warning px-3 car-d" href="">
+                    CAR DETAILS
                   </a>
                 </div>
               </div>

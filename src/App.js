@@ -13,6 +13,8 @@ import Accessories from "./components/accessories_page/accessories";
 import Carshop from "./components/carShop/carshop";
 import Payment from "./components/payment_page/payment";
 import Dashboard from "./components/dashboard_page/dashboard";
+import NewCars from "./components/car_page/newCars";
+import UsedCars from "./components/car_page/usedCars";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/" element={<Header />} />
         <Route path="/:id" element={<Carshop/>}/>
         <Route path="/cars" element={<Cars />} />
+        <Route path="/newcars" element={<NewCars />} />
+        <Route path="/usedcars" element={<UsedCars />} />
         <Route path="/cardetails" element={<CarDetails />} />
         <Route path="/carshop" element={<Carshop />} />
         <Route path="/maintenance" element={<Maintenance />} />

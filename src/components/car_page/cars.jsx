@@ -3,6 +3,8 @@ import CarListing from "./carListing";
 import "../../css/car_page/car_page.css";
 import CarCards from "./carCards";
 import CarDrive from "./carDrive";
+import NewCars from "./newCars";
+import UsedCars from "./usedCars";
 
 export default function Cars() {
   return (
@@ -19,6 +21,8 @@ export default function Cars() {
       </section> */}
       <CarListing></CarListing>
       <CarCards></CarCards>
+      {/* <NewCars></NewCars> */}
+      {/* <UsedCars></UsedCars> */}
       <CarDrive></CarDrive>
       {/* <SearchBar></SearchBar> */}
     </>

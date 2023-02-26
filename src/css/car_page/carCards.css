@@ -60,3 +60,7 @@
   border: 1px solid #f77d0a !important;
   padding: 10px 25px !important;
 }
+#car-det {
+  /* color: white !important; */
+  text-decoration: none !important;
+}
