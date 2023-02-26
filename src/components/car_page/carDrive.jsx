@@ -15,12 +15,12 @@ export default function CarDrive() {
 
           <Col lg="6" md="6" sm="12">
             <h2 className="section__title become__driver-title">
-              Do You Wanna Learn To Drive ?
+              WANNA LEARN TO DRIVE ?
             </h2>
 
             <button className="btn become__driver-btn mt-4">
               <Link className="nav-link" to="/schools">
-                Become a Driver
+                BECOME A DRIVER
               </Link>
             </button>
           </Col>

@@ -50,7 +50,7 @@ export default function CarCards() {
               setcars(x);
             }}
           >
-            All
+            ALL
           </button>
           <button
             class="btn btn-warning m-1 px-3"
@@ -58,7 +58,7 @@ export default function CarCards() {
               setcars(newcars);
             }}
           >
-            New
+            NEW
           </button>
           <button
             class="btn btn-warning m-1 px-3"
@@ -66,7 +66,7 @@ export default function CarCards() {
               setcars(usedcars);
             }}
           >
-            Used
+            USED
           </button>
         </div>
         <div class="row">

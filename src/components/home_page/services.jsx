@@ -19,7 +19,7 @@ export default function Servives() {
             </p>
             <button className="button-5">
               <Link className="nav-link" to="/cars">
-                Read More
+                READ MORE
               </Link>
             </button>
           </div>
@@ -35,7 +35,7 @@ export default function Servives() {
             </p>
             <button className="button-5">
               <Link className="nav-link" to="/maintenance">
-                Read More
+                READ MORE
               </Link>
             </button>
           </div>
@@ -50,7 +50,7 @@ export default function Servives() {
             </p>
             <button className="button-5">
               <Link className="nav-link" to="/schools">
-                Read More
+                READ MORE
               </Link>
             </button>
           </div>
@@ -65,7 +65,7 @@ export default function Servives() {
             </p>
             <button className="button-5">
               <Link className="nav-link" to="/accessories">
-                Read More
+                READ MORE
               </Link>
             </button>
           </div>
@@ -80,7 +80,7 @@ export default function Servives() {
             </p>
             <button className="button-5">
               <Link className="nav-link" to="/">
-                Read More
+                READ MORE
               </Link>
             </button>
           </div>
