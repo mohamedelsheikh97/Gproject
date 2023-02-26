@@ -41,7 +41,6 @@
   letter-spacing: 0.2rem;
   color: white;
   text-transform: uppercase;
-  /* text-align: center; */
 }
 .slider__content .q-2 {
   font-size: 2rem;
@@ -50,7 +49,6 @@
 
   color: white;
   text-transform: uppercase;
-  /* text-align: center; */
 }
 
 .reserve__btn {
@@ -58,18 +56,13 @@
   color: white !important;
   border: none;
   outline: none;
-  /* margin-left: 45% !important; */
 }
 
-.reserve__btn a {
+.reserve__btn a,
+.reserve__btn a:hover {
   text-decoration: none;
   font-weight: 600;
   color: white;
-}
-
-.reserve__btn:hover {
-  background: #000d6b;
-  color: #fff;
 }
 
 @media only screen and (max-width: 992px) {
@@ -95,4 +88,10 @@
   .slider__content h1 {
     font-size: 1.5rem;
   }
+}
+.slick-slide {
+  visibility: hidden;
+}
+.slick-slide.slick-active {
+  visibility: visible;
 }

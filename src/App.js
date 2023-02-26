@@ -14,6 +14,7 @@ import Carshop from "./components/carShop/carshop";
 import Payment from "./components/payment_page/payment";
 import Dashboard from "./components/dashboard_page/dashboard";
 import Register from "./components/register_page/register";
+import Cart from "./components/totalCart_page/cart";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer></Footer>

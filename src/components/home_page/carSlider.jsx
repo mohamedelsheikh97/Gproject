@@ -12,7 +12,7 @@ const settings = {
   autoplay: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  pauseOnHover: true,
+  pauseOnHover: false,
 };
 
 export default function CarSlider() {
@@ -36,7 +36,7 @@ export default function CarSlider() {
               <h1 class="display-3 q-1">Look Forward To Driving?</h1>
               <h1 class="display-3 q-2">You Got It Right Here</h1>
               <button className="btn reserve__btn mt-4">
-                <NavLink to="/school">PRACTICE NOW</NavLink>
+                <NavLink to="/schools">PRACTICE NOW</NavLink>
               </button>
             </div>
           </Container>
