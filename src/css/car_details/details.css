@@ -1,0 +1,15 @@
+.rating {
+  width: 20px;
+}
+
+.m {
+  border: 1px solid rgb(233, 139, 72);
+  height: 700px;
+}
+.mm {
+  border-bottom: 2px solid rgb(233, 139, 72);
+}
+.bb {
+  margin-bottom: -250px;
+  margin-left: 20px;
+}

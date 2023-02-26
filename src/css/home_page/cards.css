@@ -1,0 +1,66 @@
+.rent-item1 {
+  padding: 30px;
+  text-align: center;
+  background: var(--light);
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.rent-item1:hover,
+.rent-item1.active {
+  background: var(--orange);
+}
+
+.rent-item1 h4 {
+  transition: 0.5s;
+}
+.rent-item1 .img-fluid {
+  margin: 0 !important;
+}
+.rent-item1:hover .px-2,
+.rent-item1.active .px-2 {
+  color: var(--light) !important;
+}
+.rent-item1:hover i,
+.rent-item1.active i {
+  color: var(--light) !important;
+}
+.rent-item1:hover a,
+.rent-item1.active a {
+  color: var(--orange) !important;
+  font-size: 18px !important;
+
+  background-color: white !important;
+}
+.rent-item1:hover h4,
+.rent-item1.active h4 {
+  color: var(--white) !important;
+}
+.rent-item1:hover .card-name,
+.rent-item1.active .card-name {
+  color: var(--white) !important;
+}
+.px-2 i {
+  color: #f77d0a !important;
+}
+.btn {
+  background-color: #f77d0a !important;
+  color: var(--light) !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  border: none !important;
+}
+.display-4 {
+  font-weight: 700 !important;
+}
+.btns button {
+  padding: 10px 25px !important;
+}
+.btns button:hover {
+  color: #f77d0a !important;
+  font-weight: 450 !important;
+  background-color: white !important;
+  border: 1px solid #f77d0a !important;
+  padding: 10px 25px !important;
+}
