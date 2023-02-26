@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 export default function CarDetails() {
   const baseURL="http://localhost:5000/newcars";
-  const id="63fa024b31cdc3025671d4e7"
+  const id="63f95927dd86aab718790504"
   const [imgs, setimgs] = useState([])
   const [car, setcar] = useState({})
   const [wordData, setWordData] = useState("");
@@ -20,9 +20,7 @@ export default function CarDetails() {
     axios.get(`${baseURL}/${id}`)
     .then((res)=>{
       setcar(res.data);
-     
       setimgs(res.data.image);
-      
     })
   },[])
 
@@ -37,10 +35,7 @@ useEffect(()=>{
          <div className='d-flex flex-md-row flex-column justify-content-between mm '>      <h3 class="">{car.name} </h3>
             <hr /> 
             <NavLink to="/carshop"> <img src= {`http://localhost:5000/${car.owner?.image}`} width={"100px"} className='d-flex '  /></NavLink>
-           
-            
-        
-              </div>
+            </div>
       <div className="row">
         <div className="main col-7 no">
           <img src= {`http://localhost:5000/${wordData}`} className="p" />
