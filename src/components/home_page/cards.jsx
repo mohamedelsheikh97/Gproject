@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import "../../css/home_page/cards.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { useNavigate , Navigate } from 'react-router-dom';
+
 
 export function Cards() {
   let baseURL = "http://localhost:5000/newcars";
@@ -19,6 +21,10 @@ export function Cards() {
       });
   }, []);
   console.log(cars);
+  let navigate = useNavigate();
+  const sliderClick =(shopId)=>{
+    navigate(`/carshop/${shopId}`)
+  }
   return (
     <div className="featured mt-5">
       <div className="container">
@@ -44,16 +50,17 @@ export function Cards() {
                     <p className="card-name m-0 font-weight-bold">
                       {card.owner?.name}
                     </p>
-                    <NavLink className="nav-link" to="/carshop">
+                    
                       <img
                         src={`http://localhost:5000/${card.owner?.image}`}
                         alt=""
                         width="50px"
                         class="owner-img"
+                        onClick={()=>sliderClick(card.owner?._id)}
                       />
-                    </NavLink>
+                  
                   </div>
-                  <a class="btn btn-warning px-3 font-weight-bold" href="">
+                  <a class="btn btn-warning px-3 font-weight-bold" href=""  >
                     CAR DETAILS
                   </a>
                 </div>

@@ -22,10 +22,12 @@ function App() {
       <Navs></Navs>
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="/:id" element={<Carshop />} />
+        {/* <Route path="/:id" element={<Carshop />} /> */}
         <Route path="/cars" element={<Cars />} />
         <Route path="/cardetails" element={<CarDetails />} />
+        <Route path="/cardetails/:id" element={<CarDetails />} />
         <Route path="/carshop" element={<Carshop />} />
+        <Route path="/carshop/:id" element={<Carshop />} />
         <Route path="/maintenance" element={<Maintenance />} />
         <Route path="/schools" element={<School />} />
         <Route path="/accessories" element={<Accessories />} />
@@ -34,7 +36,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<Notfound />} />
+        <Route path="/*" element={<Notfound />} />
       </Routes>
       <Footer></Footer>
     </>
