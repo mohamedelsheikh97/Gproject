@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../../css/car_page/newcars.css";
 import { NavLink } from "react-router-dom";
 
 export default function NewCars() {
@@ -21,11 +22,14 @@ export default function NewCars() {
     <div class="container-fluid">
       <div class="container pt-1 pb-1">
         <h1 class="display-4 text-uppercase text-center mb-5">
-          New Cars <button class="btn btn-warning m-1 px-3">Browse More</button>
+          New Cars{" "}
+          <button class="btn btn-warning m-2 px-2 cardet">
+            {" "}
+            <NavLink to="/newcars">Browse More </NavLink>
+          </button>
         </h1>
         <div class="row">
           {cars.map((card) => {
-            // const { name, image, year, transmission, price } = item;
             return (
               <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
@@ -49,8 +53,8 @@ export default function NewCars() {
                       <span>EG {card.price}</span>
                     </div>
                   </div>
-                  <a class="btn btn-warning px-3" href="">
-                    <NavLink to="/newcars">CAR DETAILS</NavLink>
+                  <a class="btn btn-warning px-3 car-d" href="">
+                    CAR DETAILS
                   </a>
                 </div>
               </div>

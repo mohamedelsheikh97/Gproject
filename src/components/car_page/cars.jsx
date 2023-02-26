@@ -21,8 +21,8 @@ export default function Cars() {
       </section> */}
       <CarListing></CarListing>
       <CarCards></CarCards>
-      <NewCars></NewCars>
-      <UsedCars></UsedCars>
+      {/* <NewCars></NewCars> */}
+      {/* <UsedCars></UsedCars> */}
       <CarDrive></CarDrive>
       {/* <SearchBar></SearchBar> */}
     </>

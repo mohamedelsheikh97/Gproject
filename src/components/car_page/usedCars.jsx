@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 export default function UsedCars() {
   let baseURL = "http://localhost:5000/usedcars";
@@ -21,7 +22,11 @@ export default function UsedCars() {
       <div class="container pt-1 pb-1">
         <h1 class="display-4 text-uppercase text-center mb-5">
           Used Cars{" "}
-          <button class="btn btn-warning m-1 px-3">Browse More</button>
+          <button class="btn btn-warning m-1 px-3">
+            <NavLink class="cardet" to="/usedcars">
+              Browse More{" "}
+            </NavLink>
+          </button>
         </h1>
         <div class="row">
           {cars.map((card) => {
@@ -48,7 +53,7 @@ export default function UsedCars() {
                       <span>EG {card.price}</span>
                     </div>
                   </div>
-                  <a class="btn btn-warning px-3" href="">
+                  <a class="btn btn-warning px-3 car-d" href="">
                     CAR DETAILS
                   </a>
                 </div>

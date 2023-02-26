@@ -83,7 +83,7 @@ export default function CarCards() {
                   <div class="d-flex justify-content-center mb-4">
                     <div class="px-2">
                       <i class="fa fa-car text-warning mr-1"></i>
-                      <span>${card.year}</span>
+                      <span>{card.year}</span>
                     </div>
                     <div class="px-2 border-left">
                       <i class="fa fa-cogs text-warning mr-1"></i>
@@ -95,7 +95,9 @@ export default function CarCards() {
                     </div>
                   </div>
                   <a class="btn btn-warning px-3" href="">
-                    <NavLink to="/cardetails">CAR DETAILS</NavLink>
+                    <NavLink to="/cardetails" id="car-det">
+                      CAR DETAILS
+                    </NavLink>
                   </a>
                 </div>
               </div>
