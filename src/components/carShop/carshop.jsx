@@ -32,14 +32,14 @@ export default function Carshop() {
         console.log(error);
       });
   }, []);
-console.log(shop)
+  console.log(shop);
   console.log(cars);
   let filteredCars = cars.filter((car) => car.owner?._id === id);
   console.log(filteredCars);
   let navigate = useNavigate();
-  const sliderClick =(shopId)=>{
-    navigate(`/cardetails/${shopId}`)
-  }
+  const sliderClick = (shopId) => {
+    navigate(`/cardetails/${shopId}`);
+  };
   return (
     <div className="kk">
       <section>
@@ -47,19 +47,13 @@ console.log(shop)
           <img src={`http://localhost:5000/${shop.image}`} id="c-wrench" />
           <ul>
             <li className="big">
-              <a
-                href= {`${shop?.facebook}`}
-                target={"_blank"}
-              >
+              <a href={`${shop?.facebook}`} target={"_blank"}>
                 <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
               </a>
             </li>
-        
+
             <li>
-              <a
-                href=  {`${shop?.location}`}
-                target={"_blank"}
-              >
+              <a href={`${shop?.location}`} target={"_blank"}>
                 <i class="fas fa-thumbtack fa-2x" aria-hidden="true"></i>
               </a>
             </li>
@@ -100,7 +94,11 @@ console.log(shop)
                           />
                         </NavLink>
                       </div>
-                      <a class="btn btn-warning px-3 font-weight-bold" href="" onClick={()=>sliderClick(card._id)}>
+                      <a
+                        class="btn btn-warning px-3 font-weight-bold"
+                        href=""
+                        onClick={() => sliderClick(card._id)}
+                      >
                         CAR DETAILS
                       </a>
                     </div>

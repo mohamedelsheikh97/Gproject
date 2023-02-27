@@ -16,6 +16,7 @@ import Register from "./components/register_page/register";
 import Accessories from "./components/accessories_page/accessories";
 import Cart from "./components/totalCart_page/cart";
 import ShoppingCartProvider from "./context/ShoppingCartContext";
+import { Admin } from "./components/dashboard_page/admin";
 
 function App() {
   return (
