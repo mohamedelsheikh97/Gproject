@@ -22,7 +22,7 @@ function App() {
       <Navs></Navs>
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="/:id" element={<Carshop />} />
+       {/* // <Route path="/:id" element={<Carshop />} /> */}
         <Route path="/cars" element={<Cars />} />
         <Route path="/cardetails" element={<CarDetails />} />
         <Route path="/carshop" element={<Carshop />} />
