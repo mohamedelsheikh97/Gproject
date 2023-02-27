@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../css/home_page/cards.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 export function Cards() {
   let baseURL = "http://localhost:5000/newcars";
@@ -12,13 +13,19 @@ export function Cards() {
       .get(baseURL)
       .then((response) => {
         setcars(response.data);
-        
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
   console.log(cars);
+  let navigate = useNavigate();
+  const sliderClick = (shopId) => {
+    navigate(`/cardetails/${shopId}`);
+  };
+  const shopClick = (shopId) => {
+    window.open(`/carshop/${shopId}`);
+  };
   return (
     <div className="featured mt-5">
       <div className="container">
@@ -30,7 +37,7 @@ export function Cards() {
                 <div class="rent-item1 mb-4">
                   <img
                     class="img-fluid mb-4"
-                    src={`http://localhost:5000/${card.image}`}
+                    src={`http://localhost:5000/${card.image[0]}`}
                     alt=""
                   />
                   <h4 class="text-uppercase mb-4">{`${card.name} ${card.model}`}</h4>
@@ -44,16 +51,20 @@ export function Cards() {
                     <p className="card-name m-0 font-weight-bold">
                       {card.owner?.name}
                     </p>
-                    <NavLink className="nav-link" to="/carshop">
-                      <img
-                        src={`http://localhost:5000/${card.owner?.image}`}
-                        alt=""
-                        width="50px"
-                        class="owner-img"
-                      />
-                    </NavLink>
+
+                    <img
+                      src={`http://localhost:5000/${card.owner?.image}`}
+                      alt=""
+                      width="50px"
+                      class="owner-img"
+                      onClick={() => shopClick(card.owner?._id)}
+                    />
                   </div>
-                  <a class="btn btn-warning px-3 font-weight-bold" href="">
+                  <a
+                    class="btn btn-warning px-3 font-weight-bold"
+                    href=""
+                    onClick={() => sliderClick(card._id)}
+                  >
                     CAR DETAILS
                   </a>
                 </div>
@@ -62,6 +73,7 @@ export function Cards() {
           })}
         </div>
       </div>
+         
     </div>
   );
 }

@@ -1,8 +1,4 @@
-body{
-  background: linear-gradient(rgba(236, 168, 42, 0.6), rgba(236, 168, 42, 0.6)),
-  
-}
-.no{
+.no {
   padding-top: 20px;
 }
 .p {
@@ -65,4 +61,31 @@ body{
   left: 0;
   top: 0;
   position: absolute;
+}
+.cols-row {
+  height: 165px;
+  width: 400px;
+  display: flex !important;
+  justify-content: center;
+  align-items: end;
+}
+
+.related-imgs {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+.relatedimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  /* width: 100% !important; */
+  height: 100% !important;
+}
+.mm img {
+  border-radius: 155px;
+}
+.klo{
+border-radius: 80px !important;  
+object-fit: fill !important;
 }

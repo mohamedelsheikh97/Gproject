@@ -8,7 +8,7 @@ export default function Servives() {
       <div className="container">
         <h1 class="display-4 text-uppercase text-center">Our Services</h1>
         <div className="box-container row">
-          <div className="box col-lg-3 mx-2">
+          <div className="box col-lg-4 mx-2">
             <div>
               <i className="fas fa-car"></i>
             </div>
@@ -19,12 +19,12 @@ export default function Servives() {
             </p>
             <button className="button-5">
               <Link className="nav-link" to="/cars">
-                Read More
+                READ MORE
               </Link>
             </button>
           </div>
 
-          <div className="box col-lg-3 mx-2">
+          <div className="box col-lg-4 mx-2">
             <div>
               <i className="fas fa-tools"></i>
             </div>
@@ -33,18 +33,56 @@ export default function Servives() {
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Corporis, nisi.
             </p>
-            <button className="button-5">Read More</button>
+            <button className="button-5">
+              <Link className="nav-link" to="/maintenance">
+                READ MORE
+              </Link>
+            </button>
           </div>
-          <div className="box col-lg-3 mx-2">
+          <div className="box col-lg-4 mx-2">
             <div>
-              <i className="fas fa-headset"></i>
+              <i className="fas fa-car-side"></i>
+            </div>
+            <h4>DRIVING SCHOOLS</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Corporis, nisi.
+            </p>
+            <button className="button-5">
+              <Link className="nav-link" to="/schools">
+                READ MORE
+              </Link>
+            </button>
+          </div>
+          <div className="box col-lg-4 mx-2">
+            <div>
+              <i className="fas fa-dolly"></i>
+            </div>
+            <h4>CAR ACCESSORIES</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Corporis, nisi.
+            </p>
+            <button className="button-5">
+              <Link className="nav-link" to="/accessories">
+                READ MORE
+              </Link>
+            </button>
+          </div>
+          <div className="box col-lg-4 mx-2">
+            <div>
+              <i className="fas fa-check-circle"></i>
             </div>
             <h4>24/7 SUPPORT</h4>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Corporis, nisi.
             </p>
-            <button className="button-5">Read More</button>
+            <button className="button-5">
+              <Link className="nav-link" to="/">
+                READ MORE
+              </Link>
+            </button>
           </div>
         </div>
       </div>

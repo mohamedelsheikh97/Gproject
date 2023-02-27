@@ -3,53 +3,90 @@ import React, { useEffect, useState } from "react";
 import "../../css/car_details/carDetails.css";
 import Details from "./details";
 import { NavLink } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function CarDetails() {
-  const baseURL = "http://localhost:5000/newcars";
-  const carsURL = "http://localhost:5000/newcars/";
-  const id = "63f95927dd86aab718790504";
+
+  const [newCars, setnewCars] = useState([])
+  const [usedCars, setusedCars] = useState([])
+  const [allCars, setallCars] = useState([])
+
+  
+  const newCarsURL = "http://localhost:5000/newcars";
+  const usedCarsURL = "http://localhost:5000/usedcars";
+  let shopUrl = "http://localhost:5000/carsshops";
+  let { id } = useParams();
+
   const [imgs, setimgs] = useState([]);
   const [car, setcar] = useState({});
-  const [nextcars, setnextcars] = useState([]);
+  let [shops, setshops] = useState([]);
+  const [relatedcars, setrelatedcars] = useState([]);
   const [wordData, setWordData] = useState("");
   const handleClick = (index) => {
     setWordData(imgs[index]);
   };
-
   useEffect(() => {
-    axios.get(`${baseURL}/${id}`).then((res) => {
-      setcar(res.data);
-      setimgs(res.data.image);
-    });
     axios
-      .get(carsURL)
+      .get(newCarsURL)
       .then((res) => {
-        console.log(res.data);
-        setnextcars(res.data);
+       setnewCars(res.data) ;
+        console.log(res.data[0].image[0]);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
+      });
+      axios
+      .get(usedCarsURL)
+      .then((res) => {
+        setusedCars(res.data) ;
+        console.log(res.data[0].image[0]);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
+  useEffect(() => {
+
+    let x = [...newCars,...usedCars];
+    setallCars(x);
+    console.log(allCars);
+    for(let e of allCars){
+        if(e._id==id){
+          setcar(e)
+          setimgs(e.image);
+        } 
+    }
+  }, [newCars,usedCars,car]);
 
   useEffect(() => {
     setWordData(imgs[0]);
     console.log(car);
-  }, [imgs]);
+  }, [imgs,car]);
+  let navigate = useNavigate();
+
+  const sliderClick = (shopId) => {
+    window.open(`/cardetails/${shopId}`);
+  };
+  const shopClick = (shopId) => {
+    window.open(`/carshop/${shopId}`);
+  };
+  let filteredCars = allCars.filter((carr) => carr._id != id);
+   filteredCars = filteredCars.filter((carr) => carr.owner?._id == car.owner?._id);
+
+  console.log(filteredCars);
   return (
-    <div className="container">
+    <div className="container mt-3">
       <div className="d-flex flex-md-row flex-column justify-content-between mm ">
         {" "}
-        <h3 class="">{car.name} </h3>
-        <hr />
-        <NavLink to="/carshop">
-          {" "}
-          <img
-            src={`http://localhost:5000/${car.owner?.image}`}
-            width={"150px"}
-            className="d-flex "
-          />
-        </NavLink>
+        <h3 class="text-uppercase">{car?.name} </h3>{" "}
+        <img
+          src={`http://localhost:5000/${car.owner?.image}`}
+          width={"150px"}
+          className="d-flex image-shop"
+          alt="img"
+          onClick={() => shopClick(car.owner?._id)}
+        />
       </div>
       <div className="row">
         <div className="main col-7 no">
@@ -72,16 +109,17 @@ export default function CarDetails() {
         <div className="col-5">
           <Details car={car}> </Details>
         </div>
-        <h3 className="text-"> Related cars</h3>
+        <h3 className="text-uppercase"> Related cars</h3>
       </div>
-      <div class="row">
-        {nextcars.map((car) => {
+      <div class="row relatedcars">
+        {filteredCars.map((car) => {
           return (
-            <div className="col-4">
+            <div className="col-4 related-imgs">
               <div class="wrapper  ">
-                <div class="card front-face">
+                <div class="card cont-imgs front-face">
                   <img
-                    src={`http://localhost:5000/${car.image[0]}`}
+                    class="relatedimg"
+                    src={`http://localhost:5000/${car?.image[0]}`}
                     alt="Flip Card"
                   />
                 </div>
@@ -89,24 +127,31 @@ export default function CarDetails() {
                   <img
                     src={`http://localhost:5000/${car.owner?.image}`}
                     alt="Flip Card"
+                    onClick={() => shopClick(car.owner?._id)}
+                    className="klo"
                   />
                   <div class="info">
                     <div class="title">{car.name}</div>
                     <h4> 2023 </h4> <br />
                     <br />
                   </div>
-                  <button class="button accept-btn">More Details</button>
+                  <a>
+                    <button
+                      class="button accept-btn"
+                      onClick={() => sliderClick(car?._id)}
+                    >
+                      More Details
+                    </button>{" "}
+                  </a>
                   <br /> <br />
                   <ul>
-                    <a href="#">
+                    <a href={`${car.owner?.facebook}`}     target={"_blank"}>
                       <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#">
-                      <i class="fab fa-instagram"></i>
+                    <a href={`${car.owner?.location}`}     target={"_blank"}>
+                    <i class="fas fa-thumbtack fa-x" aria-hidden="true"> </i>
                     </a>
-                    <a href="#">
-                      <i class="fab fa-youtube"></i>
-                    </a>
+                   
                   </ul>
                 </div>
               </div>
@@ -114,6 +159,7 @@ export default function CarDetails() {
           );
         })}
       </div>
+         
     </div>
   );
 }

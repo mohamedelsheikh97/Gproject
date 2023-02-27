@@ -19,7 +19,7 @@ export default function Welcome() {
           <div className="d-flex old">
             <div className="looking">
               <h4>
-                <span>Looking for</span> Old Car?
+                <span>LOOKING FOR </span> OLD CAR?
               </h4>
               <div>
                 <p>
@@ -27,7 +27,7 @@ export default function Welcome() {
                   blanditiis praesentium voluptatum deleniti atque.
                 </p>
               </div>
-              <button className="button-5">View Listing</button>
+              <button className="button-5">VIEW LISTING</button>
             </div>
 
             <img src="/logo512.png" alt="" />
@@ -37,7 +37,7 @@ export default function Welcome() {
           <div className="d-flex old">
             <div className="looking">
               <h4>
-                <span>Looking for</span> New Car?
+                <span>LOOKING FOR</span> NEW CAR?
               </h4>
               <div>
                 <p>
@@ -45,7 +45,7 @@ export default function Welcome() {
                   blanditiis praesentium voluptatum deleniti atque.
                 </p>
               </div>
-              <button className="button-5">View Listing</button>
+              <button className="button-5">VIEW LISTING</button>
             </div>
 
             <img src="/looking-new-car-1.png" alt="" />
