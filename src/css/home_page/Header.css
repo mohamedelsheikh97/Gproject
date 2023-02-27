@@ -19,7 +19,7 @@
 }
 
 h2 {
-  font-family: " pacifico ", cursive;
+  /* font-family: " pacifico ", cursive; */
   font-weight: normal;
   font-size: 70px !important;
 }
@@ -28,6 +28,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: " pacifico ", cursive;
+  /* font-family: " pacifico ", cursive; */
   font-size: 70px !important;
 }

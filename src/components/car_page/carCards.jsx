@@ -4,8 +4,7 @@ import axios from "axios";
 
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useNavigate , Navigate } from 'react-router-dom';
-
+import { useNavigate, Navigate } from "react-router-dom";
 
 export default function CarCards() {
   let baseURL1 = "http://localhost:5000/newcars";
@@ -42,9 +41,9 @@ export default function CarCards() {
   }, [newcars, usedcars]);
 
   let navigate = useNavigate();
-  const sliderClick =(shopId)=>{
-    window.open(`/cardetails/${shopId}`)
-  }
+  const sliderClick = (shopId) => {
+    window.open(`/cardetails/${shopId}`);
+  };
   return (
     <div class="container-fluid">
       <div class="container pt-1 pb-1">
@@ -94,17 +93,19 @@ export default function CarCards() {
                     </div>
                     <div class="px-2 border-left">
                       <i class="fa fa-cogs text-warning mr-1"></i>
-                      <span>${card.transmission}</span>
+                      <span>{card.transmission}</span>
                     </div>
                     <div class="px-2 border-left">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
                       <span>EG {card.price}</span>
                     </div>
                   </div>
-                  <a class="btn btn-warning px-3" href=""  onClick={()=>sliderClick(card._id)}>
-               
-                      CAR DETAILS
-                   
+                  <a
+                    class="btn btn-warning px-3"
+                    href=""
+                    onClick={() => sliderClick(card._id)}
+                  >
+                    CAR DETAILS
                   </a>
                 </div>
               </div>

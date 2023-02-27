@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../css/car_details/carDetails.css";
 import Details from "./details";
 import { NavLink } from "react-router-dom";
-import { useNavigate , Navigate } from 'react-router-dom';
+import { useNavigate, Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export default function CarDetails() {
@@ -12,7 +12,7 @@ export default function CarDetails() {
   let shopUrl = "http://localhost:5000/carsshops";
   let { id } = useParams();
   // const id = "63fb56b63ffaeb35b9854306";
-  
+
   const [imgs, setimgs] = useState([]);
   const [car, setcar] = useState({});
   let [shops, setshops] = useState([]);
@@ -56,30 +56,26 @@ export default function CarDetails() {
   }, [imgs]);
   let navigate = useNavigate();
 
-  const sliderClick =(shopId)=>{
-    window.open(`/cardetails/${shopId}`)
-  }
-  const shopClick =(shopId)=>{
-    navigate(`/carshop/${shopId}`)
-  }
+  const sliderClick = (shopId) => {
+    window.open(`/cardetails/${shopId}`);
+  };
+  const shopClick = (shopId) => {
+    window.open(`/carshop/${shopId}`);
+  };
   let filteredCars = nextcars.filter((carr) => carr._id != id);
-  console.log(filteredCars)
+  console.log(filteredCars);
   return (
-    <div className="container">
+    <div className="container mt-3">
       <div className="d-flex flex-md-row flex-column justify-content-between mm ">
         {" "}
-        <h3 class="">{car.name} </h3>
-        <hr />
-        
-          {" "}
-          <img
-            src={`http://localhost:5000/${car.owner?.image}`}
-            width={"150px"}
-            className="d-flex "
-            alt="img"
-            onClick={()=>sliderClick(car.owner?._id)}
-          />
-       
+        <h3 class="text-uppercase">{car?.name} </h3>{" "}
+        <img
+          src={`http://localhost:5000/${car.owner?.image}`}
+          width={"150px"}
+          className="d-flex image-shop"
+          alt="img"
+          onClick={() => shopClick(car.owner?._id)}
+        />
       </div>
       <div className="row">
         <div className="main col-7 no">
@@ -102,17 +98,16 @@ export default function CarDetails() {
         <div className="col-5">
           <Details car={car}> </Details>
         </div>
-        <h3 className="text-"> Related cars</h3>
+        <h3 className="text-uppercase"> Related cars</h3>
       </div>
-      <div class="row">
-        { 
-        filteredCars.map((car) => { 
-
+      <div class="row relatedcars">
+        {filteredCars.map((car) => {
           return (
-            <div className="col-4">
+            <div className="col-4 related-imgs">
               <div class="wrapper  ">
-                <div class="card front-face">
+                <div class="card cont-imgs front-face">
                   <img
+                    class="relatedimg"
                     src={`http://localhost:5000/${car?.image[0]}`}
                     alt="Flip Card"
                   />
@@ -121,7 +116,7 @@ export default function CarDetails() {
                   <img
                     src={`http://localhost:5000/${car.owner?.image}`}
                     alt="Flip Card"
-                    onClick={()=>shopClick(car.owner?._id)}
+                    onClick={() => shopClick(car.owner?._id)}
                   />
                   <div class="info">
                     <div class="title">{car.name}</div>
@@ -129,10 +124,16 @@ export default function CarDetails() {
                     <br />
                   </div>
                   <a>
-                  <button class="button accept-btn"  onClick={()=>sliderClick(car?._id)}>More Details</button> </a>
+                    <button
+                      class="button accept-btn"
+                      onClick={() => sliderClick(car?._id)}
+                    >
+                      More Details
+                    </button>{" "}
+                  </a>
                   <br /> <br />
                   <ul>
-                    <a href="#" >
+                    <a href="#">
                       <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="#">
@@ -148,6 +149,7 @@ export default function CarDetails() {
           );
         })}
       </div>
+         
     </div>
   );
 }

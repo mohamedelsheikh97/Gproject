@@ -5,9 +5,9 @@ const FilterTop = () => {
   return (
     <div className="filter-top">
       <div className="grid-list-btn">
-        <button className="new">
+        {/* <button className="new">
           <BsList />
-        </button>
+        </button> */}
       </div>
       <h1 className="text-dark text-uppercase font-weight-bold">
         Car Accessories
@@ -18,10 +18,8 @@ const FilterTop = () => {
         "
         >
           <select name="sort" id="sort">
-            <option value="lowest">Price (Lowest)</option>
-            <option value="highest">Price (Highest)</option>
-            <option value="a-z">Price (a-z)</option>
-            <option value="z-a">Price (z-a)</option>
+            <option value="lowest">External</option>
+            <option value="highest">Internal</option>
           </select>
         </form>
       </div>

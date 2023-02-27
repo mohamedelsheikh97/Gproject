@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/home_page/slider.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 const ReactCardSlider = (props) => {
   let navigate = useNavigate();
   const slideLeft = () => {
@@ -14,10 +14,9 @@ const ReactCardSlider = (props) => {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
- const sliderClick =(shopId)=>{
-    navigate(`/${shopId}`)
-  }
-
+  const sliderClick = (shopId) => {
+    navigate(`/carshop/${shopId}`);
+  };
 
   return (
     <div className="container">
@@ -34,9 +33,13 @@ const ReactCardSlider = (props) => {
               <div
                 className="slider-card"
                 key={index}
-                onClick={()=>sliderClick(slide._id)}
+                onClick={() => sliderClick(slide._id)}
               >
-                <img class="shop-slider" src={`http://localhost:5000/${slide.image}`} alt="" />
+                <img
+                  class="shop-slider"
+                  src={`http://localhost:5000/${slide.image}`}
+                  alt=""
+                />
                 <p className="text-center m-0">{slide.name}</p>
               </div>
             );
