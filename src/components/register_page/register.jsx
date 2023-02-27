@@ -1,14 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../css/register_page/register.css";
 
 export default function Register() {
+  const baseURL="http://localhost:5000/users/signup"
+  const [formValue, setformValue] = useState({
+    fname:"",
+    lname:"",
+    email:"",
+    phone:""
+  })
+  
+  const getFormValues = (e) => {
+        
+    setformValue({
+      ...formValue,
+      [e.target.name]: e.target.value,
+    });
+    console.log(e.target.value); 
+  
+};
+  const goTORegister=()=>{
+    axios.post(baseURL,)
+  }
   return (
     <div class="login-container">
       <div class="row login-row">
         <div class="col-md-6 offset-md-3">
           <div class="card my-2">
-            <form class="card-body cardbody-color p-lg-5">
+            <div class="card-body cardbody-color p-lg-5">
               <div class="text-center">
                 <img
                   src="/sign.png"
@@ -20,47 +41,57 @@ export default function Register() {
 
               <div class="mb-3 input-1">
                 <input
+                  name="fname"
                   type="text"
                   class="form-control"
                   id="FirstName"
                   aria-describedby="emailHelp"
                   placeholder="First Name"
+                  onChange={getFormValues}
                 />
               </div>
               <div class="mb-3 input-1">
                 <input
+                  name="lname"
                   type="text"
                   class="form-control"
                   id="LastName"
                   placeholder="Last Name"
+                  onChange={getFormValues}
                 />
               </div>
               <div class="mb-3 input-1">
                 <input
+                  name="email"
                   type="email"
                   class="form-control"
                   id="email"
                   placeholder="Email"
+                  onChange={getFormValues}
                 />
               </div>
               <div class="mb-3 input-1">
                 <input
-                  type="text"
+                  name="password"
+                  type="password"
                   class="form-control"
-                  id="Address"
-                  placeholder="Address"
+                  id="password"
+                  placeholder="Password"
+                  onChange={getFormValues}
                 />
               </div>
               <div class="mb-3 input-1">
                 <input
+                  name="phone"
                   type="text"
                   class="form-control"
                   id="phone"
                   placeholder="Phone Number"
+                  onChange={getFormValues}
                 />
               </div>
               <div class="text-center input-1">
-                <button type="submit" class="btn btn-color px-5 mb-5 w-100">
+                <button onClick={goTORegister} class="btn btn-color px-5 mb-5 w-100">
                   Register
                 </button>
               </div>
@@ -73,7 +104,7 @@ export default function Register() {
                   </NavLink>
                 </a>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

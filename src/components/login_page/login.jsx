@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../css/login_page/login.css";
 
@@ -30,11 +30,16 @@ const gologin=(e)=>{
   axios.post(baseURL,formValue).then(res=>
     {
       // alert(res.data.errors)
-     // seterrorValue(res.data.errors)
-      console.log(res.data);
+       console.log(res.status);
+      seterrorValue(res.data.errors)
     }).catch(err=>{console.log(err);});
   
 }
+
+useEffect(()=>{
+  console.log(errorValue);
+
+},[errorValue])
   return (
     <div class="login-container">
       <div class="row login-row">
@@ -60,6 +65,7 @@ const gologin=(e)=>{
                   placeholder="User Name"
                   onChange={getFormValues}
                 />
+                <span className="text-danger px-2">{errorValue.email.toLocaleUpperCase()}</span>
               </div>
               <div class="mb-3 input-1">
                 <input
@@ -70,6 +76,7 @@ const gologin=(e)=>{
                   placeholder="password"
                   onChange={getFormValues}
                 />
+              <span className="text-danger px-2">{errorValue.password.toLocaleUpperCase()}</span>
               </div>
               <div class="text-center input-1">
                 <button onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
