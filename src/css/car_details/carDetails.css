@@ -85,3 +85,7 @@
 .mm img {
   border-radius: 155px;
 }
+.klo{
+border-radius: 80px !important;  
+object-fit: fill !important;
+}

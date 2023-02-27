@@ -21,7 +21,7 @@ export function Cards() {
   console.log(cars);
   let navigate = useNavigate();
   const sliderClick = (shopId) => {
-    window.open(`/cardetails/${shopId}`);
+    navigate(`/cardetails/${shopId}`);
   };
   const shopClick = (shopId) => {
     window.open(`/carshop/${shopId}`);

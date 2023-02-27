@@ -128,6 +128,7 @@ export default function CarDetails() {
                     src={`http://localhost:5000/${car.owner?.image}`}
                     alt="Flip Card"
                     onClick={() => shopClick(car.owner?._id)}
+                    className="klo"
                   />
                   <div class="info">
                     <div class="title">{car.name}</div>
@@ -144,15 +145,13 @@ export default function CarDetails() {
                   </a>
                   <br /> <br />
                   <ul>
-                    <a href="#">
+                    <a href={`${car.owner?.facebook}`}     target={"_blank"}>
                       <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#">
-                      <i class="fab fa-instagram"></i>
+                    <a href={`${car.owner?.location}`}     target={"_blank"}>
+                    <i class="fas fa-thumbtack fa-x" aria-hidden="true"> </i>
                     </a>
-                    <a href="#">
-                      <i class="fab fa-youtube"></i>
-                    </a>
+                   
                   </ul>
                 </div>
               </div>

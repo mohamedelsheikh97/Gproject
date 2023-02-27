@@ -48,23 +48,16 @@ console.log(shop)
           <ul>
             <li className="big">
               <a
-                href="https://www.facebook.com/elkershcars.eg/"
+                href= {`${shop?.facebook}`}
                 target={"_blank"}
               >
                 <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
               </a>
             </li>
+        
             <li>
               <a
-                href="https://www.instagram.com/elkershcars.official/"
-                target={"_blank"}
-              >
-                <i class="fab fa-instagram-square fa-2x" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.google.com/maps/place/El+Kersh+Cars+Official/data=!4m7!3m6!1s0x14583f39289fec69:0x94b8b87ed5aec655!8m2!3d30.083923!4d31.3259021!16s%2Fg%2F1tcttvfd!19sChIJaeyfKDk_WBQRVcau1X64uJQ?authuser=0&hl=ar&rclk=1"
+                href=  {`${shop?.location}`}
                 target={"_blank"}
               >
                 <i class="fas fa-thumbtack fa-2x" aria-hidden="true"></i>
