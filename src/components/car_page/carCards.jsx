@@ -42,7 +42,7 @@ export default function CarCards() {
 
   let navigate = useNavigate();
   const sliderClick = (shopId) => {
-    window.open(`/cardetails/${shopId}`);
+    navigate(`/cardetails/${shopId}`);
   };
   return (
     <div class="container-fluid">

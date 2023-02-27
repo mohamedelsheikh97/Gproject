@@ -7,53 +7,62 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export default function CarDetails() {
-  const baseURL = "http://localhost:5000/newcars";
-  const carsURL = "http://localhost:5000/newcars";
+
+  const [newCars, setnewCars] = useState([])
+  const [usedCars, setusedCars] = useState([])
+  const [allCars, setallCars] = useState([])
+
+  
+  const newCarsURL = "http://localhost:5000/newcars";
+  const usedCarsURL = "http://localhost:5000/usedcars";
   let shopUrl = "http://localhost:5000/carsshops";
   let { id } = useParams();
-  // const id = "63fb56b63ffaeb35b9854306";
 
   const [imgs, setimgs] = useState([]);
   const [car, setcar] = useState({});
   let [shops, setshops] = useState([]);
-
-  const [nextcars, setnextcars] = useState([]);
+  const [relatedcars, setrelatedcars] = useState([]);
   const [wordData, setWordData] = useState("");
   const handleClick = (index) => {
     setWordData(imgs[index]);
   };
   useEffect(() => {
     axios
-      .get(shopUrl)
-      .then((response) => {
-        setshops(response.data);
-        console.log(response.data);
-        console.log(response.data[0].image[0]);
+      .get(newCarsURL)
+      .then((res) => {
+       setnewCars(res.data) ;
+        console.log(res.data[0].image[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      axios
+      .get(usedCarsURL)
+      .then((res) => {
+        setusedCars(res.data) ;
+        console.log(res.data[0].image[0]);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
   useEffect(() => {
-    axios.get(`${baseURL}/${id}`).then((res) => {
-      setcar(res.data);
-      setimgs(res.data?.image);
-    });
-    axios
-      .get(carsURL)
-      .then((res) => {
-        console.log(res.data);
-        setnextcars(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+
+    let x = [...newCars,...usedCars];
+    setallCars(x);
+    console.log(allCars);
+    for(let e of allCars){
+        if(e._id==id){
+          setcar(e)
+          setimgs(e.image);
+        } 
+    }
+  }, [newCars,usedCars,car]);
 
   useEffect(() => {
     setWordData(imgs[0]);
     console.log(car);
-  }, [imgs]);
+  }, [imgs,car]);
   let navigate = useNavigate();
 
   const sliderClick = (shopId) => {
@@ -62,7 +71,9 @@ export default function CarDetails() {
   const shopClick = (shopId) => {
     window.open(`/carshop/${shopId}`);
   };
-  let filteredCars = nextcars.filter((carr) => carr._id != id);
+  let filteredCars = allCars.filter((carr) => carr._id != id);
+   filteredCars = filteredCars.filter((carr) => carr.owner?._id == car.owner?._id);
+
   console.log(filteredCars);
   return (
     <div className="container mt-3">
