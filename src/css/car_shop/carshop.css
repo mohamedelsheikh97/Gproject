@@ -64,7 +64,7 @@
   display: inline;
 }
 
-.card-name{
+.card-name {
   font-size: 1.5rem !important;
 }
 
@@ -245,7 +245,6 @@ hr {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* border-radius: 10px; */
 }
 .wrapper .back-face {
   display: flex;

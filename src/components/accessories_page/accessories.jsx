@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import ListView from "./ListView";
 import FilterTop from "./FilterTop";
 import FilterSide from "./FilterSide";
 import "../../css/accessories_page/allproducts.css";
 import { Container } from "reactstrap";
+import Store from "./Store";
 
 export default function Accessories() {
   return (
@@ -16,11 +16,11 @@ export default function Accessories() {
         </Container>
       </section>
       <div className="products-cont container grid grid-one-two">
-        <FilterSide />
+        {/* <FilterSide /> */}
         <div>
           <FilterTop />
           <div className="list-cards-cont">
-            <ListView />
+            <Store />
           </div>
         </div>
       </div>

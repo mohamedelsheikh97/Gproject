@@ -15,27 +15,47 @@ export default function Details(props) {
             <div class="w-100">
               <br />
               <div class="container-fluid fs-5">
-                <div class="row">
+                <div class="row rows-cont">
                   <div class="col-8 ">
                     <ul>
                       <li>
-                        <i class="fas fa-dollar-sign"></i>{" "}
-                        <strong>Price: </strong> {car.price} EGP
+                        <i class="fas fa-dollar-sign icon-car"></i>{" "}
+                        <strong class="font-weight-bold text-uppercase fs-5">
+                          Price:{" "}
+                        </strong>{" "}
+                        <span class="font-weight-bold text-uppercase fs-5">
+                          {car.price} EGP
+                        </span>
                       </li>
                       <br />
                       <li>
-                        <i class="fas fa-users "></i> <strong>Model: </strong>{" "}
-                        {car.model}
+                        <i class="fas fa-users icon-car"></i>{" "}
+                        <strong class="font-weight-bold text-uppercase fs-5">
+                          Model:{" "}
+                        </strong>{" "}
+                        <span class="font-weight-bold text-uppercase fs-5">
+                          {car.model}
+                        </span>
                       </li>
                       <br />
                       <li>
-                        <i class="fas fa-calendar"></i>{" "}
-                        <strong>Transmission: </strong> {car.transmission}{" "}
+                        <i class="fas fa-calendar icon-car"></i>{" "}
+                        <strong class="font-weight-bold text-uppercase fs-5">
+                          Transmission:{" "}
+                        </strong>{" "}
+                        <span class="font-weight-bold text-uppercase fs-5">
+                          {car.transmission}{" "}
+                        </span>
                       </li>
                       <br />
                       <li>
-                        <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Motor: </strong> {car.transmission}
+                        <i class="fas fa-info-circle icon-car"></i>{" "}
+                        <strong class="font-weight-bold text-uppercase fs-5">
+                          Motor:{" "}
+                        </strong>{" "}
+                        <span class="font-weight-bold text-uppercase fs-5">
+                          {car.transmission}{" "}
+                        </span>
                       </li>
                       <br />
                     </ul>
@@ -44,21 +64,31 @@ export default function Details(props) {
                   <div class="col-md-6 col-12">
                     <ul>
                       <li>
-                        <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Color: </strong> {car.color}
+                        <i class="fas fa-info-circle icon-car"></i>{" "}
+                        <strong class="font-weight-bold text-uppercase fs-5">
+                          Color:{" "}
+                        </strong>{" "}
+                        <span class="font-weight-bold text-uppercase fs-5">
+                          {car.color}{" "}
+                        </span>
                       </li>
                       <br />
                       <li>
-                        <i class="fas fa-info-circle"></i>{" "}
-                        <strong>Year: </strong> {car.year}
+                        <i class="fas fa-info-circle icon-car"></i>{" "}
+                        <strong class="font-weight-bold text-uppercase fs-5">
+                          Year:{" "}
+                        </strong>{" "}
+                        <span class="font-weight-bold text-uppercase fs-5">
+                          {car.year}
+                        </span>
                       </li>
 
                       <div class="google-map"></div>
                     </ul>
                   </div>
 
-                  <div className="col-12  ">
-                    <div className="row   ">
+                  <div className="col-12 ">
+                    <div className="row cols-row">
                       <div class=" ">
                         <button class=" col-5  btn btn-warning bb   ">
                           <i class="fas fa-phone-alt"></i> Call

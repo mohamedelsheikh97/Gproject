@@ -6,10 +6,21 @@
   border: 1px solid rgb(233, 139, 72);
   height: 700px;
 }
-.mm {
+/* .mm {
   border-bottom: 2px solid rgb(233, 139, 72);
+} */
+.rows-cont {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-.bb {
-  margin-bottom: -250px;
-  margin-left: 20px;
+.col-8 {
+  width: 100% !important;
+}
+.col-12 {
+  width: 100% !important;
+  height: 200px !important;
+}
+.icon-car {
+  color: orange;
 }

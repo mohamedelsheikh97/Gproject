@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../../css/car_shop/carshop.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 export default function Carshop() {
   let { id } = useParams();
+  let { name } = useParams();
   let baseUrl = "http://localhost:5000/carsshops";
   let baseUrl1 = "http://localhost:5000/newcars";
   let [shop, setshop] = useState([]);
@@ -31,10 +32,14 @@ export default function Carshop() {
         console.log(error);
       });
   }, []);
-
+console.log(shop)
   console.log(cars);
-  let filteredCars = cars.filter((car) => car.owner._id === id);
+  let filteredCars = cars.filter((car) => car.owner?._id === id);
   console.log(filteredCars);
+  let navigate = useNavigate();
+  const sliderClick =(shopId)=>{
+    navigate(`/cardetails/${shopId}`)
+  }
   return (
     <div className="kk">
       <section>
@@ -79,14 +84,14 @@ export default function Carshop() {
                     <div class="rent-item1 mb-4">
                       <img
                         class="img-fluid mb-4"
-                        src={`http://localhost:5000/${card.image}`}
+                        src={`http://localhost:5000/${card?.image[0]}`}
                         alt=""
                       />
-                      <h4 class="text-uppercase mb-4">{`${card.name} ${card.model}`}</h4>
+                      <h4 class="text-uppercase mb-4">{`${card?.name} ${card?.model}`}</h4>
                       <div class="d-flex justify-content-center mb-4">
                         <div class="card-price px-2">
                           <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
-                          <span class="font-weight-bold">${card.price}</span>
+                          <span class="font-weight-bold">${card?.price}</span>
                         </div>
                       </div>
                       <div className="m-2">
@@ -102,7 +107,7 @@ export default function Carshop() {
                           />
                         </NavLink>
                       </div>
-                      <a class="btn btn-warning px-3 font-weight-bold" href="">
+                      <a class="btn btn-warning px-3 font-weight-bold" href="" onClick={()=>sliderClick(card._id)}>
                         CAR DETAILS
                       </a>
                     </div>
