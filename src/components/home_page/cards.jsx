@@ -51,7 +51,6 @@ export function Cards() {
                     <p className="card-name m-0 font-weight-bold">
                       {card.owner?.name}
                     </p>
-
                     <img
                       src={`http://localhost:5000/${card.owner?.image}`}
                       alt=""
@@ -73,7 +72,6 @@ export function Cards() {
           })}
         </div>
       </div>
-         
     </div>
   );
 }

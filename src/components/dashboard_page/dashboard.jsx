@@ -38,10 +38,8 @@ export default function Dashboard() {
 
   const handleChange = (e) => {
     console.log(e.target.files);
-
     for (let i = 0; i < e.target.files.length; i++) {
-      setImage([...e.target.files, e.target.files[i]]);
-      console.log(e.target.files);
+      formData.append("image", e.target.files[i]);
       console.log(e.target.files[i]);
     }
   };
@@ -51,7 +49,7 @@ export default function Dashboard() {
 
   const formSubissionHandler = (event) => {
     event.preventDefault();
-    formData.append("image", image);
+
     if (status === "New") {
       formData.append("name", formValue.name);
       formData.append("model", formValue.model);
@@ -59,6 +57,7 @@ export default function Dashboard() {
       formData.append("motor", formValue.motor);
       formData.append("color", formValue.color);
       formData.append("price", formValue.price);
+
       axios
         .post(baseUrl, formData)
         .then((res) => {})

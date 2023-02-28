@@ -25,6 +25,7 @@ function App() {
         <Navs></Navs>
         <Routes>
           <Route path="/" element={<Header />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/cars" element={<Cars />} />
           <Route path="/cardetails" element={<CarDetails />} />
           <Route path="/cardetails/:id" element={<CarDetails />} />

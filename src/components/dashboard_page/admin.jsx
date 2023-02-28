@@ -43,7 +43,16 @@ export function Admin() {
       .catch((err) => {
         console.log(err);
       });
+
+    const restCars = newcars.filter((car) => {
+      return car._id !== carId;
+    });
+
+    setnewcars(restCars);
   };
+
+  const editCar = () => {};
+
   return (
     <section>
       <div class="container-xl">
@@ -89,13 +98,17 @@ export function Admin() {
                       <td>{car.motor}</td>
                       <td>{car.color}</td>
                       <td>
-                        <a href="#" class="btn">
-                          <i class="fa fa-edit edit"></i>
-                        </a>
                         <button
                           type="button"
                           class="btn"
-                          onClick={deleteCar(car._id)}
+                          onClick={() => editCar(car._id)}
+                        >
+                          <i class="fa fa-edit edit"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          onClick={() => deleteCar(car._id)}
                         >
                           <i class="fas fa-trash-alt delete"></i>
                         </button>
