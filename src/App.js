@@ -17,6 +17,7 @@ import Accessories from "./components/accessories_page/accessories";
 import Cart from "./components/totalCart_page/cart";
 import ShoppingCartProvider from "./context/ShoppingCartContext";
 import { Admin } from "./components/dashboard_page/admin";
+import LoginCarsShop from "./components/login_page/login_cars_shop";
 
 function App() {
   return (
@@ -36,9 +37,12 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/shopLogin" element={<LoginCarsShop />} />
           <Route path="/register" element={<Register />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/:id" element={<Dashboard />} />
+
           <Route path="/*" element={<Notfound />} />
         </Routes>
         <Footer></Footer>

@@ -37,10 +37,11 @@ export default function Dashboard() {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.files);
+    //  console.log("setImage",image);
     for (let i = 0; i < e.target.files.length; i++) {
-      formData.append("image", e.target.files[i]);
-      console.log(e.target.files[i]);
+      // formData.append("image",e.target.files[i] );
+      ourimages.push(e.target.files[i]);
+      console.log("recieve", ourimages[i]);
     }
   };
   const statusHandler = (event) => {
@@ -57,16 +58,23 @@ export default function Dashboard() {
       formData.append("motor", formValue.motor);
       formData.append("color", formValue.color);
       formData.append("price", formValue.price);
-
+      console.log(ourimages);
+      for (let i = 0; i < ourimages.length; i++) {
+        formData.append("image", ourimages[i]);
+        console.log("send", ourimages[i]);
+        // console.log(ourimages);
+        // formData.append("image", ourimages);
+      }
+      console.log(formValue);
       axios
         .post(baseUrl, formData)
         .then((res) => {})
         .catch((err) => {
           console.log(err);
         });
-      for (var key of formData.entries()) {
-        console.log(key[0] + ", " + key[1]);
-      }
+      // for (var key of formData.entries()) {
+      //   console.log(key[0] + ", " + key[1]);
+      // }
       // navigate("/admin");
     }
     if (status === "Used") {
@@ -91,7 +99,7 @@ export default function Dashboard() {
     <div>
       <div className="container">
         <div className="carForm">
-          <form onSubmit={formSubissionHandler}>
+          <div onSubmit={formSubissionHandler}>
             <div className="form-control">
               <input
                 type="file"
@@ -192,10 +200,10 @@ export default function Dashboard() {
                 </div>
               )}
               <div className="form-actions">
-                <button>Submit</button>
+                <button onClick={formSubissionHandler}>Submit</button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
