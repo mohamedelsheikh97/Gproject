@@ -1,10 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../../css/register_page/register.css";
 
 export default function Register() {
-  const baseURL="http://localhost:5000/users/signup"
+  const [errorValue, seterrorValue] = useState("");
+  const navigate = useNavigate();
+
+  const baseURL="http://localhost:5000/users/signup";
   const [formValue, setformValue] = useState({
     fname:"",
     lname:"",
@@ -22,7 +25,17 @@ export default function Register() {
   
 };
   const goTORegister=()=>{
-    axios.post(baseURL,)
+    axios.post(baseURL,formValue).then(res=>{
+      console.log(); 
+      if(res.data.error){
+        seterrorValue(res.data.error)
+        console.log(res.data.error);
+      }
+      
+      else{console.log("RegisterSucced");
+        navigate("/");
+      }
+    }).catch(err=>{console.log(err);})
   }
   return (
     <div class="login-container">
@@ -89,6 +102,8 @@ export default function Register() {
                   placeholder="Phone Number"
                   onChange={getFormValues}
                 />
+                
+<div className="text-center"><span className="text-danger  fs-4">{errorValue.toLocaleUpperCase()}</span></div>
               </div>
               <div class="text-center input-1">
                 <button onClick={goTORegister} class="btn btn-color px-5 mb-5 w-100">

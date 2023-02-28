@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../../css/login_page/login.css";
 
-export default function Login() {
+export default function LoginCarsShop() {
   const [errorValue, seterrorValue] = useState("");
   const navigate = useNavigate  ();
+  let id=""
 
-  const baseURL="http://localhost:5000/users/login";
+  const baseURL="http://localhost:5000/carsshops/login";
 
   // const [errorsValue, seterrorsValue] = useState({
   //   email: "",
@@ -38,8 +39,9 @@ const gologin=(e)=>{
       seterrorValue(res.data.error)
 
       }else{
-        console.log(res.data);
-        navigate("/")
+        console.log(res.data.id);
+        navigate(`/dashboard/${res.data.id}`)
+        
       } 
     }).catch(err=>{console.log(err);});
   

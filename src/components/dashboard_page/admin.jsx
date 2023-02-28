@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import React, { useEffect, useState } from "react";
-import "../../css/dashboard_page/admin.css";
+// import "../../css/dashboard_page/admin.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
