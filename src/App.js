@@ -24,6 +24,7 @@ function App() {
       <Navs></Navs>
       <Routes>
         <Route path="/" element={<Header />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cardetails" element={<CarDetails />} />
         <Route path="/cardetails/:id" element={<CarDetails />} />
@@ -40,6 +41,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/:id" element={<Dashboard />} />
+        <Route path="/admin/:id" element={<Admin />} />
         <Route path="/*" element={<Notfound />} />
       </Routes>
       <Footer></Footer>

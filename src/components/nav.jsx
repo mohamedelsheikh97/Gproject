@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "../css/Navs.css";
 import { Link, NavLink } from "react-router-dom";
+// import { BsCart3 } from "react-icons/bs";
 
 const Navs = () => {
   return (
@@ -93,6 +94,15 @@ const Navs = () => {
               <i class="fas fa-user-circle"></i>
             </NavLink>
           </Nav>
+
+          {/* <Nav>
+            <NavLink to="/cart">
+              <span className="cart-icon relative">
+                <BsCart3 />
+                <span className="cart-counter absolute -top-3 -right-3 text-xs bg-orange-600 font-medium rounded-full w-5 h-5 flex justify-center items-center z-[1]"></span>
+              </span>
+            </NavLink>
+          </Nav> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
