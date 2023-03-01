@@ -1,0 +1,21 @@
+.line {
+  width: 100% !important;
+  color: black;
+}
+.acc-color {
+  color: grey;
+  font-weight: 700;
+}
+.filter-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem auto;
+}
+#sort {
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  font-weight: 500;
+  border: 2px solid orange;
+}
