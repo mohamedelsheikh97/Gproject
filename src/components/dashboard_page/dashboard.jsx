@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
 import "../../css/dashboard_page/dashboard.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Dashboard() {
   let [Formname, setname] = useState("");
   let [status, setStatus] = useState("New");
   const [image, setImage] = useState([]);
-  let ourimages = [];
+  let { id } = useParams();
 
   let baseUrl = "http://localhost:5000/newcars";
   let baseUrl1 = "http://localhost:5000/usedcars";
@@ -23,6 +22,7 @@ export default function Dashboard() {
     price: 0,
     year: 0,
     distance: 0,
+    owner: id,
   });
 
   const getFormValues = (e) => {
@@ -37,12 +37,7 @@ export default function Dashboard() {
   };
 
   const handleChange = (e) => {
-    //  console.log("setImage",image);
-    for (let i = 0; i < e.target.files.length; i++) {
-      // formData.append("image",e.target.files[i] );
-      ourimages.push(e.target.files[i]);
-      console.log("recieve", ourimages[i]);
-    }
+    setImage(e.target.files[0]);
   };
   const statusHandler = (event) => {
     setStatus(event.target.value);
@@ -58,13 +53,9 @@ export default function Dashboard() {
       formData.append("motor", formValue.motor);
       formData.append("color", formValue.color);
       formData.append("price", formValue.price);
-      console.log(ourimages);
-      for (let i = 0; i < ourimages.length; i++) {
-        formData.append("image", ourimages[i]);
-        console.log("send", ourimages[i]);
-        // console.log(ourimages);
-        // formData.append("image", ourimages);
-      }
+      formData.append("owner", formValue.owner);
+      formData.append("image", image);
+
       console.log(formValue);
       axios
         .post(baseUrl, formData)
@@ -72,10 +63,7 @@ export default function Dashboard() {
         .catch((err) => {
           console.log(err);
         });
-      // for (var key of formData.entries()) {
-      //   console.log(key[0] + ", " + key[1]);
-      // }
-      // navigate("/admin");
+      navigate(`/admin/${id}`);
     }
     if (status === "Used") {
       formData.append("name", formValue.name);

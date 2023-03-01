@@ -5,10 +5,10 @@ import "../../css/login_page/login.css";
 
 export default function LoginCarsShop() {
   const [errorValue, seterrorValue] = useState("");
-  const navigate = useNavigate  ();
-  let id=""
+  const navigate = useNavigate();
+  let id = "";
 
-  const baseURL="http://localhost:5000/carsshops/login";
+  const baseURL = "http://localhost:5000/carsshops/login";
 
   // const [errorsValue, seterrorsValue] = useState({
   //   email: "",
@@ -21,36 +21,34 @@ export default function LoginCarsShop() {
   });
 
   const getFormValues = (e) => {
-        
     setFormValue({
       ...formValue,
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.value); 
-  
-};
-const gologin=(e)=>{
-  console.log(formValue);
-  axios.post(baseURL,formValue).then(res=>
-    {
-      if(res.data.error){
-        console.log(res.data);
-        // seterrorsValue(res.data.error)
-      seterrorValue(res.data.error)
+    console.log(e.target.value);
+  };
+  const gologin = (e) => {
+    console.log(formValue);
+    axios
+      .post(baseURL, formValue)
+      .then((res) => {
+        if (res.data.error) {
+          console.log(res.data);
+          // seterrorsValue(res.data.error)
+          seterrorValue(res.data.error);
+        } else {
+          console.log(res.data.id);
+          navigate(`/admin/${res.data.id}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-      }else{
-        console.log(res.data.id);
-        navigate(`/dashboard/${res.data.id}`)
-        
-      } 
-    }).catch(err=>{console.log(err);});
-  
-}
-
-useEffect(()=>{
-  // console.log(errorValue);
-
-},[errorValue])
+  useEffect(() => {
+    // console.log(errorValue);
+  }, [errorValue]);
   return (
     <div class="login-container">
       <div class="row login-row">
@@ -87,9 +85,12 @@ useEffect(()=>{
                   placeholder="password"
                   onChange={getFormValues}
                 />
-              {/* <span className="text-danger px-2">{errorsValue.password.toLocaleUpperCase()}</span> */}
-<div className="text-center"><span className="text-danger  fs-4">{errorValue.toLocaleUpperCase()}</span></div>
-
+                {/* <span className="text-danger px-2">{errorsValue.password.toLocaleUpperCase()}</span> */}
+                <div className="text-center">
+                  <span className="text-danger  fs-4">
+                    {errorValue.toLocaleUpperCase()}
+                  </span>
+                </div>
               </div>
               <div class="text-center input-1">
                 <button onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
