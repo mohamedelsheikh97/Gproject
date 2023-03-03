@@ -71,25 +71,28 @@ export function Admin() {
                     <b>Manage Cars</b>
                   </h4>
                 </div>
-                <div class="col-sm-6">
-                  <button class="btn btn-success" onClick={addCar}>
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Car</span>
-                  </button>
+                <div class="col-sm-5 ">
+                  <button
+               
+                            class="button addd-btn"
+                           onClick={addCar}
+                          >
+                            <strong> Add Car </strong> 
+                          </button>
                 </div>
               </div>
             </div>
             {filteredCars !== [] && (
-              <table class="table table-striped table-hover table-bordered table-content mb-4">
+              <table class="table-fill">
                 <thead>
-                  <tr class="center-align">
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>transmission</th>
-                    <th>Price</th>
-                    <th>motor</th>
-                    <th>color</th>
-                    <th>Actions</th>
+                  <tr class="">
+                    <th className="wwww">Image</th>
+                    <th className="wwww">Name</th>
+                    <th className="wwww">transmission</th>
+                    <th className="wwww">Price</th>
+                    <th className="wwww">motor</th>
+                    <th className="wwww">color</th>
+                    <th className="wwww">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -99,25 +102,32 @@ export function Admin() {
                         <td>
                           <img src={`http://localhost:5000/${car.image}`} />
                         </td>
-                        <td>{`${car.name} ${car.model}`}</td>
-                        <td>{car.transmission}</td>
-                        <td>{car.price}</td>
-                        <td>{car.motor}</td>
-                        <td>{car.color}</td>
+                        <td> <strong>{`${car.name} ${car.model}`}</strong></td>
+                        <td> <strong> {car.transmission} </strong></td>
+                        <td><strong> {car.price} </strong></td>
+                        <td><strong>{car.motor} </strong></td>
+                        <td><strong>{car.color} </strong></td>
                         <td>
-                          <button
+                          {/* <button
                             type="button"
                             class="btn"
                             onClick={() => editCar(car._id)}
                           >
                             <i class="fa fa-edit edit"></i>
-                          </button>
+                          </button> */}
+                           <button
+                      class="button accept-btn"
+                      onClick={() => editCar(car._id)}
+                    >
+                       <strong> Edit </strong> 
+                       
+                    </button>{" "}
+                    <br /> <br />
                           <button
-                            type="button"
-                            class="btn"
+                            class="button cancel-btn"
                             onClick={() => deleteCar(car._id)}
                           >
-                            <i class="fas fa-trash-alt delete"></i>
+                            <strong> Delete </strong> 
                           </button>
                         </td>
                       </tr>
