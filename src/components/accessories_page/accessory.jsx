@@ -36,7 +36,7 @@ export default function Accessory() {
       <div className="container">
         <div className="filter-top">
           <div className="grid-list-btn"></div>
-          <h1 className="text-dark text-uppercase font-weight-bold">
+          <h1 className="text-uppercase font-weight-bold accessory-title">
             Featured Accessories
           </h1>
           <div className="dropdown">
@@ -61,32 +61,23 @@ export default function Accessory() {
                     src={`http://localhost:5000/${card.image}`}
                     alt=""
                   />
-                  <h4 class="text-uppercase mb-4">{`${card.name}`}</h4>
-                  <hr className="line" />
-                  <h5 class="text-uppercase mb-4">{`${card.desc}`}</h5>
-                  <hr className="line" />
+                  <h4 class="text-uppercase mb-4 mt-4 acc-name">{`${card.name}`}</h4>
+                  {/* <hr className="line" /> */}
+                  {/* <h5 class="text-uppercase mb-4 acc-desc">{`${card.desc}`}</h5>
+                  <hr className="line" /> */}
                   <div class="d-flex justify-content-center mb-4">
                     <div class="card-price px-2">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
-                      <span class="font-weight-bold">${card.price}</span>
+                      <span class="font-weight-bold acc-price">
+                        EG {card.price}
+                      </span>
                     </div>
                   </div>
+                  {/* <hr className="line" />
                   <div class="card-color px-2">
                     <i class="fa fa-solid fa fa-usd text-warning mr-1"></i>
                     <span className="acc-color">Color: </span>
                     <span class="font-weight-bold">{card.color}</span>
-                  </div>
-                  {/* <div className="m-2">
-                    <p className="card-name m-0 font-weight-bold">
-                      {card.owner?.name}
-                    </p>
-
-                    <img
-                      src={`http://localhost:5000/${card.owner?.image}`}
-                      alt=""
-                      width="50px"
-                      class="owner-img"
-                    />
                   </div> */}
                   <a
                     class="btn btn-warning font-weight-bold"

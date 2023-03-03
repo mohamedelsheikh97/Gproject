@@ -19,8 +19,8 @@ nav .logoo {
 }
 nav a {
   margin-left: 20px !important;
-  color: black !important;
-  font-size: 20px;
+  color: #2b2e4a !important;
+  font-size: 25px;
   font-weight: 550 !important;
 }
 
@@ -37,4 +37,17 @@ nav #lastnav:hover {
 }
 #lastnav i {
   color: rgb(246, 172, 77);
+}
+.fa-cart-plus {
+  color: orange;
+  margin-top: 5px;
+}
+.cart {
+  color: orange;
+}
+.nav-link {
+  font-size: 18px !important;
+}
+.logo-name {
+  font-size: 20px !important;
 }

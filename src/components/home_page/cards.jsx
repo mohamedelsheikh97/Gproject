@@ -29,8 +29,10 @@ export function Cards() {
   return (
     <div className="featured mt-5">
       <div className="container">
-        <h1 class="display-4 text-uppercase text-center">Featured Cars</h1>
-        <div className="row ">
+        <h1 class="display-4 text-uppercase text-center featured-cars mt-5">
+          Featured Cars
+        </h1>
+        <div className="row featured-cars-row">
           {cars.map((card) => {
             return (
               <div class="col-lg-4 col-md-6 mb-2">
@@ -40,27 +42,27 @@ export function Cards() {
                     src={`http://localhost:5000/${card.image[0]}`}
                     alt=""
                   />
-                  <h4 class="text-uppercase mb-4">{`${card.name} ${card.model}`}</h4>
-                  <div class="d-flex justify-content-center mb-4">
+                  <h4 class="text-uppercase mb-3 mt-3">{`${card.name} ${card.model}`}</h4>
+                  <div class="d-flex justify-content-center mb-4 cardddd">
                     <div class="card-price px-2">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
-                      <span class="font-weight-bold">${card.price}</span>
+                      <span class="font-weight-bold">EG {card.price}</span>
                     </div>
                   </div>
                   <div className="m-2">
-                    <p className="card-name m-0 font-weight-bold">
+                    {/* <p className="card-name m-0 font-weight-bold">
                       {card.owner?.name}
-                    </p>
+                    </p> */}
                     <img
                       src={`http://localhost:5000/${card.owner?.image}`}
                       alt=""
                       width="50px"
-                      class="owner-img"
+                      class="owner-img mt-1"
                       onClick={() => shopClick(card.owner?._id)}
                     />
                   </div>
                   <a
-                    class="btn btn-warning px-3 font-weight-bold"
+                    class="btn btn-warning px-3 font-weight-bold mt-3"
                     href=""
                     onClick={() => sliderClick(card._id)}
                   >

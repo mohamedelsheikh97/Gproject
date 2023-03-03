@@ -5,7 +5,7 @@ const Footer = () => {
     <footer class="section">
       <div class="container-fluid py-5 px-sm-3 px-md-5">
         <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 footer-head">
             <h4 class="text-uppercase text-light mb-4">Our Services</h4>
             <div class="d-flex flex-column justify-content-start">
               <a class="mb-2" href="#">
@@ -20,7 +20,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 footer-head">
             <h4 class="text-uppercase text-light mb-4">About Us</h4>
             <div class="d-flex flex-column justify-content-start">
               <a class="mb-2" href="#">
@@ -34,17 +34,17 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 footer-head">
             <h4 class="text-uppercase text-light mb-4">Information</h4>
             <p class="mb-2">
               <i class="fa fa-map-marker-alt text-white mr-3"></i>
-              Menoufya, Egypt
+              Egypt
             </p>
             <p class="mb-2">
               <i class="fa fa-phone-alt text-white mr-3"></i>+012 345 67890
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 footer-head">
             <h6 class="text-uppercase text-white py-2">Follow Us</h6>
             <div class="d-flex justify-content-start">
               <a

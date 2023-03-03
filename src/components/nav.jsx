@@ -81,7 +81,7 @@ const Navs = () => {
                   />
                 </g>
               </svg>
-              <span className="name p-2">KALAKS</span>
+              <span className="name p-2 logo-name">KALAKS</span>
             </div>
           </Navbar.Brand>
         </NavLink>

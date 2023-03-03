@@ -6,6 +6,11 @@
   gap: 1rem;
   margin: 0 !important;
 }
+.services {
+  background-color: #2b2e4a !important;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
 .heading {
   padding-bottom: 2rem;
   text-align: center;
@@ -63,4 +68,37 @@
 
 .services .box-container {
   background: none !important;
+}
+.sevice-title {
+  color: white;
+  margin-top: 70px !important;
+  margin-bottom: 30px !important;
+}
+.service-sections {
+  color: white !important;
+}
+.service-par {
+  color: white !important;
+}
+.service-container {
+  padding-top: 10px !important;
+  padding-bottom: 100px !important;
+}
+.button-5 {
+  background-color: #fb8332;
+}
+.service-icon {
+  color: white;
+}
+.box {
+  background: white;
+}
+.box .sevice-title {
+  color: #2b2e4a !important;
+}
+.box .service-sections {
+  color: #2b2e4a !important;
+}
+.box .service-par {
+  color: #2b2e4a !important;
 }

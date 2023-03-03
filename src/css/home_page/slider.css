@@ -10,6 +10,7 @@
   overflow-x: scroll;
   scrollbar-width: none;
   scroll-behavior: smooth;
+  margin-bottom: 50px;
 }
 
 #slider::-webkit-scrollbar {
@@ -69,17 +70,27 @@
 }
 
 .slider-card {
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 16rem;
   background: white;
   border-radius: 10px;
   display: inline-block;
+  border: 2px solid #2b2e4a;
   margin-left: 5px;
   margin-right: 5px;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
   cursor: pointer;
 }
 .slider-card .shop-slider {
-  width: 10rem;
-  height: 8rem;
+  width: 188px !important;
+  height: 210px !important;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.shop-slider-name {
+  color: #2b2e4a;
+  font-weight: 600;
+}
+.shop-slider-title {
+  color: #2b2e4a;
 }

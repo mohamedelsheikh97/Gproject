@@ -6,12 +6,12 @@ import Welcome from "./welcome";
 import { Cards } from "./cards";
 import ReactCardSlider from "./reactCardSlider";
 import Servives from "./services";
-import {useEffect , useState} from "react";
-import axios from "axios" ;
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-   let baseURL = "http://localhost:5000/carsshops";
+  let baseURL = "http://localhost:5000/carsshops";
   let [shops, setshops] = useState([]);
   let navigate = useNavigate();
   useEffect(() => {
@@ -89,8 +89,8 @@ const Header = () => {
     <header>
       <CarSlider></CarSlider>
       <Brands></Brands>
-      <Servives></Servives>
       <Welcome></Welcome>
+      <Servives></Servives>
       <Cards></Cards>
       <ReactCardSlider shops={shops} />
     </header>

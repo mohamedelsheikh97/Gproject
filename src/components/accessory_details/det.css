@@ -5,7 +5,12 @@
 text-color {
   color: #0093c4;
 }
-
+.acc-image-1 img {
+  background-repeat: no-repeat !important;
+  background-size: auto !important;
+  background-attachment: fixed;
+  background-position: center;
+}
 /* Main image - left */
 .main-img img {
   width: 100%;
@@ -108,6 +113,7 @@ text-color {
 }
 .acc-name {
   font-size: 35px !important;
+  color: #2b2e4a;
 }
 .h-line {
   width: 100% !important;

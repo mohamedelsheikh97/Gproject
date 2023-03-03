@@ -4,23 +4,26 @@
   background: var(--light);
   border: 1px solid rgb(226, 226, 226);
   border-radius: 30px;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
 .rent-item:hover,
 .rent-item.active {
-  background: var(--orange);
+  background: rgb(246, 172, 77);
 }
 
 .rent-item h4 {
-  transition: 0.5s;
+  transition: 0.1s !important;
+}
+.rent-item i {
+  transition: 0.1s !important;
 }
 .rent-item .img-fluid {
   margin: 0 !important;
 }
 .rent-item:hover h4,
 .rent-item.active h4 {
-  color: var(--light);
+  color: var(--light) !important;
 }
 .rent-item:hover .px-2,
 .rent-item.active .px-2 {
@@ -38,10 +41,10 @@
   background-color: white !important;
 }
 .px-2 i {
-  color: #f77d0a !important;
+  color: rgb(246, 172, 77) !important;
 }
 .btn {
-  background-color: #f77d0a !important;
+  background-color: rgb(246, 172, 77) !important;
   color: var(--light) !important;
   font-size: 18px !important;
   font-weight: 400 !important;
@@ -57,10 +60,15 @@
   color: #f77d0a !important;
   font-weight: 450 !important;
   background-color: white !important;
-  border: 1px solid #f77d0a !important;
+  border: 1px solid rgb(246, 172, 77) !important;
   padding: 10px 25px !important;
 }
 #car-det {
   /* color: white !important; */
   text-decoration: none !important;
+}
+.rent-item .img-fluid {
+  margin: 0 !important;
+  width: 250px !important;
+  height: 250px !important;
 }

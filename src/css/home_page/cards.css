@@ -4,19 +4,26 @@
   background: var(--light);
   border: 1px solid rgb(226, 226, 226);
   border-radius: 30px;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
 .rent-item1:hover,
 .rent-item1.active {
-  background: var(--orange);
+  background: rgb(246, 172, 77);
 }
-
+.rent-item1 i {
+  transition: 0.1s;
+}
 .rent-item1 h4 {
-  transition: 0.5s;
+  transition: 0.1s;
+}
+.font-weight-bold {
+  transition: 0.1s;
 }
 .rent-item1 .img-fluid {
   margin: 0 !important;
+  width: 250px !important;
+  height: 250px !important;
 }
 .rent-item1:hover .px-2,
 .rent-item1.active .px-2 {
@@ -42,10 +49,10 @@
   color: var(--white) !important;
 }
 .px-2 i {
-  color: #f77d0a !important;
+  color: rgb(246, 172, 77) !important;
 }
 .btn {
-  background-color: #f77d0a !important;
+  background-color: rgb(246, 172, 77) !important;
   color: var(--light) !important;
   font-size: 18px !important;
   font-weight: 400 !important;
@@ -58,9 +65,28 @@
   padding: 10px 25px !important;
 }
 .btns button:hover {
-  color: #f77d0a !important;
+  color: rgb(246, 172, 77) !important;
   font-weight: 450 !important;
   background-color: white !important;
-  border: 1px solid #f77d0a !important;
+  border: 1px solid rgb(246, 172, 77) !important;
   padding: 10px 25px !important;
+}
+.cardddd {
+  color: black !important;
+  margin-bottom: 0 !important;
+}
+.rent-item1 h4,
+.mb-4 {
+  color: #2b2e4a !important;
+}
+.featured .featured-cars {
+  margin-top: 70px !important;
+  color: #2b2e4a;
+}
+.featured-cars-row {
+  padding-top: 50px !important;
+}
+.owner-img {
+  width: 70px !important;
+  height: 70px !important;
 }
