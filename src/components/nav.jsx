@@ -95,6 +95,12 @@ const Navs = () => {
             </NavLink>
           </Nav>
 
+          <Nav>
+            <a class="nav-item nav-link" href="/mycart">
+              <i class="fas fa-cart-plus fs-4"></i>
+            </a>
+          </Nav>
+
           {/* <Nav>
             <NavLink to="/cart">
               <span className="cart-icon relative">
