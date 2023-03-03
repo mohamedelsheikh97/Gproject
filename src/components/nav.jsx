@@ -3,8 +3,21 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "../css/Navs.css";
 import { Link, NavLink } from "react-router-dom";
 // import { BsCart3 } from "react-icons/bs";
+// import { useLocation } from 'react-router-dom';
 
 const Navs = () => {
+  
+  function getAuthToken() {
+    return localStorage.getItem('authToken');
+  }
+  const token = getAuthToken();
+  function removeAuthToken() {
+    localStorage.removeItem('authToken');
+  }
+  function handleClick() {
+    removeAuthToken();
+    window.location.reload();
+  }
   return (
     <Navbar bg="light" expand="lg" sticky="top" fixed="top">
       <Container>
@@ -109,6 +122,9 @@ const Navs = () => {
               </span>
             </NavLink>
           </Nav> */}
+          {token && <NavLink NavLink onClick={handleClick} className="nav-link" to="/">
+            logout
+          </NavLink>}
         </Navbar.Collapse>
       </Container>
     </Navbar>
