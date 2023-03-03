@@ -8,6 +8,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 export function Cards() {
   let baseURL = "http://localhost:5000/newcars";
   let [cars, setcars] = useState([]);
+
   useEffect(() => {
     axios
       .get(baseURL)

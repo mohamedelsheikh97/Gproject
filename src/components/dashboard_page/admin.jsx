@@ -66,33 +66,29 @@ export function Admin() {
           <div class="table-wrapper">
             <div class="table-title m-5">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-10">
                   <h4>
-                    <b>Manage Cars</b>
+                    <b>MANAGE CARS</b>
                   </h4>
                 </div>
-                <div class="col-sm-5 ">
-                  <button
-               
-                            class="button addd-btn"
-                           onClick={addCar}
-                          >
-                            <strong> Add Car </strong> 
-                          </button>
+                <div class="col-sm-2">
+                  <button class="button addd-btn" onClick={addCar}>
+                    <strong> Add Car </strong>
+                  </button>
                 </div>
               </div>
             </div>
             {filteredCars !== [] && (
-              <table class="table-fill">
+              <table class="table-fill mb-5">
                 <thead>
                   <tr class="">
-                    <th className="wwww">Image</th>
-                    <th className="wwww">Name</th>
-                    <th className="wwww">transmission</th>
-                    <th className="wwww">Price</th>
-                    <th className="wwww">motor</th>
-                    <th className="wwww">color</th>
-                    <th className="wwww">Actions</th>
+                    <th className="wwww">IMAGE</th>
+                    <th className="wwww">NAME</th>
+                    <th className="wwww">TRANSMISSION</th>
+                    <th className="wwww">PRICE</th>
+                    <th className="wwww">MOTOR</th>
+                    <th className="wwww">COLOR</th>
+                    <th className="wwww">ACTIONS</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -102,11 +98,23 @@ export function Admin() {
                         <td>
                           <img src={`http://localhost:5000/${car.image}`} />
                         </td>
-                        <td> <strong>{`${car.name} ${car.model}`}</strong></td>
-                        <td> <strong> {car.transmission} </strong></td>
-                        <td><strong> {car.price} </strong></td>
-                        <td><strong>{car.motor} </strong></td>
-                        <td><strong>{car.color} </strong></td>
+                        <td>
+                          {" "}
+                          <strong>{`${car.name} ${car.model}`}</strong>
+                        </td>
+                        <td>
+                          {" "}
+                          <strong> {car.transmission} </strong>
+                        </td>
+                        <td>
+                          <strong> {car.price} </strong>
+                        </td>
+                        <td>
+                          <strong>{car.motor} </strong>
+                        </td>
+                        <td>
+                          <strong>{car.color} </strong>
+                        </td>
                         <td>
                           {/* <button
                             type="button"
@@ -115,19 +123,18 @@ export function Admin() {
                           >
                             <i class="fa fa-edit edit"></i>
                           </button> */}
-                           <button
-                      class="button accept-btn"
-                      onClick={() => editCar(car._id)}
-                    >
-                       <strong> Edit </strong> 
-                       
-                    </button>{" "}
-                    <br /> <br />
+                          <button
+                            class="button accept-btn"
+                            onClick={() => editCar(car._id)}
+                          >
+                            <strong> Edit </strong>
+                          </button>{" "}
+                          <br /> <br />
                           <button
                             class="button cancel-btn"
                             onClick={() => deleteCar(car._id)}
                           >
-                            <strong> Delete </strong> 
+                            <strong> Delete </strong>
                           </button>
                         </td>
                       </tr>

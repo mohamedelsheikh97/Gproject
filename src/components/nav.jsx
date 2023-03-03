@@ -94,11 +94,15 @@ const Navs = () => {
               <i class="fas fa-user-circle"></i>
             </NavLink>
           </Nav>
-
           <Nav>
             <a class="nav-item nav-link" href="/mycart">
               <i class="fas fa-cart-plus fs-4"></i>
             </a>
+          </Nav>
+          <Nav>
+            <NavLink id="lastnav" to="/login">
+              <i class="fas fa-sign-out-alt"></i>
+            </NavLink>
           </Nav>
 
           {/* <Nav>
