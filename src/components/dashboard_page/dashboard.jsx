@@ -39,6 +39,7 @@ export default function Dashboard() {
   const handleChange = (e) => {
     setImage(e.target.files[0]);
   };
+
   const statusHandler = (event) => {
     setStatus(event.target.value);
   };

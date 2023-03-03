@@ -1,10 +1,25 @@
-import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "../css/Navs.css";
 import { Link, NavLink } from "react-router-dom";
+
 // import { BsCart3 } from "react-icons/bs";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Navs = () => {
+  let baseURL = "http://localhost:5000/cart";
+  let [mycart, setmycart] = useState([]);
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setmycart(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <Navbar bg="light" expand="lg" sticky="top" fixed="top">
       <Container>
@@ -100,6 +115,7 @@ const Navs = () => {
               <i class="fas fa-cart-plus fs-4"></i>
             </a>
           </Nav>
+          <span>{mycart.length}</span>
 
           {/* <Nav>
             <NavLink to="/cart">
