@@ -58,7 +58,7 @@ export default function Accessory() {
                 <div class="rent-item1 mb-4">
                   <img
                     class="img-fluid mb-4"
-                    src={`http://localhost:5000/${card.image[0]}`}
+                    src={`http://localhost:5000/${card.image}`}
                     alt=""
                   />
                   <h4 class="text-uppercase mb-4 mt-4 acc-name">{`${card.name}`}</h4>

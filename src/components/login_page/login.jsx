@@ -5,9 +5,9 @@ import "../../css/login_page/login.css";
 
 export default function Login() {
   const [errorValue, seterrorValue] = useState("");
-  const navigate = useNavigate  ();
+  const navigate = useNavigate();
 
-  const baseURL="http://localhost:5000/users/login";
+  const baseURL = "http://localhost:5000/users/login";
 
   // const [errorsValue, seterrorsValue] = useState({
   //   email: "",
@@ -20,35 +20,38 @@ export default function Login() {
   });
 
   const getFormValues = (e) => {
-        
     setFormValue({
       ...formValue,
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.value); 
-  
-};
-const gologin=(e)=>{
-  console.log(formValue);
-  axios.post(baseURL,formValue).then(res=>
-    {
-      if(res.data.error){
-        console.log(res.data);
-        // seterrorsValue(res.data.error)
-      seterrorValue(res.data.error)
+    console.log(e.target.value);
+  };
+  const gologin = (e) => {
+    console.log(formValue);
+    axios
+      .post(baseURL, formValue)
+      .then((res) => {
+        if (res.data.error) {
+          console.log(res.data);
+          // seterrorsValue(res.data.error)
+          seterrorValue(res.data.error);
+        } else {
+          console.log(res.data);
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-      }else{
-        console.log(res.data);
-        navigate("/")
-      } 
-    }).catch(err=>{console.log(err);});
-  
-}
+  const shopLogin = () => {
+    navigate("/shopLogin");
+  };
 
-useEffect(()=>{
-  // console.log(errorValue);
-
-},[errorValue])
+  useEffect(() => {
+    // console.log(errorValue);
+  }, [errorValue]);
   return (
     <div class="login-container">
       <div class="row login-row">
@@ -85,9 +88,12 @@ useEffect(()=>{
                   placeholder="password"
                   onChange={getFormValues}
                 />
-              {/* <span className="text-danger px-2">{errorsValue.password.toLocaleUpperCase()}</span> */}
-<div className="text-center"><span className="text-danger  fs-4">{errorValue.toLocaleUpperCase()}</span></div>
-
+                {/* <span className="text-danger px-2">{errorsValue.password.toLocaleUpperCase()}</span> */}
+                <div className="text-center">
+                  <span className="text-danger  fs-4">
+                    {errorValue.toLocaleUpperCase()}
+                  </span>
+                </div>
               </div>
               <div class="text-center input-1">
                 <button onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
@@ -102,6 +108,9 @@ useEffect(()=>{
                     Create an Account
                   </NavLink>
                 </a>
+              </div>
+              <div className="text-center shopLogin">
+                <button onClick={() => shopLogin()}>Login as Seller</button>
               </div>
               {/* <div className="text-danger text-center">{errorValue.email + errorValue.password}</div> */}
             </div>

@@ -1,0 +1,11 @@
+.myCart .productCard {
+  width: 50%;
+}
+
+.cartDetails {
+  width: 100%;
+}
+
+.productCard img {
+  width: 150px;
+}

@@ -94,12 +94,13 @@ const Navs = () => {
               <i class="fas fa-user-circle"></i>
             </NavLink>
           </Nav>
-          {/* <Nav>
-            <a class="nav-item nav-link" href="#">
+
+          <Nav>
+            <a class="nav-item nav-link" href="/mycart">
               <i class="fas fa-cart-plus fs-4"></i>
-              <span class="cart fs-5">0</span>
             </a>
-          </Nav> */}
+          </Nav>
+
           {/* <Nav>
             <NavLink to="/cart">
               <span className="cart-icon relative">
