@@ -117,7 +117,6 @@ const Navs = () => {
               <i class="fas fa-sign-out-alt"></i>
             </NavLink>
           </Nav>
-
           {/* <Nav>
             <NavLink to="/cart">
               <span className="cart-icon relative">
