@@ -61,7 +61,8 @@ export default function Carshop() {
           <div class="hh">
             <div class="typewriter">Our Cars .....</div>
           </div>
-          <hr class="black" />
+          <br class="black" />
+          <br />
 
           <div class="container ">
             <div className="row ">
@@ -74,28 +75,16 @@ export default function Carshop() {
                         src={`http://localhost:5000/${card?.image[0]}`}
                         alt=""
                       />
-                      <h4 class="text-uppercase mb-4">{`${card?.name} ${card?.model}`}</h4>
+                      <h4 class="text-uppercase mb-4 mt-3">{`${card?.name} ${card?.model}`}</h4>
                       <div class="d-flex justify-content-center mb-4">
                         <div class="card-price px-2">
                           <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
-                          <span class="font-weight-bold">${card?.price}</span>
+                          <span class="font-weight-bold">EG {card?.price}</span>
                         </div>
                       </div>
-                      <div className="m-2">
-                        <p className="card-name m-0 font-weight-bold">
-                          {card.owner?.name}
-                        </p>
-                        <NavLink className="nav-link" to="/carshop">
-                          <img
-                            src={`http://localhost:5000/${card.owner?.image}`}
-                            alt=""
-                            width="50px"
-                            class="owner-img"
-                          />
-                        </NavLink>
-                      </div>
+                      <div className="m-2 "></div>
                       <a
-                        class="btn btn-warning px-3 font-weight-bold"
+                        class="btn btn-warning px-3 font-weight-bold mt-3"
                         href=""
                         onClick={() => sliderClick(card._id)}
                       >

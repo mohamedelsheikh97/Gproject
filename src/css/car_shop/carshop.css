@@ -293,3 +293,8 @@ hr {
   border-color: #446eac;
   background: linear-gradient(375deg, transparent, transparent);
 }
+.shop-owner-image {
+  width: 50px !important;
+  height: 50px !important;
+  margin: auto;
+}

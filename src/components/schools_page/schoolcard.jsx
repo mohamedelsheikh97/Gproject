@@ -1,23 +1,28 @@
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
+import "../../css/schools_page/schoolheader.css";
+
 const Schoolcard = () => {
   return (
-    <div>
-      <div class="card mb-3" max-width={540}>
+    <div className="school-section">
+      <h1 class="display-4 text-uppercase text-center mb-5 mt-5 school-head">
+        Best Schools
+      </h1>
+      <div class="card mb-4 mt-5" max-width={540}>
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="col-md-4">
             <img
-              src="https://scontent.faly1-2.fna.fbcdn.net/v/t39.30808-6/283047379_5592228430810849_4208249622077577649_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=oW0DHLG6nE8AX9kwdug&_nc_ht=scontent.faly1-2.fna&oh=00_AfD8qjEoPo3scLUFehoH-NLpIyUHd6RPPc5tM01lCuPLQw&oe=63F94E4D"
-              class="card-img"
+              src="https://www.drive2schools.com/hubfs/Stock%20images/5ce3d6e73f26d.jpeg"
+              class="card-img school-card-img"
               alt="..."
             />
           </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title">Delta Driving Academy</h4>
-              <hr />
-              <p class="card-text">
+            <div class="card-body school-heading">
+              <h4 class="card-title school-name">Delta Driving Academy</h4>
+              <hr className="school line" />
+              <p class="card-text school-desc">
                 With Delta Academy you will learn to drive at the hands of
                 professional trainers with steps and an advanced curriculum that
                 will get you to the required result which is driving safely and
@@ -43,23 +48,25 @@ const Schoolcard = () => {
       {/* 2 */}
       <div class="card mb-3" max-width={540}>
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="col-md-4">
             <img
-              src="https://scontent.faly1-2.fna.fbcdn.net/v/t1.18169-9/15439879_1824588111162804_5944798279230966884_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=IxaabweBPisAX_WYvDR&_nc_ht=scontent.faly1-2.fna&oh=00_AfA7b-Reoe_tUqteEfEuqhPmIqyUOf7FfrNSPhCOSinDtg&oe=641C5E81"
-              class="card-img"
+              src="https://wallpapercave.com/wp/wp8413230.jpg"
+              class="card-img school-card-img"
               alt="..."
             />
           </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title">Faramawy Driving Academy</h4>
-              <hr />
-              <p class="card-text">
+            <div class="card-body school-heading">
+              <h4 class="card-title school-name">Faramawy Driving Academy</h4>
+              <hr className="school line" />
+              <p class="card-text school-desc">
                 Driving is taught at Al-Faramawy Center in a distinctive and
                 easy way, and the trainer is characterized by patience until
                 customers are taught to drive professionally, and the
                 subscription is done at a nominal price and suitable for
-                everyone.
+                everyone also the driving cars at Al-Faramawy is equivalent and
+                suitable for all . In Al-Faramawy we teach you with high
+                desciplin and high tense.
               </p>
               <a href="tel:+201006761356" class="bta">
                 <IoCall />
@@ -79,21 +86,26 @@ const Schoolcard = () => {
       {/* 3 */}
       <div class="card mb-3" max-width={540}>
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="col-md-4">
             <img
-              src="https://scontent.faly1-2.fna.fbcdn.net/v/t39.30808-6/302444665_490952093035059_6771487292897831545_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=UV1TvXqG61sAX9BQisB&_nc_ht=scontent.faly1-2.fna&oh=00_AfBxf8G2rutI0zYc4fo1JdwEbiQIurXcR_67VwT3tr3N1A&oe=63F96A26"
-              class="card-img"
+              src="https://media.hatla2eestatic.com/uploads/news/42214/big_img_158eec6205cbec5a6390e5cb9c6900db.jpg"
+              class="card-img school-card-img"
               alt="..."
             />
           </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title">Mrs. Simsima Driving Academy</h4>
-              <hr />
-              <p class="card-text">
+            <div class="card-body school-heading">
+              <h4 class="card-title school-name">
+                Mrs. Simsima Driving Academy
+              </h4>
+              <hr className="school line" />
+              <p class="card-text school-desc">
                 It is one of the oldest and most famous driving academy in
                 Menoufia with the presence of trainers to teach driving in a
-                professional way and at a nominal price for everyone.
+                professional way and at a nominal price for everyone. and the
+                subscription is done at a nominal price and suitable for
+                everyone also the driving cars at Mrs.Simsima is equivalent and
+                suitable for all
               </p>
               <a href="tel:+201011541438" class="bta">
                 <IoCall />

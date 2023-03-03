@@ -24,7 +24,7 @@ export default function Accdetails() {
   return (
     <div className="container mt-3">
       <div className="row">
-        <div className="main col-5 no">
+        <div className="main col-5 no acc-image-1">
           <img
             src={`http://localhost:5000/${accessory?.image}`}
             className="p"

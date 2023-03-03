@@ -66,7 +66,7 @@ const Navs = () => {
                   />
                 </g>
               </svg>
-              <span className="name p-2">KALAKS</span>
+              <span className="name p-2 logo-name">KALAKS</span>
             </div>
           </Navbar.Brand>
         </NavLink>
@@ -94,7 +94,12 @@ const Navs = () => {
               <i class="fas fa-user-circle"></i>
             </NavLink>
           </Nav>
-
+          {/* <Nav>
+            <a class="nav-item nav-link" href="#">
+              <i class="fas fa-cart-plus fs-4"></i>
+              <span class="cart fs-5">0</span>
+            </a>
+          </Nav> */}
           {/* <Nav>
             <NavLink to="/cart">
               <span className="cart-icon relative">

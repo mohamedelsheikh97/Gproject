@@ -85,8 +85,8 @@ export default function CarCards() {
                     src={`http://localhost:5000/${card.image[0]}`}
                     alt=""
                   />
-                  <h4 class="text-uppercase mb-4">{`${card.name} ${card.model}`}</h4>
-                  <div class="d-flex justify-content-center mb-4">
+                  <h4 class="text-uppercase mb-4 mt-3">{`${card.name} ${card.model}`}</h4>
+                  <div class="d-flex justify-content-center mb-4 font-weight-bold">
                     <div class="px-2">
                       <i class="fa fa-car text-warning mr-1"></i>
                       <span>{card.year}</span>
@@ -101,7 +101,7 @@ export default function CarCards() {
                     </div>
                   </div>
                   <a
-                    class="btn btn-warning px-3"
+                    class="btn btn-warning px-3 car-button"
                     href=""
                     onClick={() => sliderClick(card._id)}
                   >

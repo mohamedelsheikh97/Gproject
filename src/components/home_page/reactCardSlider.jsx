@@ -19,8 +19,10 @@ const ReactCardSlider = (props) => {
   };
 
   return (
-    <div className="container">
-      <h1 class="display-4 text-uppercase text-center">Our Shops</h1>
+    <div className="container mb-5">
+      <h1 class="display-4 text-uppercase text-center mt-5 mb-5 shop-slider-title">
+        Our Shops
+      </h1>
       <div id="main-slider-container">
         <MdChevronLeft
           size={40}
@@ -40,7 +42,7 @@ const ReactCardSlider = (props) => {
                   src={`http://localhost:5000/${slide.image}`}
                   alt=""
                 />
-                <p className="text-center m-0">{slide.name}</p>
+                <p className="text-center m-0 shop-slider-name">{slide.name}</p>
               </div>
             );
           })}

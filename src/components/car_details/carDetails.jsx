@@ -7,12 +7,10 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export default function CarDetails() {
+  const [newCars, setnewCars] = useState([]);
+  const [usedCars, setusedCars] = useState([]);
+  const [allCars, setallCars] = useState([]);
 
-  const [newCars, setnewCars] = useState([])
-  const [usedCars, setusedCars] = useState([])
-  const [allCars, setallCars] = useState([])
-
-  
   const newCarsURL = "http://localhost:5000/newcars";
   const usedCarsURL = "http://localhost:5000/usedcars";
   let shopUrl = "http://localhost:5000/carsshops";
@@ -30,16 +28,16 @@ export default function CarDetails() {
     axios
       .get(newCarsURL)
       .then((res) => {
-       setnewCars(res.data) ;
+        setnewCars(res.data);
         console.log(res.data[0].image[0]);
       })
       .catch((error) => {
         console.log(error);
       });
-      axios
+    axios
       .get(usedCarsURL)
       .then((res) => {
-        setusedCars(res.data) ;
+        setusedCars(res.data);
         console.log(res.data[0].image[0]);
       })
       .catch((error) => {
@@ -47,22 +45,21 @@ export default function CarDetails() {
       });
   }, []);
   useEffect(() => {
-
-    let x = [...newCars,...usedCars];
+    let x = [...newCars, ...usedCars];
     setallCars(x);
     console.log(allCars);
-    for(let e of allCars){
-        if(e._id==id){
-          setcar(e)
-          setimgs(e.image);
-        } 
+    for (let e of allCars) {
+      if (e._id == id) {
+        setcar(e);
+        setimgs(e.image);
+      }
     }
-  }, [newCars,usedCars,car]);
+  }, [newCars, usedCars, car]);
 
   useEffect(() => {
     setWordData(imgs[0]);
     console.log(car);
-  }, [imgs,car]);
+  }, [imgs, car]);
   let navigate = useNavigate();
 
   const sliderClick = (shopId) => {
@@ -72,7 +69,9 @@ export default function CarDetails() {
     window.open(`/carshop/${shopId}`);
   };
   let filteredCars = allCars.filter((carr) => carr._id != id);
-   filteredCars = filteredCars.filter((carr) => carr.owner?._id == car.owner?._id);
+  filteredCars = filteredCars.filter(
+    (carr) => carr.owner?._id == car.owner?._id
+  );
 
   console.log(filteredCars);
   return (
@@ -145,13 +144,14 @@ export default function CarDetails() {
                   </a>
                   <br /> <br />
                   <ul>
-                    <a href={`${car.owner?.facebook}`}     target={"_blank"}>
+                    <a href={`${car.owner?.facebook}`} target={"_blank"}>
                       <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href={`${car.owner?.location}`}     target={"_blank"}>
-                    <i class="fas fa-thumbtack fa-x" aria-hidden="true"> </i>
+                    <a href={`${car.owner?.location}`} target={"_blank"}>
+                      <i class="fas fa-thumbtack fa-x" aria-hidden="true">
+                        {" "}
+                      </i>
                     </a>
-                   
                   </ul>
                 </div>
               </div>
