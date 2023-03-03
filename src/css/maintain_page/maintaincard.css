@@ -1,7 +1,13 @@
-.card {
-  margin: 20px;
+.mcard{
+  margin: 30px 15%;
+  padding: 15px;
+  width: 70%;
   display: flex;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
 }
 .bta {
   margin: 25px 0;
