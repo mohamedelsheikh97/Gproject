@@ -38,7 +38,10 @@ th {
   color: #2b2e4a;
   font-weight: 400;
 }
-
+.car-var {
+  font-weight: 500;
+  color: #2b2e4a;
+}
 th:first-child {
   border-top-left-radius: 3px;
 }
@@ -59,8 +62,10 @@ tr {
 
 tr:hover td {
   background: #98805a;
-  color: #ffffff;
-  border-top: 1px solid #22262e;
+  font-weight: 500 !important;
+  color: #2b2e4a;
+  /* color: #ffffff; */
+  /* border-top: 1px solid #22262e; */
 }
 
 tr:first-child {
@@ -76,7 +81,6 @@ tr:nth-child(odd) td {
 }
 
 tr:nth-child(odd):hover td {
-  background: #98805a;
 }
 
 tr:last-child td:first-child {

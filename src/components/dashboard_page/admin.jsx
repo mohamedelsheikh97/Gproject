@@ -83,7 +83,7 @@ export function Admin() {
                 <thead>
                   <tr class="">
                     <th className="wwww">IMAGE</th>
-                    <th className="wwww">NAME</th>
+                    <th className="wwww">MODEL</th>
                     <th className="wwww">TRANSMISSION</th>
                     <th className="wwww">PRICE</th>
                     <th className="wwww">MOTOR</th>
@@ -100,20 +100,23 @@ export function Admin() {
                         </td>
                         <td>
                           {" "}
-                          <strong>{`${car.name} ${car.model}`}</strong>
+                          <strong className="car-var">{`${car.name} ${car.model}`}</strong>
                         </td>
                         <td>
                           {" "}
-                          <strong> {car.transmission} </strong>
+                          <strong className="car-var">
+                            {" "}
+                            {car.transmission}{" "}
+                          </strong>
                         </td>
                         <td>
-                          <strong> {car.price} </strong>
+                          <strong className="car-var"> {car.price} </strong>
                         </td>
                         <td>
-                          <strong>{car.motor} </strong>
+                          <strong className="car-var">{car.motor} </strong>
                         </td>
                         <td>
-                          <strong>{car.color} </strong>
+                          <strong className="car-var">{car.color} </strong>
                         </td>
                         <td>
                           {/* <button
@@ -123,13 +126,6 @@ export function Admin() {
                           >
                             <i class="fa fa-edit edit"></i>
                           </button> */}
-                          <button
-                            class="button accept-btn"
-                            onClick={() => editCar(car._id)}
-                          >
-                            <strong> Edit </strong>
-                          </button>{" "}
-                          <br /> <br />
                           <button
                             class="button cancel-btn"
                             onClick={() => deleteCar(car._id)}

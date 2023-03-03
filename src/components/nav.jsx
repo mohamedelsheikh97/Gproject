@@ -6,13 +6,12 @@ import { Link, NavLink } from "react-router-dom";
 // import { useLocation } from 'react-router-dom';
 
 const Navs = () => {
-  
   function getAuthToken() {
-    return localStorage.getItem('authToken');
+    return localStorage.getItem("authToken");
   }
   const token = getAuthToken();
   function removeAuthToken() {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem("authToken");
   }
   function handleClick() {
     removeAuthToken();
@@ -103,20 +102,18 @@ const Navs = () => {
             </NavLink>
           </Nav>
           <Nav>
-            <NavLink id="lastnav" to="/login">
-              <i class="fas fa-user-circle"></i>
-            </NavLink>
+            {!token && (
+              <NavLink id="lastnav" to="/login">
+                <i class="fas fa-user-circle"></i>
+              </NavLink>
+            )}
           </Nav>
           <Nav>
             <a class="nav-item nav-link" href="/mycart">
               <i class="fas fa-cart-plus fs-4"></i>
             </a>
           </Nav>
-          <Nav>
-            <NavLink id="lastnav" to="/login">
-              <i class="fas fa-sign-out-alt"></i>
-            </NavLink>
-          </Nav>
+
           {/* <Nav>
             <NavLink to="/cart">
               <span className="cart-icon relative">
@@ -125,9 +122,11 @@ const Navs = () => {
               </span>
             </NavLink>
           </Nav> */}
-          {token && <NavLink NavLink onClick={handleClick} className="nav-link" to="/">
-            logout
-          </NavLink>}
+          {token && (
+            <NavLink NavLink onClick={handleClick} className="nav-link" to="/">
+              <i class="fas fa-sign-out-alt"></i>
+            </NavLink>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
