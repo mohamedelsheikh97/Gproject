@@ -12,6 +12,9 @@ export function Cart() {
   let [mycart, setmycart] = useState([]);
   let [usedcars, setUsedcars] = useState([]);
   let navigate = useNavigate();
+  let total =
+    (mycart.reduce((partialSum, a) => partialSum + a.price, 0) + 5 + 2) * 1000;
+  console.log(total);
   useEffect(() => {
     axios
       .get(baseURL)
