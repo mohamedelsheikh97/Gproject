@@ -1,5 +1,6 @@
 .myCart .productCard {
-  width: 60rem;
+  width: 600px;
+  margin-left: 50px;
 }
 
 .cartDetails {
@@ -21,7 +22,7 @@
 .Total {
   width: 30rem;
   border: solid 0.2rem #eeeeee;
-  margin-left: 100px;
+  margin-left: 150px;
   padding: 18px;
   height: min-content;
   background-color: #eeeeee;

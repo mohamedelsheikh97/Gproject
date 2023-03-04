@@ -37,9 +37,7 @@ export default function Accessory() {
           <h1 className="text-uppercase font-weight-bold accessory-title">
             Featured Accessories
           </h1>
-          <div className="dropdown">
-       
-          </div>
+          <div className="dropdown"></div>
         </div>
         <div className="row ">
           {accessories.map((card) => {
@@ -47,7 +45,7 @@ export default function Accessory() {
               <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item1 mb-4">
                   <img
-                    class="img-fluid mb-4"
+                    class="img-fluid mb-4 acc-image-card"
                     src={`http://localhost:5000/${card.image}`}
                     alt=""
                   />

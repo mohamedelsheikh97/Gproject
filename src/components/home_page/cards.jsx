@@ -50,7 +50,7 @@ export function Cards() {
                   </div>
                   <div className="m-2">
                     <img
-                      src={`http://localhost:5000/${card.owner?.image}`}
+                      src={card.owner?.image}
                       alt=""
                       width="50px"
                       class="owner-img mt-1"

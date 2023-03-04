@@ -53,7 +53,7 @@ export default function CarDetails() {
         setimgs(e.image);
       }
     }
-  }, [ car,usedCars]);
+  }, [car, usedCars]);
 
   useEffect(() => {
     setWordData(imgs[0]);
@@ -79,7 +79,7 @@ export default function CarDetails() {
         {" "}
         <h3 class="text-uppercase car-name">{car?.name} </h3>{" "}
         <img
-          src={`http://localhost:5000/${car.owner?.image}`}
+          src={car.owner?.image}
           width={"150px"}
           className="d-flex image-shop"
           alt="img"
