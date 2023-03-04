@@ -1,22 +1,10 @@
-import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "../css/Navs.css";
 import { Link, NavLink } from "react-router-dom";
+
 // import { BsCart3 } from "react-icons/bs";
-// import { useLocation } from 'react-router-dom';
 
 const Navs = () => {
-  function getAuthToken() {
-    return localStorage.getItem("authToken");
-  }
-  const token = getAuthToken();
-  function removeAuthToken() {
-    localStorage.removeItem("authToken");
-  }
-  function handleClick() {
-    removeAuthToken();
-    window.location.reload();
-  }
   return (
     <Navbar bg="light" expand="lg" sticky="top" fixed="top">
       <Container>
@@ -113,6 +101,7 @@ const Navs = () => {
               <i class="fas fa-cart-plus fs-4"></i>
             </a>
           </Nav>
+          <span>{mycart.length}</span>
 
           {/* <Nav>
             <NavLink to="/cart">

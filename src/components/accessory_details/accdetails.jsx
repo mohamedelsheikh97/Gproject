@@ -34,7 +34,7 @@ export default function Accdetails() {
         console.log(err);
       });
     console.log(accessory);
-    // console.log("ghdfhdg");
+    window.location.reload();
   };
 
   return (
