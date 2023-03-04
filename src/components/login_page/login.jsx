@@ -6,6 +6,7 @@ import "../../css/login_page/login.css";
 export default function Login() {
   const [errorValue, seterrorValue] = useState("");
   const navigate = useNavigate();
+  // const [isLoggedin, setIsLoggedin]=useState(false);
 
   const baseURL = "http://localhost:5000/users/login";
 
@@ -26,6 +27,10 @@ export default function Login() {
     });
     console.log(e.target.value);
   };
+
+  function setAuthToken(token) {
+    localStorage.setItem('authToken', token);
+  }
   const gologin = (e) => {
     console.log(formValue);
     axios
@@ -36,8 +41,13 @@ export default function Login() {
           // seterrorsValue(res.data.error)
           seterrorValue(res.data.error);
         } else {
+          setAuthToken(res.data.token)
+          // setIsLoggedin(true)
           console.log(res.data);
-          navigate("/");
+          // navigate("/",{isLoggedin:isLoggedin});
+          // navigate("/");
+          window.open("/")
+          // window.location.reload();
         }
       })
       .catch((err) => {
@@ -96,7 +106,7 @@ export default function Login() {
                 </div>
               </div>
               <div class="text-center input-1">
-                <button onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
+                <button  onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
                   Login
                 </button>
               </div>
