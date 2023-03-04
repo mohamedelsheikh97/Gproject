@@ -10,6 +10,7 @@ export function Admin() {
   let baseURL1 = "http://localhost:5000/usedcars";
   let [newcars, setnewcars] = useState([]);
   let [usedcars, setusedcars] = useState([]);
+  let [cars, setcars] = useState([]);
   let navigate = useNavigate();
   let { id } = useParams();
   // const filteredCars = newcars.filter((car) => {
@@ -20,21 +21,27 @@ export function Admin() {
       .get(baseURL)
       .then((response) => {
         setnewcars(response.data);
+        console.log(response.data);
+        console.log(response.data[0].image[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    axios
+      .get(baseURL1)
+      .then((response) => {
+        setusedcars(response.data);
+        console.log(response.data);
+        console.log(response.data[0].image[0]);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
   useEffect(() => {
-    axios
-      .get(baseURL1)
-      .then((response) => {
-        setusedcars(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    let x = [...newcars, ...usedcars];
+    setcars(x);
+  }, [newcars, usedcars]);
 
   const addCar = () => {
     navigate(`/dashboard/${id}`);
@@ -48,16 +55,24 @@ export function Admin() {
         console.log(err);
       });
 
-    const restCars = newcars.filter((car) => {
+    axios
+      .delete(`${baseURL1}/${carId}`)
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+
+    const restCars = cars.filter((car) => {
       return car._id !== carId;
     });
 
-    setnewcars(restCars);
+    setcars(restCars);
+    window.location.reload();
   };
 
   const editCar = (carId) => {};
 
-  let filteredCars = newcars.filter((car) => car.owner?._id === id);
+  let filteredCars = cars.filter((car) => car.owner?._id === id);
 
   return (
     <section>
@@ -67,6 +82,33 @@ export function Admin() {
             <div class="table-title m-5">
               <div class="row">
                 <div class="col-sm-10">
+                  <div class="btns mt-1 mb-5 d-flex justify-content-center">
+                    <button
+                      class="btn btn-warning m-1 px-3"
+                      onClick={() => {
+                        let x = [...newcars, ...usedcars];
+                        setcars(x);
+                      }}
+                    >
+                      ALL
+                    </button>
+                    <button
+                      class="btn btn-warning m-1 px-3"
+                      onClick={() => {
+                        setcars(newcars);
+                      }}
+                    >
+                      NEW
+                    </button>
+                    <button
+                      class="btn btn-warning m-1 px-3"
+                      onClick={() => {
+                        setcars(usedcars);
+                      }}
+                    >
+                      USED
+                    </button>
+                  </div>
                   <h4>
                     <b>MANAGE CARS</b>
                   </h4>
