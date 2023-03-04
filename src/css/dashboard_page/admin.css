@@ -79,7 +79,10 @@ tr:last-child {
 tr:nth-child(odd) td {
   background: #ebebeb;
 }
-
+tr:nth-child(even) td {
+  background: #ebebeb;
+}
+/* 
 tr:nth-child(odd):hover td {
 }
 
@@ -89,7 +92,7 @@ tr:last-child td:first-child {
 
 tr:last-child td:last-child {
   border-bottom-right-radius: 3px;
-}
+} */
 
 td {
   background: #ffffff;
