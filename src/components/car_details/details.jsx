@@ -10,7 +10,7 @@ export default function Details(props) {
   return (
     <div>
       <article class="card car-details label-primary new ">
-        <div class="card-body  m">
+        <div class="card-body-2  det-m-body">
           <div class="d-flex flex-md-row align-items-md-start align-items-center row">
             <div class="w-100">
               <br />

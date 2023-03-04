@@ -236,7 +236,7 @@ hr {
   backface-visibility: hidden;
   transform-style: preserve-3d;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 2s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 .wrapper:hover > .front-face {
   transform: rotateY(-180deg);

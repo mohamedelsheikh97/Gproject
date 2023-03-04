@@ -76,17 +76,17 @@ const Navs = () => {
                     ry="6.808"
                   />
                   <path
-                    class="car__line car__line--top"
+                    class="car_line car_line--top"
                     d="M22.5 16.5H2.475"
                     stroke-width="3"
                   />
                   <path
-                    class="car__line car__line--middle"
+                    class="car_line car_line--middle"
                     d="M20.5 23.5H.4755"
                     stroke-width="3"
                   />
                   <path
-                    class="car__line car__line--bottom"
+                    class="car_line car_line--bottom"
                     d="M25.5 9.5h-19"
                     stroke-width="3"
                   />
@@ -127,7 +127,7 @@ const Navs = () => {
               <i class="fas fa-cart-plus fs-4"></i>
             </a>
           </Nav>
-          <span>{mycart.length !== 0 && mycart.length}</span>
+          <span>{mycart.length}</span>
 
           {/* <Nav>
             <NavLink to="/cart">
