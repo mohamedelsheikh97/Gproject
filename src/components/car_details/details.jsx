@@ -10,15 +10,15 @@ export default function Details(props) {
   return (
     <div>
       <article class="card car-details label-primary new ">
-        <div class="card-body-2  det-m-body">
-          <div class="d-flex flex-md-row align-items-md-start align-items-center row">
-            <div class="w-100">
+        <div class="card-body-2 det-m-body">
+          <div class="d-flex flex-md-row align-items-md-start align-items-center row card-body-3">
+            <div class="w-100 details-container-page">
               <br />
-              <div class="container-fluid fs-5">
-                <div class="row rows-cont">
-                  <div class="col-8 ">
+              <div class="container-fluid fs-5 card-body-4">
+                <div class="row rows-cont card-body-4">
+                  <div class="col-8 card-body-4">
                     <ul>
-                      <li>
+                      <li className="list-item">
                         <i class="fas fa-dollar-sign icon-car"></i>{" "}
                         <strong class="font-weight-bold text-uppercase fs-5">
                           Price:{" "}
@@ -27,8 +27,7 @@ export default function Details(props) {
                           {car.price} EGP
                         </span>
                       </li>
-                      <br />
-                      <li>
+                      <li className="list-item">
                         <i class="fas fa-users icon-car"></i>{" "}
                         <strong class="font-weight-bold text-uppercase fs-5">
                           Model:{" "}
@@ -37,8 +36,7 @@ export default function Details(props) {
                           {car.model}
                         </span>
                       </li>
-                      <br />
-                      <li>
+                      <li className="list-item">
                         <i class="fas fa-calendar icon-car"></i>{" "}
                         <strong class="font-weight-bold text-uppercase fs-5">
                           Transmission:{" "}
@@ -47,8 +45,7 @@ export default function Details(props) {
                           {car.transmission}{" "}
                         </span>
                       </li>
-                      <br />
-                      <li>
+                      <li className="list-item">
                         <i class="fas fa-info-circle icon-car"></i>{" "}
                         <strong class="font-weight-bold text-uppercase fs-5">
                           Motor:{" "}
@@ -57,13 +54,9 @@ export default function Details(props) {
                           {car.transmission}{" "}
                         </span>
                       </li>
-                      <br />
                     </ul>
-                  </div>
-
-                  <div class="col-md-6 col-12">
                     <ul>
-                      <li>
+                      <li className="list-item">
                         <i class="fas fa-info-circle icon-car"></i>{" "}
                         <strong class="font-weight-bold text-uppercase fs-5">
                           Color:{" "}
@@ -72,8 +65,7 @@ export default function Details(props) {
                           {car.color}{" "}
                         </span>
                       </li>
-                      <br />
-                      <li>
+                      <li className="list-item">
                         <i class="fas fa-info-circle icon-car"></i>{" "}
                         <strong class="font-weight-bold text-uppercase fs-5">
                           Year:{" "}
@@ -82,30 +74,14 @@ export default function Details(props) {
                           {car.year}
                         </span>
                       </li>
-
-                      <div class="google-map"></div>
-                    </ul>
-                  </div>
-
-                  <div className="col-12 ">
-                    <div className="row cols-row">
-                      <div class=" ">
-                        <button class=" col-5  btn btn-warning bb   ">
-                          <i class="fas fa-phone-alt"></i> Call
+                      <br />
+                      <a id="location-button" href={car.owner?.location}>
+                        <button class="btn btn-secondary col-5 bb  ">
+                          <i class="fas fa-location-arrow"></i>{" "}
+                          <strong>Location</strong>{" "}
                         </button>
-
-                        <a
-                          className="col-6"
-                          href={car.owner?.location}
-                          target={"_blank"}
-                        >
-                          <button class="btn btn-secondary col-5 bb  ">
-                            <i class="fas fa-location-arrow"></i>{" "}
-                            <strong>Location</strong>{" "}
-                          </button>
-                        </a>
-                      </div>
-                    </div>
+                      </a>
+                    </ul>
                   </div>
                 </div>
               </div>

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../css/home_page/cards.css";
 import axios from "axios";
-import { Link, NavLink } from "react-router-dom";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "../../css/cart/cart.css";
-import { BsArrowLeft } from "react-icons/bs";
 
 export function Cart() {
   let baseURL = "http://localhost:5000/cart";

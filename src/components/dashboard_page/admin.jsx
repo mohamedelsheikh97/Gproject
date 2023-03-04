@@ -70,7 +70,7 @@ export function Admin() {
     window.location.reload();
   };
 
-  const editCar = (carId) => {};
+  // const editCar = (carId) => {};
 
   let filteredCars = cars.filter((car) => car.owner?._id === id);
 

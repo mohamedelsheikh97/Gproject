@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function Dashboard() {
   let [Formname, setname] = useState("");
   let [status, setStatus] = useState("New");
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState('');
   let { id } = useParams();
 
   let baseUrl = "http://localhost:5000/newcars";
@@ -95,12 +95,14 @@ export default function Dashboard() {
         <div className="carForm">
           <div onSubmit={formSubissionHandler}>
             <div className="form-control">
+            <img width={150} src={image === '' ? '' :URL.createObjectURL(image)} /> 
               <input
                 type="file"
                 name="image"
                 onChange={handleChange}
                 multiple
               />
+              
               <label htmlFor="newUsed">Status :</label>
               <select name="newUsed" id="newUsed" onChange={statusHandler}>
                 <option value="New">New</option>

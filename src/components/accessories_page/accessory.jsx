@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./accessories.css";
 import axios from "axios";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Container } from "reactstrap";
-
-import { Link, NavLink } from "react-router-dom";
 
 export default function Accessory() {
   let baseURL = "http://localhost:5000/accessories";
@@ -40,15 +38,7 @@ export default function Accessory() {
             Featured Accessories
           </h1>
           <div className="dropdown">
-            <form
-              action="#
-        "
-            >
-              <select name="sort" id="sort">
-                <option value="lowest">External</option>
-                <option value="highest">Internal</option>
-              </select>
-            </form>
+       
           </div>
         </div>
         <div className="row ">
@@ -62,9 +52,7 @@ export default function Accessory() {
                     alt=""
                   />
                   <h4 class="text-uppercase mb-4 mt-4 acc-name">{`${card.name}`}</h4>
-                  {/* <hr className="line" /> */}
-                  {/* <h5 class="text-uppercase mb-4 acc-desc">{`${card.desc}`}</h5>
-                  <hr className="line" /> */}
+
                   <div class="d-flex justify-content-center mb-4">
                     <div class="card-price px-2">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
@@ -73,12 +61,6 @@ export default function Accessory() {
                       </span>
                     </div>
                   </div>
-                  {/* <hr className="line" />
-                  <div class="card-color px-2">
-                    <i class="fa fa-solid fa fa-usd text-warning mr-1"></i>
-                    <span className="acc-color">Color: </span>
-                    <span class="font-weight-bold">{card.color}</span>
-                  </div> */}
                   <a
                     class="btn btn-warning font-weight-bold"
                     onClick={() => sliderClick(card._id)}

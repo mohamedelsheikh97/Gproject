@@ -2,8 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../css/car_details/carDetails.css";
 import Details from "./details";
-import { NavLink } from "react-router-dom";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export default function CarDetails() {
@@ -13,13 +12,13 @@ export default function CarDetails() {
 
   const newCarsURL = "http://localhost:5000/newcars";
   const usedCarsURL = "http://localhost:5000/usedcars";
-  let shopUrl = "http://localhost:5000/carsshops";
+  // let shopUrl = "http://localhost:5000/carsshops";
   let { id } = useParams();
 
   const [imgs, setimgs] = useState([]);
   const [car, setcar] = useState({});
-  let [shops, setshops] = useState([]);
-  const [relatedcars, setrelatedcars] = useState([]);
+  // let [shops, setshops] = useState([]);
+  // const [relatedcars, setrelatedcars] = useState([]);
   const [wordData, setWordData] = useState("");
   const handleClick = (index) => {
     setWordData(imgs[index]);
@@ -54,7 +53,7 @@ export default function CarDetails() {
         setimgs(e.image);
       }
     }
-  }, [newCars, usedCars, car]);
+  }, [ car,usedCars]);
 
   useEffect(() => {
     setWordData(imgs[0]);
@@ -78,7 +77,7 @@ export default function CarDetails() {
     <div className="container mt-3">
       <div className="d-flex flex-md-row flex-column justify-content-between mm ">
         {" "}
-        <h3 class="text-uppercase">{car?.name} </h3>{" "}
+        <h3 class="text-uppercase car-name">{car?.name} </h3>{" "}
         <img
           src={`http://localhost:5000/${car.owner?.image}`}
           width={"150px"}
@@ -87,7 +86,7 @@ export default function CarDetails() {
           onClick={() => shopClick(car.owner?._id)}
         />
       </div>
-      <div className="row">
+      <div className="row main-details">
         <div className="main col-7 no">
           <img src={`http://localhost:5000/${wordData}`} className="p" />
           <div className="flex_row">
@@ -95,7 +94,6 @@ export default function CarDetails() {
               return (
                 <div className="thumbnail" key={i}>
                   <img
-                    // className={wordData.id == i ? "clicked" : ""}
                     id="po"
                     src={`http://localhost:5000/${data}`}
                     onClick={() => handleClick(i)}
@@ -108,9 +106,11 @@ export default function CarDetails() {
         <div className="col-5">
           <Details car={car}> </Details>
         </div>
-        <h3 className="text-uppercase"> Related cars</h3>
       </div>
-      <div class="row relatedcars">
+      <div class="row relatedcars mb-5">
+        <h1 class="display-4 text-uppercase text-center cars-related-title">
+          RELATED CARS
+        </h1>{" "}
         {filteredCars.map((car) => {
           return (
             <div className="col-4 related-imgs">

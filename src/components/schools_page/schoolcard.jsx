@@ -9,7 +9,7 @@ const Schoolcard = () => {
       <h1 class="display-4 text-uppercase text-center mb-5 mt-5 school-head">
         Best Schools
       </h1>
-      <div class="card mb-4 mt-5" max-width={540}>
+      <div class="card mb-4 mt-5 school-card" max-width={540}>
         <div class="row no-gutters">
           <div class="col-md-4">
             <img
@@ -46,7 +46,7 @@ const Schoolcard = () => {
         </div>
       </div>
       {/* 2 */}
-      <div class="card mb-3" max-width={540}>
+      <div class="card mb-3 school-card" max-width={540}>
         <div class="row no-gutters">
           <div class="col-md-4">
             <img
@@ -84,7 +84,7 @@ const Schoolcard = () => {
         </div>
       </div>
       {/* 3 */}
-      <div class="card mb-3" max-width={540}>
+      <div class="card mb-3 school-card" max-width={540}>
         <div class="row no-gutters">
           <div class="col-md-4">
             <img
