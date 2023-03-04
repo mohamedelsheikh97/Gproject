@@ -48,7 +48,9 @@ export function Cart() {
   };
   return (
     <div className="myCart">
-      <h4 className="text-center mb-4 mt-4">Your Products</h4>
+      <h1 class="text-uppercase text-center text-dark mt-5 mb-5 cart-title">
+        YOUR PRODUCTS
+      </h1>
       {mycart.length === 0 && (
         <div className="text-center empty">
           <img
@@ -57,10 +59,12 @@ export function Cart() {
           />
           <div className="text-center">
             <h5>
-              Your card is <span>Empty</span>
+              YOUR CARD IS <span>EMPTY</span>
             </h5>
-            <p>You should add products to your card to complete checkout!</p>
-            <button onClick={() => goshop()}>Go Shopping</button>
+            <p>YOU SHOULD ADD PRODUCTS YO YOUR CARD TO COMPLETE CHECKOUT!</p>
+            <button className="mb-4 text-light" onClick={() => goshop()}>
+              GO SHOPPING
+            </button>
           </div>
         </div>
       )}
@@ -69,7 +73,9 @@ export function Cart() {
           {mycart.map((mycart) => {
             return (
               <Card className="productCard">
-                <Card.Header>{mycart.name}</Card.Header>
+                <Card.Header className="text-uppercase ">
+                  {mycart.name}
+                </Card.Header>
                 <Card.Body>
                   <div className="d-flex">
                     <div className="mx-3 ">
@@ -79,8 +85,12 @@ export function Cart() {
                       />
                     </div>
                     <div className="cartDetails d-flex flex-column mb-3 mx-3 justify-content-around">
-                      <Card.Title>{mycart.name}</Card.Title>
-                      <Card.Text>{mycart.desc}</Card.Text>
+                      <Card.Title className="text-uppercase">
+                        {mycart.name}
+                      </Card.Title>
+                      <Card.Text className="text-uppercase">
+                        {mycart.desc}
+                      </Card.Text>
                       <div className="d-flex justify-content-between">
                         <Button
                           variant="primary"
@@ -88,7 +98,7 @@ export function Cart() {
                         >
                           Remove
                         </Button>
-                        <h4>{mycart.price}</h4>
+                        <h4 className="text-danger">PRICE: {mycart.price}</h4>
                       </div>
                     </div>
                   </div>
@@ -100,7 +110,7 @@ export function Cart() {
 
         {mycart.length !== 0 && (
           <div className="Total">
-            <h4 className="text-center">your cart ({mycart.length})</h4>
+            <h4 className="text-center">YOUR CART ( {mycart.length} )</h4>
             <div>
               <div className="details">
                 {mycart.map((mycart) => {
@@ -112,7 +122,7 @@ export function Cart() {
                           alt=""
                           className="mr-3"
                         />
-                        <p>{mycart.name}</p>
+                        <p className="text-uppercase">{mycart.name}</p>
                       </div>
                       <p className="price">
                         ${parseFloat(mycart.price).toFixed(2)}
@@ -123,20 +133,20 @@ export function Cart() {
               </div>
               <div className="d-flex align-items-center justify-content-between mb-2">
                 <div>
-                  <p>Delivery:</p>
+                  <p>DELIVERY:</p>
                 </div>
                 <p className="price">${parseFloat("5").toFixed(2)}</p>
               </div>
               <div className="d-flex align-items-center justify-content-between mb-2 Taxes">
                 <div>
-                  <p>Taxes:</p>
+                  <p>TAXES:</p>
                 </div>
                 <p className="price">${parseFloat("2").toFixed(2)}</p>
               </div>
 
               <div className="d-flex align-items-center justify-content-between mb-2">
                 <div>
-                  <p>Total:</p>
+                  <p>TOTAL:</p>
                 </div>
                 <p className="price">
                   $
