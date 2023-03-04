@@ -39,7 +39,7 @@ const ReactCardSlider = (props) => {
               >
                 <img
                   class="shop-slider"
-                  src={`http://localhost:5000/${slide.image}`}
+                  src={slide.image}
                   alt=""
                 />
                 <p className="text-center m-0 shop-slider-name">{slide.name}</p>

@@ -6,7 +6,7 @@ import "../../css/login_page/login.css";
 export default function LoginCarsShop() {
   const [errorValue, seterrorValue] = useState("");
   const navigate = useNavigate();
-  let id = "";
+  // let id = "";
 
   const baseURL = "http://localhost:5000/carsshops/login";
 
@@ -27,6 +27,11 @@ export default function LoginCarsShop() {
     });
     console.log(e.target.value);
   };
+
+  function setAuthToken(token) {
+    localStorage.setItem('authToken', token);
+  } 
+
   const gologin = (e) => {
     console.log(formValue);
     axios
@@ -37,6 +42,7 @@ export default function LoginCarsShop() {
           // seterrorsValue(res.data.error)
           seterrorValue(res.data.error);
         } else {
+          setAuthToken(res.data.token)
           console.log(res.data.id);
           navigate(`/admin/${res.data.id}`);
         }
