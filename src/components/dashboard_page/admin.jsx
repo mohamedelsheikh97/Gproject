@@ -81,7 +81,7 @@ export function Admin() {
             {filteredCars !== [] && (
               <table class="table-fill mb-5">
                 <thead>
-                  <tr class="">
+                  <tr class="table-r">
                     <th className="wwww">IMAGE</th>
                     <th className="wwww">MODEL</th>
                     <th className="wwww">TRANSMISSION</th>
@@ -95,30 +95,30 @@ export function Admin() {
                   {filteredCars.map((car) => {
                     return (
                       <tr class="center-align car-row">
-                        <td>
+                        <td className="table-info">
                           <img src={`http://localhost:5000/${car.image}`} />
                         </td>
-                        <td>
+                        <td className="table-info">
                           {" "}
                           <strong className="car-var">{`${car.name} ${car.model}`}</strong>
                         </td>
-                        <td>
+                        <td className="table-info">
                           {" "}
                           <strong className="car-var">
                             {" "}
                             {car.transmission}{" "}
                           </strong>
                         </td>
-                        <td>
+                        <td className="table-info">
                           <strong className="car-var"> {car.price} </strong>
                         </td>
-                        <td>
+                        <td className="table-info">
                           <strong className="car-var">{car.motor} </strong>
                         </td>
-                        <td>
+                        <td className="table-info">
                           <strong className="car-var">{car.color} </strong>
                         </td>
-                        <td>
+                        <td className="table-info">
                           {/* <button
                             type="button"
                             class="btn"
