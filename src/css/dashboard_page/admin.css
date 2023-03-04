@@ -80,8 +80,7 @@ tr:nth-child(odd) td {
   background: #ebebeb;
 }
 
-tr:nth-child(odd):hover td {
-}
+
 
 tr:last-child td:first-child {
   border-bottom-left-radius: 3px;

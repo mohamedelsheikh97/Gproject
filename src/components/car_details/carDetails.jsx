@@ -54,7 +54,7 @@ export default function CarDetails() {
         setimgs(e.image);
       }
     }
-  }, [newCars, usedCars, car]);
+  }, [ car,usedCars]);
 
   useEffect(() => {
     setWordData(imgs[0]);
