@@ -13,10 +13,6 @@ export default function DetailsCard(props) {
       <div class="row">
         <div class="col-md-7">
           <div class="main-description px-2">
-            {/* <a class="nav-item nav-link" href="#">
-              <i class="fas fa-cart-plus fs-4"></i>
-              <span class="cart fs-5">1</span>
-            </a> */}
             <div className="d-flex flex-md-row flex-column justify-content-between mm ">
               {" "}
               <h3 class="text-uppercase acc-name">{accessory.name} </h3>{" "}

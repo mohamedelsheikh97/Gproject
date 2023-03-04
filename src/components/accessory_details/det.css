@@ -119,3 +119,14 @@ text-color {
   width: 100% !important;
   color: black !important;
 }
+.acc-name {
+  color: #2b2e4a;
+  font-size: 40px !important;
+}
+.acc-row-container {
+  padding-bottom: 201px;
+  padding-top: 41px;
+}
+.my-5 {
+  margin-top: 0 !important;
+}

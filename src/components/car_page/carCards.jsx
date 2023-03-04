@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../css/car_page/carCards.css";
 import axios from "axios";
-
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CarCards() {
   let baseURL1 = "http://localhost:5000/newcars";

@@ -37,11 +37,7 @@ const ReactCardSlider = (props) => {
                 key={index}
                 onClick={() => sliderClick(slide._id)}
               >
-                <img
-                  class="shop-slider"
-                  src={slide.image}
-                  alt=""
-                />
+                <img class="shop-slider" src={slide.image} alt="" />
                 <p className="text-center m-0 shop-slider-name">{slide.name}</p>
               </div>
             );

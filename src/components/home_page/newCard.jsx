@@ -46,32 +46,5 @@ export function Cards() {
         </button>
       </div>
     </div>
-    // <div className='featured container mt-5'>
-    //   <h5> Featured cars</h5>
-    //   {
-    //     cars.map((card)=>{
-    //       return (
-    //         <Card style={{ width: '18rem' }} className='cardItem p-2 mt-4'>
-    //   <Card.Img variant="top" src={`http://localhost:5000/${card.image}`} />
-    //   <Card.Body>
-    //     <Card.Title>{`${card.name} ${card.model}`}</Card.Title>
-    //     <div className='provider d-flex align-items-center'>
-    //         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsFN-bYFnN7-K2SEmIdjYmDpNmN9Ulxz5H_g&usqp=CAU" alt="" />
-    //         <div className='m-2'>
-    //           <p className='m-0'>elkersh motors</p>
-    //           <span>seller</span>
-    //         </div>
-    //     </div>
-    //     <div className=' d-flex align-items-center justify-content-between'>
-    //         <p className='m-0'>${card.price}</p>
-    //         <button className="button-5">Details</button>
-    //     </div>
-    // </Card.Body>
-    // </Card>
-    //       )
-    //     })
-    //   }
-
-    // </div>
   );
 }

@@ -18,14 +18,17 @@ import LoginCarsShop from "./components/login_page/login_cars_shop";
 import Accessory from "./components/accessories_page/accessory";
 import Accdetails from "./components/accessory_details/accdetails";
 import { Cart } from "./components/cart/cart";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
 // import { useLocation } from "react-router-dom";
 
 
-function App() {
-  // const location = useLocation();
-  // const loggedin= location.state.isLoggedin;
+const stripPromise=loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
+function App() {
   return (
+    <Elements stripe={stripPromise}>
     <>
       <Navs></Navs>
       <Routes>
@@ -53,6 +56,7 @@ function App() {
       </Routes>
       <Footer></Footer>
     </>
+    </Elements>
   );
 }
 

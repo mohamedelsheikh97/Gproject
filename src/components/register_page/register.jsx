@@ -7,36 +7,38 @@ export default function Register() {
   const [errorValue, seterrorValue] = useState("");
   const navigate = useNavigate();
 
-  const baseURL="http://localhost:5000/users/signup";
+  const baseURL = "http://localhost:5000/users/signup";
   const [formValue, setformValue] = useState({
-    fname:"",
-    lname:"",
-    email:"",
-    phone:""
-  })
-  
+    fname: "",
+    lname: "",
+    email: "",
+    phone: "",
+  });
+
   const getFormValues = (e) => {
-        
     setformValue({
       ...formValue,
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.value); 
-  
-};
-  const goTORegister=()=>{
-    axios.post(baseURL,formValue).then(res=>{
-      console.log(); 
-      if(res.data.error){
-        seterrorValue(res.data.error)
-        console.log(res.data.error);
-      }
-      
-      else{console.log("RegisterSucced");
-        navigate("/");
-      }
-    }).catch(err=>{console.log(err);})
-  }
+    console.log(e.target.value);
+  };
+  const goTORegister = () => {
+    axios
+      .post(baseURL, formValue)
+      .then((res) => {
+        console.log();
+        if (res.data.error) {
+          seterrorValue(res.data.error);
+          console.log(res.data.error);
+        } else {
+          console.log("RegisterSucced");
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div class="login-container">
       <div class="row login-row">
@@ -102,11 +104,18 @@ export default function Register() {
                   placeholder="Phone Number"
                   onChange={getFormValues}
                 />
-                
-<div className="text-center"><span className="text-danger  fs-4">{errorValue.toLocaleUpperCase()}</span></div>
+
+                <div className="text-center">
+                  <span className="text-danger  fs-4">
+                    {errorValue.toLocaleUpperCase()}
+                  </span>
+                </div>
               </div>
               <div class="text-center input-1">
-                <button onClick={goTORegister} class="btn btn-color px-5 mb-5 w-100">
+                <button
+                  onClick={goTORegister}
+                  class="btn btn-color px-5 mb-5 w-100"
+                >
                   Register
                 </button>
               </div>

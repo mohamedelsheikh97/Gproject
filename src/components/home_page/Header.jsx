@@ -91,8 +91,9 @@ const Header = () => {
       <Brands></Brands>
       <Welcome></Welcome>
       <Servives></Servives>
-      <Cards></Cards>
       <ReactCardSlider shops={shops} />
+      <Cards></Cards>
+      
     </header>
   );
 };

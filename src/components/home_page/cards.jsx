@@ -1,9 +1,7 @@
-import Card from "react-bootstrap/Card";
 import React, { useEffect, useState } from "react";
 import "../../css/home_page/cards.css";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function Cards() {
   let baseURL = "http://localhost:5000/newcars";
@@ -51,11 +49,8 @@ export function Cards() {
                     </div>
                   </div>
                   <div className="m-2">
-                    {/* <p className="card-name m-0 font-weight-bold">
-                      {card.owner?.name}
-                    </p> */}
                     <img
-                      src={`http://localhost:5000/${card.owner?.image}`}
+                      src={card.owner?.image}
                       alt=""
                       width="50px"
                       class="owner-img mt-1"
