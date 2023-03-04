@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./accessories.css";
 import axios from "axios";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Container } from "reactstrap";
-
-import { Link, NavLink } from "react-router-dom";
 
 export default function Accessory() {
   let baseURL = "http://localhost:5000/accessories";
@@ -39,9 +37,7 @@ export default function Accessory() {
           <h1 className="text-uppercase font-weight-bold accessory-title">
             Featured Accessories
           </h1>
-          <div className="dropdown">
-       
-          </div>
+          <div className="dropdown"></div>
         </div>
         <div className="row ">
           {accessories.map((card) => {
@@ -49,14 +45,12 @@ export default function Accessory() {
               <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item1 mb-4">
                   <img
-                    class="img-fluid mb-4"
+                    class="img-fluid mb-4 acc-image-card"
                     src={`http://localhost:5000/${card.image}`}
                     alt=""
                   />
                   <h4 class="text-uppercase mb-4 mt-4 acc-name">{`${card.name}`}</h4>
-                  {/* <hr className="line" /> */}
-                  {/* <h5 class="text-uppercase mb-4 acc-desc">{`${card.desc}`}</h5>
-                  <hr className="line" /> */}
+
                   <div class="d-flex justify-content-center mb-4">
                     <div class="card-price px-2">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
@@ -65,12 +59,6 @@ export default function Accessory() {
                       </span>
                     </div>
                   </div>
-                  {/* <hr className="line" />
-                  <div class="card-color px-2">
-                    <i class="fa fa-solid fa fa-usd text-warning mr-1"></i>
-                    <span className="acc-color">Color: </span>
-                    <span class="font-weight-bold">{card.color}</span>
-                  </div> */}
                   <a
                     class="btn btn-warning font-weight-bold"
                     onClick={() => sliderClick(card._id)}

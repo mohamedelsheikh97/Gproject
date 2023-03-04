@@ -70,7 +70,7 @@ export function Admin() {
     window.location.reload();
   };
 
-  const editCar = (carId) => {};
+  // const editCar = (carId) => {};
 
   let filteredCars = cars.filter((car) => car.owner?._id === id);
 
@@ -82,7 +82,12 @@ export function Admin() {
             <div class="table-title m-5">
               <div class="row">
                 <div class="col-sm-10">
-                  <div class="btns mt-1 mb-5 d-flex justify-content-center">
+                  <div class="btns mt-1 mb-5 d-flex justify-content-center filter-buttons">
+                    <h4 className="manage-car">
+                      <b className="d-flex justify-content-center align-items-center mt-3 mr-5">
+                        MANAGE CARS
+                      </b>
+                    </h4>
                     <button
                       class="btn btn-warning m-1 px-3"
                       onClick={() => {
@@ -109,15 +114,12 @@ export function Admin() {
                       USED
                     </button>
                   </div>
-                  <h4>
-                    <b>MANAGE CARS</b>
-                  </h4>
                 </div>
-                <div class="col-sm-2">
-                  <button class="button addd-btn" onClick={addCar}>
-                    <strong> Add Car </strong>
-                  </button>
-                </div>
+                {/* <div class="col-sm-2"> */}
+                <button class="button addd-btn" onClick={addCar}>
+                  <strong> Add Car </strong>
+                </button>
+                {/* </div> */}
               </div>
             </div>
             {filteredCars !== [] && (

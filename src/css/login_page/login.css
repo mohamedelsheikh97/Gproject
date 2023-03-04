@@ -82,3 +82,11 @@ a {
 .shopLogin button:hover {
   transform: translateY(-1px);
 }
+.login-row {
+  width: 100% !important;
+  margin: 0 !important;
+}
+.cardbody-color {
+  padding-top: 105px !important;
+  padding-bottom: 177px !important;
+}

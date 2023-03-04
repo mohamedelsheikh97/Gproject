@@ -27,10 +27,6 @@ import { Elements } from "@stripe/react-stripe-js";
 const stripPromise=loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 function App() {
-  
-  // const location = useLocation();
-  // const loggedin= location.state.isLoggedin;
-
   return (
     <Elements stripe={stripPromise}>
     <>

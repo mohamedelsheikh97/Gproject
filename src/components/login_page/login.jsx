@@ -6,14 +6,7 @@ import "../../css/login_page/login.css";
 export default function Login() {
   const [errorValue, seterrorValue] = useState("");
   const navigate = useNavigate();
-  // const [isLoggedin, setIsLoggedin]=useState(false);
-
   const baseURL = "http://localhost:5000/users/login";
-
-  // const [errorsValue, seterrorsValue] = useState({
-  //   email: "",
-  //   password: "",
-  // });
 
   const [formValue, setFormValue] = useState({
     email: "",
@@ -29,7 +22,7 @@ export default function Login() {
   };
 
   function setAuthToken(token) {
-    localStorage.setItem('authToken', token);
+    localStorage.setItem("authToken", token);
   }
   const gologin = (e) => {
     console.log(formValue);
@@ -38,16 +31,11 @@ export default function Login() {
       .then((res) => {
         if (res.data.error) {
           console.log(res.data);
-          // seterrorsValue(res.data.error)
           seterrorValue(res.data.error);
         } else {
-          setAuthToken(res.data.token)
-          // setIsLoggedin(true)
+          setAuthToken(res.data.token);
           console.log(res.data);
-          // navigate("/",{isLoggedin:isLoggedin});
-          // navigate("/");
-          window.open("/")
-          // window.location.reload();
+          window.open("/");
         }
       })
       .catch((err) => {
@@ -59,9 +47,7 @@ export default function Login() {
     navigate("/shopLogin");
   };
 
-  useEffect(() => {
-    // console.log(errorValue);
-  }, [errorValue]);
+  useEffect(() => {}, [errorValue]);
   return (
     <div class="login-container">
       <div class="row login-row">
@@ -87,7 +73,6 @@ export default function Login() {
                   placeholder="User Name"
                   onChange={getFormValues}
                 />
-                {/* <span className="text-danger px-2">{errorsValue.email.toLocaleUpperCase()}</span> */}
               </div>
               <div class="mb-3 input-1">
                 <input
@@ -98,7 +83,6 @@ export default function Login() {
                   placeholder="password"
                   onChange={getFormValues}
                 />
-                {/* <span className="text-danger px-2">{errorsValue.password.toLocaleUpperCase()}</span> */}
                 <div className="text-center">
                   <span className="text-danger  fs-4">
                     {errorValue.toLocaleUpperCase()}
@@ -106,7 +90,7 @@ export default function Login() {
                 </div>
               </div>
               <div class="text-center input-1">
-                <button  onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
+                <button onClick={gologin} class="btn btn-color px-5 mb-5 w-100">
                   Login
                 </button>
               </div>
@@ -122,7 +106,6 @@ export default function Login() {
               <div className="text-center shopLogin">
                 <button onClick={() => shopLogin()}>Login as Seller</button>
               </div>
-              {/* <div className="text-danger text-center">{errorValue.email + errorValue.password}</div> */}
             </div>
           </div>
         </div>

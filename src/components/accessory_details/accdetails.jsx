@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../css/car_details/carDetails.css";
-import DetailsCard from "./detailsCard";
 import { useParams } from "react-router-dom";
+import "./det.css";
 
 export default function Accdetails() {
   let baseURL = "http://localhost:5000/accessories";
@@ -39,7 +39,7 @@ export default function Accdetails() {
 
   return (
     <div className="container mt-3">
-      <div className="row">
+      <div className="row acc-row-container">
         <div className="main col-5 no acc-image-1">
           <img
             src={`http://localhost:5000/${accessory?.image}`}
@@ -47,14 +47,10 @@ export default function Accdetails() {
           />
         </div>
         <div className="col-7">
-          <div class="container my-5">
+          <div class="container my-5 container-details">
             <div class="row">
               <div class="col-md-7">
                 <div class="main-description px-2">
-                  {/* <a class="nav-item nav-link" href="#">
-              <i class="fas fa-cart-plus fs-4"></i>
-              <span class="cart fs-5">1</span>
-            </a> */}
                   <div className="d-flex flex-md-row flex-column justify-content-between mm ">
                     {" "}
                     <h3 class="text-uppercase acc-name">
@@ -99,13 +95,6 @@ export default function Accdetails() {
                     Description: <br />
                     {accessory.desc}
                   </p>
-                </div>
-
-                <div class="row questions bg-light p-3">
-                  <div class="col-md-11 text">
-                    Have a question about our products at U Store? Feel free to
-                    contact our representatives via live chat or email.
-                  </div>
                 </div>
               </div>
             </div>

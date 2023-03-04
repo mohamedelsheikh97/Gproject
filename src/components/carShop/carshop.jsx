@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../css/car_shop/carshop.css";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 
 export default function Carshop() {
   let { id } = useParams();
-  let { name } = useParams();
+  // let { name } = useParams();
   let baseUrl = "http://localhost:5000/carsshops";
   let baseUrl1 = "http://localhost:5000/newcars";
   let [shop, setshop] = useState([]);
@@ -44,7 +43,7 @@ export default function Carshop() {
     <div className="kk">
       <section>
         <div class="container-fluid intro">
-          <img src={`http://localhost:5000/${shop.image}`} id="c-wrench" />
+          <img src={shop.image} id="c-wrench" />
           <ul>
             <li className="big">
               <a href={`${shop?.facebook}`} target={"_blank"}>
@@ -95,44 +94,6 @@ export default function Carshop() {
                 );
               })}
             </div>
-
-            {/* 
-    <div class="wrapper col-4">
-      <div class="card front-face">
-        <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06" alt="Flip Card"/>
-      </div>
-      <div class="card back-face">
-        <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06" alt="Flip Card"/>
-        <div class="info">
-          <div class="title">BMW</div>
-          <p>2023  <br/>X8</p>
-        </div>
-        <ul>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </ul>
-      </div>
-    </div>
-    <div class="wrapper col-4">
-      <div class="card front-face">
-        <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06" alt="Flip Card"/>
-      </div>
-      <div class="card back-face">
-        <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/321424992_807532877012554_3481564339408091151_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=ME1YyJ8zGkIAX_n8qli&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCh1g23aEePoD8vYlTkQ3ytL785o35T8JqZy9VoVPXzRQ&oe=63FB4F06" alt="Flip Card"/>
-        <div class="info">
-          <div class="title">BMW</div>
-          <p>2023  <br/>X8</p>
-        </div>
-        <ul>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </ul>
-      </div>
-    </div> */}
           </div>
         </div>
       </section>
