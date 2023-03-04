@@ -75,12 +75,15 @@ export default function Dashboard() {
       formData.append("price", formValue.price);
       formData.append("year", formValue.year);
       formData.append("distance", formValue.distance);
+      formData.append("owner", formValue.owner);
+      formData.append("image", image);
       axios
         .post(baseUrl1, formData)
         .then((res) => {})
         .catch((err) => {
           console.log(err);
         });
+      navigate(`/admin/${id}`);
     }
   };
 
