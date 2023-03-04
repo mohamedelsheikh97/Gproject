@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/home_page/welcome.css";
+
 export default function Welcome() {
   return (
     <div className="container">
@@ -58,7 +59,6 @@ export default function Welcome() {
                 </button>
               </Link>
             </div>
-
             <img src="/looking-new-car-1.png" alt="" />
           </div>
         </div>

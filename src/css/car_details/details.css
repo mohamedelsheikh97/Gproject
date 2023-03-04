@@ -6,9 +6,7 @@
   border: 1px solid rgb(233, 139, 72);
   height: 700px;
 }
-/* .mm {
-  border-bottom: 2px solid rgb(233, 139, 72);
-} */
+
 .rows-cont {
   width: 100% !important;
   margin: 0 !important;
@@ -19,11 +17,35 @@
 }
 .col-12 {
   width: 100% !important;
-  height: 200px !important;
+  height: 120px !important;
 }
 .icon-car {
   color: orange;
 }
-.col-5 {
+
+.buttons-car {
+  height: 20px !important;
+}
+.card-body-2 {
+  height: 500px !important;
+}
+.card-body-3 {
+  height: 500px !important;
+}
+.card-body-4 {
+  height: 450px !important;
+}
+.details-container-page {
+  height: 500px !important;
+}
+#location-button {
+  height: 50px !important;
+  justify-content: center;
   margin-top: 20px !important;
+  text-decoration: none !important;
+  display: flex;
+}
+.list-item {
+  margin-top: 25px !important;
+  color: #2b2e4a;
 }

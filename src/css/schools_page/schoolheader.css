@@ -23,7 +23,6 @@
 .school-card-img {
   width: 100% !important;
   height: 100%;
-  /* margin-top: 40px; */
   margin-left: 15px;
 }
 .school-heading {
@@ -43,4 +42,10 @@
 }
 .school-section {
   margin-bottom: 70px;
+}
+.no-gutters {
+  width: 100% !important;
+}
+.school-card {
+  display: flex;
 }

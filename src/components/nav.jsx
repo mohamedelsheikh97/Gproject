@@ -1,8 +1,6 @@
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "../css/Navs.css";
-import { Link, NavLink } from "react-router-dom";
-
-// import { BsCart3 } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
@@ -127,16 +125,7 @@ const Navs = () => {
               <i class="fas fa-cart-plus fs-4"></i>
             </a>
           </Nav>
-          <span>{mycart.length}</span>
-
-          {/* <Nav>
-            <NavLink to="/cart">
-              <span className="cart-icon relative">
-                <BsCart3 />
-                <span className="cart-counter absolute -top-3 -right-3 text-xs bg-orange-600 font-medium rounded-full w-5 h-5 flex justify-center items-center z-[1]"></span>
-              </span>
-            </NavLink>
-          </Nav> */}
+          {!mycart.length == 0 && <span>{mycart.length}</span>}
           {token && (
             <NavLink NavLink onClick={handleClick} className="nav-link" to="/">
               <i class="fas fa-sign-out-alt"></i>
