@@ -169,3 +169,6 @@ tr:hover {
 .filter-buttons {
   margin-bottom: 0 !important;
 }
+.table-responsive {
+  padding-bottom: 212px !important;
+}

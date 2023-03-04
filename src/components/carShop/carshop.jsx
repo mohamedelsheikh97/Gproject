@@ -43,7 +43,7 @@ export default function Carshop() {
     <div className="kk">
       <section>
         <div class="container-fluid intro">
-          <img src={`http://localhost:5000/${shop.image}`} id="c-wrench" />
+          <img src={shop.image} id="c-wrench" />
           <ul>
             <li className="big">
               <a href={`${shop?.facebook}`} target={"_blank"}>
