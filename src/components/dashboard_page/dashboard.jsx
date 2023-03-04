@@ -126,8 +126,8 @@ export default function Dashboard() {
                   <option value="hyundai">hundayi</option>
                   <option value="kia">kia</option>
                   <option value="Audi">Audi</option>
-                  <option value="WOLKSWAGEN">WOLKSWAGEN</option>
-                  <option value="Pejout">Pejout</option>
+                  <option value="Volkswagen">Volkswagen</option>
+                  <option value="Peugeot">Peugeot</option>
                 </select>
                 {/* -------------------------MODEL------------------------------ */}
                 {Formname === "bmw" && <label htmlFor="name">Model :</label>}
@@ -158,8 +158,8 @@ export default function Dashboard() {
                     <option value="Sonata">Sonata</option>
                   </select>
                 )}
-                {Formname === "Kia" && <label htmlFor="name">Model :</label>}
-                {Formname === "Kia" && (
+                {Formname === "kia" && <label htmlFor="name">Model :</label>}
+                {Formname === "kia" && (
                   <select name="model" id="selection" onChange={getFormValues}>
                     <option value="cerato">cerato</option>
                     <option value="sportage">sportage</option>
@@ -174,18 +174,20 @@ export default function Dashboard() {
                     <option value="Q3">Q3</option>
                   </select>
                 )}
-                {Formname === "WOLKSWAGEN" && (
+                {Formname === "Volkswagen" && (
                   <label htmlFor="name">Model :</label>
                 )}
-                {Formname === "WOLKSWAGEN" && (
+                {Formname === "Volkswagen" && (
                   <select name="model" id="selection" onChange={getFormValues}>
                     <option value="Golf">Golf</option>
                     <option value="Polo">Polo</option>
                     <option value="Tiguan">Tiguan</option>
                   </select>
                 )}
-                {Formname === "Pejout" && <label htmlFor="name">Model :</label>}
-                {Formname === "Pejout" && (
+                {Formname === "Peugeot" && (
+                  <label htmlFor="name">Model :</label>
+                )}
+                {Formname === "Peugeot" && (
                   <select name="model" id="selection" onChange={getFormValues}>
                     <option value="408">408</option>
                     <option value="508">508</option>

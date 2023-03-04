@@ -142,27 +142,27 @@ export function Admin() {
                         <td className="table-info">
                           <img src={`http://localhost:5000/${car.image}`} />
                         </td>
-                        <td className="table-info">
+                        <td className="table-info text-center">
                           {" "}
                           <strong className="car-var">{`${car.name} ${car.model}`}</strong>
                         </td>
-                        <td className="table-info">
+                        <td className="table-info text-center">
                           {" "}
                           <strong className="car-var">
                             {" "}
                             {car.transmission}{" "}
                           </strong>
                         </td>
-                        <td className="table-info">
+                        <td className="table-info text-center">
                           <strong className="car-var"> {car.price} </strong>
                         </td>
-                        <td className="table-info">
+                        <td className="table-info text-center">
                           <strong className="car-var">{car.motor} </strong>
                         </td>
-                        <td className="table-info">
+                        <td className="table-info text-center">
                           <strong className="car-var">{car.color} </strong>
                         </td>
-                        <td className="table-info">
+                        <td className="table-info text-center">
                           {/* <button
                             type="button"
                             class="btn"

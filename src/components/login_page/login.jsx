@@ -35,7 +35,8 @@ export default function Login() {
         } else {
           setAuthToken(res.data.token);
           console.log(res.data);
-          window.open("/");
+          navigate("/");
+          window.location.reload(false);
         }
       })
       .catch((err) => {
