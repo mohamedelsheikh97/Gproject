@@ -148,3 +148,9 @@
   border-bottom: solid 0.19rem #ffffff;
   padding-bottom: 10px;
 }
+.cart-title {
+  color: #2b2e4a !important;
+}
+.myCart {
+  padding-bottom: 200px;
+}
