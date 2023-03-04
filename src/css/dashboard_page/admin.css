@@ -21,7 +21,7 @@
   animation: float 5s infinite;
 }
 
-.wwww {
+th {
   color: #070301;
   background: #d49d07;
   border-bottom: 4px solid #9ea7af;
@@ -51,7 +51,7 @@ th:last-child {
   border-right: none;
 }
 
-.table-r {
+tr {
   border-top: 1px solid #c1c3d1;
   border-bottom: 1px solid #c1c3d1;
   color: #666b85;
@@ -60,7 +60,7 @@ th:last-child {
   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
 
-.table-r:hover td {
+tr:hover td {
   background: #98805a;
   font-weight: 500 !important;
   color: #2b2e4a;
@@ -68,30 +68,30 @@ th:last-child {
   /* border-top: 1px solid #22262e; */
 }
 
-.table-rr:first-child {
+tr:first-child {
   border-top: none;
 }
 
-.table-r:last-child {
+tr:last-child {
   border-bottom: none;
 }
 
-.table-r:nth-child(odd) td {
+tr:nth-child(odd) td {
   background: #ebebeb;
 }
 
-.table-r:nth-child(odd):hover td {
+tr:nth-child(odd):hover td {
 }
 
-.table-r:last-child td:first-child {
+tr:last-child td:first-child {
   border-bottom-left-radius: 3px;
 }
 
-.table-r:last-child td:last-child {
+tr:last-child td:last-child {
   border-bottom-right-radius: 3px;
 }
 
-.table-info {
+td {
   background: #ffffff;
   padding: 20px;
   text-align: center;
@@ -102,7 +102,7 @@ th:last-child {
   border-right: 1px solid #c1c3d1;
 }
 
-.table-info:last-child {
+td:last-child {
   border-right: 0px;
 }
 
@@ -118,15 +118,15 @@ th.text-right {
   text-align: center;
 }
 
-.table-info.text-left {
+td.text-left {
   text-align: center;
 }
 
-.table-info.text-center {
+td.text-center {
   text-align: center;
 }
 
-.table-info.text-right {
+td.text-right {
   text-align: center;
 }
 .cancel-btn {

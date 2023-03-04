@@ -3,8 +3,37 @@ import "../css/Navs.css";
 import { Link, NavLink } from "react-router-dom";
 
 // import { BsCart3 } from "react-icons/bs";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+
+// import { BsCart3 } from "react-icons/bs";
 
 const Navs = () => {
+  function getAuthToken() {
+    return localStorage.getItem("authToken");
+  }
+  const token = getAuthToken();
+  function removeAuthToken() {
+    localStorage.removeItem("authToken");
+  }
+  function handleClick() {
+    removeAuthToken();
+    window.location.reload();
+  }
+  let baseURL = "http://localhost:5000/cart";
+  let [mycart, setmycart] = useState([]);
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setmycart(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <Navbar bg="light" expand="lg" sticky="top" fixed="top">
       <Container>
