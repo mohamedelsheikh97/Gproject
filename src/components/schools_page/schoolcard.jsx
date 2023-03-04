@@ -37,6 +37,7 @@ const Schoolcard = () => {
               <a
                 href="https://www.bing.com/maps?q=%D8%A7%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D9%87+%D8%A7%D9%84%D8%AF%D9%84%D8%AA%D8%A7+%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85+%D9%82%D9%8A%D8%A7%D8%AF%D9%87+%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&FORM=HDRSC4&cp=30.56008%7E31.00995&lvl=14.5"
                 class="btb"
+                target="blank"
               >
                 {" "}
                 <FaMapMarkerAlt /> Address
@@ -75,6 +76,7 @@ const Schoolcard = () => {
               <a
                 href="https://www.google.com/maps/dir//%D8%A7%D9%84%D9%81%D8%B1%D9%85%D8%A7%D9%88%D9%89+%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85+%D9%82%D9%8A%D8%A7%D8%AF%D9%87+%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%D8%8C+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D8%A8%D9%88+%D8%B4%D9%88%D8%B4%D9%87+%D8%A8%D8%AC%D9%88%D8%A7%D8%B1+%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89+%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86%D8%8C+%D9%85%D8%AF%D9%8A%D9%86%D8%A9+%D9%85%D9%86%D9%88%D9%81%D8%8C+%D9%85%D9%86%D9%88%D9%81%D8%8C+%D8%A7%D9%84%D9%85%D9%86%D9%88%D9%81%D9%8A%D8%A9%D8%8C%D8%8C+%D9%85%D8%AF%D9%8A%D9%86%D8%A9+%D9%85%D9%86%D9%88%D9%81%D8%8C+%D9%85%D8%AF%D9%8A%D9%86%D9%87+%D9%85%D9%86%D9%88%D9%81%D8%8C%E2%80%AD/@30.4661382,30.3775832,10z/data=!4m8!4m7!1m0!1m5!1m1!1s0x14587f9bfb6f13c7:0x3530c1bd3ac5a530!2m2!1d30.9378859!2d30.4661382"
                 class="btb"
+                target="blank"
               >
                 {" "}
                 <FaMapMarkerAlt /> Address
@@ -114,6 +116,7 @@ const Schoolcard = () => {
               <a
                 href="https://www.google.com/maps/dir/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9+%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0%D8%A9+%D8%B3%D9%85%D8%B3%D9%85%D8%A9+%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85+%D9%82%D9%8A%D8%A7%D8%AF%D8%A9+%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA,+El-Bagour+City,+%D8%A7%D9%84%D8%A8%D8%A7%D8%AC%D9%88%D8%B1%D8%8C%D8%8C+Menofia+Governorate+6075416%E2%80%AD//@30.4234656,31.0046395,13z/data=!4m8!4m7!1m5!1m1!1s0x14587974ac409955:0x8ef7626368bf2395!2m2!1d31.039659!2d30.4234703!1m0"
                 class="btb"
+                target="blank"
               >
                 {" "}
                 <FaMapMarkerAlt /> Address

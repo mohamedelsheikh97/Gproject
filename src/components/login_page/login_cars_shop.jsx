@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../css/login_page/login.css";
 
 export default function LoginCarsShop() {
@@ -19,6 +19,11 @@ export default function LoginCarsShop() {
     });
     console.log(e.target.value);
   };
+
+  function setAuthToken(token) {
+    localStorage.setItem('authToken', token);
+  } 
+
   const gologin = (e) => {
     console.log(formValue);
     axios
@@ -28,6 +33,7 @@ export default function LoginCarsShop() {
           console.log(res.data);
           seterrorValue(res.data.error);
         } else {
+          setAuthToken(res.data.token)
           console.log(res.data.id);
           navigate(`/admin/${res.data.id}`);
         }
