@@ -22,8 +22,11 @@
 }
 .rent-item1 .img-fluid {
   margin: 0 !important;
-  width: 300px !important;
+  width: 350px !important;
   height: 250px !important;
+  box-shadow: 0 4px 8px #000000 !important;
+  height: auto;
+  margin: 0 auto;
 }
 .rent-item1:hover .px-2,
 .rent-item1.active .px-2 {

@@ -34,7 +34,7 @@ const Navs = () => {
       <Container>
         <NavLink className="nav-link" to="/">
           <Navbar.Brand href="#home" className="logoo">
-            {" "}
+            {" "}       
             <div class="loader">
               <svg
                 class="car"

@@ -84,8 +84,7 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
   border-bottom-right-radius: 3px;
 }
-
-td {
+*/ td {
   background: #ffffff;
   padding: 20px;
   text-align: center;
