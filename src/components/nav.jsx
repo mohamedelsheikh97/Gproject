@@ -3,14 +3,40 @@ import "../css/Navs.css";
 import { Link, NavLink } from "react-router-dom";
 
 // import { BsCart3 } from "react-icons/bs";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Navs = () => {
+  function getAuthToken() {
+    return localStorage.getItem("authToken");
+  }
+  const token = getAuthToken();
+  function removeAuthToken() {
+    localStorage.removeItem("authToken");
+  }
+  function handleClick() {
+    removeAuthToken();
+    window.location.reload();
+  }
+  let baseURL = "http://localhost:5000/cart";
+  let [mycart, setmycart] = useState([]);
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setmycart(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <Navbar bg="light" expand="lg" sticky="top" fixed="top">
       <Container>
         <NavLink className="nav-link" to="/">
           <Navbar.Brand href="#home" className="logoo">
-            {" "}
+            {" "}       
             <div class="loader">
               <svg
                 class="car"
@@ -50,17 +76,17 @@ const Navs = () => {
                     ry="6.808"
                   />
                   <path
-                    class="car__line car__line--top"
+                    class="car_line car_line--top"
                     d="M22.5 16.5H2.475"
                     stroke-width="3"
                   />
                   <path
-                    class="car__line car__line--middle"
+                    class="car_line car_line--middle"
                     d="M20.5 23.5H.4755"
                     stroke-width="3"
                   />
                   <path
-                    class="car__line car__line--bottom"
+                    class="car_line car_line--bottom"
                     d="M25.5 9.5h-19"
                     stroke-width="3"
                   />
