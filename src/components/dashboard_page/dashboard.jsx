@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function Dashboard() {
   let [Formname, setname] = useState("");
   let [status, setStatus] = useState("New");
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
   let { id } = useParams();
 
   let baseUrl = "http://localhost:5000/newcars";
@@ -95,14 +95,17 @@ export default function Dashboard() {
         <div className="carForm">
           <div onSubmit={formSubissionHandler}>
             <div className="form-control">
-            <img width={150} src={image === '' ? '' :URL.createObjectURL(image)} /> 
+              <img
+                width={150}
+                src={image === "" ? "" : URL.createObjectURL(image)}
+              />
               <input
                 type="file"
                 name="image"
                 onChange={handleChange}
                 multiple
               />
-              
+
               <label htmlFor="newUsed">Status :</label>
               <select name="newUsed" id="newUsed" onChange={statusHandler}>
                 <option value="New">New</option>
@@ -121,6 +124,10 @@ export default function Dashboard() {
                   <option value="bmw">BMW</option>
                   <option value="mercedes">Mercedes</option>
                   <option value="hyundai">hundayi</option>
+                  <option value="kia">kia</option>
+                  <option value="Audi">Audi</option>
+                  <option value="WOLKSWAGEN">WOLKSWAGEN</option>
+                  <option value="Pejout">Pejout</option>
                 </select>
                 {/* -------------------------MODEL------------------------------ */}
                 {Formname === "bmw" && <label htmlFor="name">Model :</label>}
@@ -151,6 +158,41 @@ export default function Dashboard() {
                     <option value="Sonata">Sonata</option>
                   </select>
                 )}
+                {Formname === "Kia" && <label htmlFor="name">Model :</label>}
+                {Formname === "Kia" && (
+                  <select name="model" id="selection" onChange={getFormValues}>
+                    <option value="cerato">cerato</option>
+                    <option value="sportage">sportage</option>
+                    <option value="Rio">Rio</option>
+                  </select>
+                )}
+                {Formname === "Audi" && <label htmlFor="name">Model :</label>}
+                {Formname === "Audi" && (
+                  <select name="model" id="selection" onChange={getFormValues}>
+                    <option value="RS7">RS7</option>
+                    <option value="A4">A4</option>
+                    <option value="Q3">Q3</option>
+                  </select>
+                )}
+                {Formname === "WOLKSWAGEN" && (
+                  <label htmlFor="name">Model :</label>
+                )}
+                {Formname === "WOLKSWAGEN" && (
+                  <select name="model" id="selection" onChange={getFormValues}>
+                    <option value="Golf">Golf</option>
+                    <option value="Polo">Polo</option>
+                    <option value="Tiguan">Tiguan</option>
+                  </select>
+                )}
+                {Formname === "Pejout" && <label htmlFor="name">Model :</label>}
+                {Formname === "Pejout" && (
+                  <select name="model" id="selection" onChange={getFormValues}>
+                    <option value="408">408</option>
+                    <option value="508">508</option>
+                    <option value="208">208</option>
+                  </select>
+                )}
+
                 {/* ----------------------------TRANSMISSION------------------------ */}
                 <label htmlFor="transmission">Transmission :</label>
                 <select

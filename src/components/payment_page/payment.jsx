@@ -7,7 +7,7 @@
 
 // export default function Payment() {
 //   const stripe=useStripe();
-//   const element=useElements(); 
+//   const element=useElements();
 //   const [error, seterror] = useState("")
 //   const [isProcessing, setisProcessing] = useState(false)
 //   const [paymentDetails, setpaymentDetails] = useState({
@@ -73,37 +73,51 @@
 
 //       seterror("success")
 
-
 //     }catch(err){
 //       console.log(err);
 //       seterror(err);
 //       setisProcessing(false);
 //     }
-   
-  
+
 //   }
 
-
 import "../../css/payment_page/payment.css";
-import React, { useState } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import axios from 'axios';
+import React, { useState } from "react";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-export default function Payment  ()  {
-  const totalCost=5000
-  let navag=useNavigate();
+export default function Payment() {
+  let navag = useNavigate();
+  let baseURL = "http://localhost:5000/cart";
+  let [mycart, setmycart] = useState([]);
   const stripe = useStripe();
   const element = useElements();
   const [isProcessing, setProcessing] = useState(false);
   const [credentials, setCredentials] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
   });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('Pay');
+
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setmycart(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  let total =
+    (mycart.reduce((partialSum, a) => partialSum + a.price, 0) + 5 + 2) * 1000;
+  console.log(total);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("Pay");
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -112,15 +126,15 @@ export default function Payment  ()  {
 
   const handleCardChange = (e) => {
     if (e.error) return setError(e.error.message);
-    setError('');
+    setError("");
   };
 
   const handlePayment = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    setSuccess('Processing...');
+    setSuccess("Processing...");
 
-    const cardElement = element.getElement('card');
+    const cardElement = element.getElement("card");
     const { name, phone, email, address } = credentials;
     const billingInfo = {
       name,
@@ -132,12 +146,12 @@ export default function Payment  ()  {
     };
 
     try {
-      const paymentIntent = await axios.post('http://localhost:5000/payments', {
-        amount: totalCost
+      const paymentIntent = await axios.post("http://localhost:5000/payments", {
+        amount: total,
       });
 
       const paymentMethodObj = await stripe.createPaymentMethod({
-        type: 'card',
+        type: "card",
         card: cardElement,
         billing_details: billingInfo,
       });
@@ -145,7 +159,7 @@ export default function Payment  ()  {
       if (paymentMethodObj.error) {
         setError(paymentMethodObj.error.message);
         setProcessing(false);
-        setSuccess('Pay');
+        setSuccess("Pay");
         return;
       }
 
@@ -158,32 +172,30 @@ export default function Payment  ()  {
       if (confirmedPayment.error) {
         setError(confirmedPayment.error.message);
         setProcessing(false);
-        setSuccess('Pay');
+        setSuccess("Pay");
         return;
       }
 
-      setSuccess('Success! Payment is Complete');
+      setSuccess("Success! Payment is Complete");
 
       setTimeout(() => {
-        setSuccess('Pay');
+        setSuccess("Pay");
         setProcessing(false);
         setCredentials({
-          name: '',
-          email: '',
-          phone: '',
-          address: '',
+          name: "",
+          email: "",
+          phone: "",
+          address: "",
         });
         cardElement.clear();
-        navag('/accessories')
+        navag("/accessories");
       }, 2000);
     } catch (error) {
       setError(error.message);
       setProcessing(false);
-      setSuccess('Pay');
+      setSuccess("Pay");
     }
   };
-
-
 
   return (
     <div>
@@ -194,38 +206,60 @@ export default function Payment  ()  {
               <h3 className="title">Payment</h3>
               <div className="inputBox">
                 <span>Full Name :</span>
-                <input name="userName" required onChange={handleChange} type="text" placeholder="enter your name" />
+                <input
+                  name="userName"
+                  required
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="enter your name"
+                />
               </div>
               <div className="inputBox">
                 <span>Email :</span>
-                <input name="email" required onChange={handleChange} type="email" placeholder="example@example.com" />
+                <input
+                  name="email"
+                  required
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="example@example.com"
+                />
               </div>
               <div className="inputBox">
                 <span>Address :</span>
-                <input name="address" required onChange={handleChange} type="text" placeholder="room - street - locality" />
+                <input
+                  name="address"
+                  required
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="room - street - locality"
+                />
               </div>
               <div className="inputBox">
                 <span>Phone :</span>
-                <input name="phone" required onChange={handleChange} type="text" placeholder="your number" />
+                <input
+                  name="phone"
+                  required
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="your number"
+                />
               </div>
               <div className="inputBox">
                 <span>Credit Card :</span>
-                <CardElement  options={{
-                  hidePostalCode:true,
-                  style:{
-                    base:{
-                      fontSize:'20px',
+                <CardElement
+                  options={{
+                    hidePostalCode: true,
+                    style: {
+                      base: {
+                        fontSize: "20px",
+                      },
+                      invalid: {
+                        color: "red",
+                      },
                     },
-                    invalid:{
-                      color:'red'
-                    }
-                    
-                  },
-                
-                }}
-                onChange={handleCardChange}
+                  }}
+                  onChange={handleCardChange}
                 />
-                
               </div>
             </div>
           </div>
@@ -237,7 +271,6 @@ export default function Payment  ()  {
             className="submit-btn"
             disabled={isProcessing}
           />
-          
         </form>
       </div>
     </div>
