@@ -40,15 +40,7 @@ export default function Accessory() {
             Featured Accessories
           </h1>
           <div className="dropdown">
-            <form
-              action="#
-        "
-            >
-              <select name="sort" id="sort">
-                <option value="lowest">External</option>
-                <option value="highest">Internal</option>
-              </select>
-            </form>
+       
           </div>
         </div>
         <div className="row ">
