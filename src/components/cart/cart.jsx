@@ -8,7 +8,9 @@ import "../../css/cart/cart.css";
 
 export function Cart() {
   let baseURL = "http://localhost:5000/cart";
+
   let [mycart, setmycart] = useState([]);
+  let [usedcars, setUsedcars] = useState([]);
   let navigate = useNavigate();
   useEffect(() => {
     axios
@@ -40,9 +42,28 @@ export function Cart() {
   const checkout = () => {
     navigate("/payment");
   };
+
+  const goshop = () => {
+    navigate("/accessories");
+  };
   return (
     <div className="myCart">
-      <h3 className="text-center">Your Products</h3>
+      <h4 className="text-center mb-4 mt-4">Your Products</h4>
+      {mycart.length === 0 && (
+        <div className="text-center empty">
+          <img
+            src="https://mir-s3-cdn-cf.behance.net/projects/404/54b13147340145.Y3JvcCw0MDUsMzE3LDAsNDI.png"
+            alt=""
+          />
+          <div className="text-center">
+            <h5>
+              Your card is <span>Empty</span>
+            </h5>
+            <p>You should add products to your card to complete checkout!</p>
+            <button onClick={() => goshop()}>Go Shopping</button>
+          </div>
+        </div>
+      )}
       <div className="d-flex">
         <div>
           {mycart.map((mycart) => {
@@ -77,59 +98,61 @@ export function Cart() {
           })}
         </div>
 
-        <div className="Total">
-          <h4 className="text-center">your cart ({mycart.length})</h4>
-          <div>
-            <div className="details">
-              {mycart.map((mycart) => {
-                return (
-                  <div className="d-flex align-items-center justify-content-between mb-2 ">
-                    <div className="d-flex align-items-center  ">
-                      <img
-                        src={`http://localhost:5000/${mycart.image}`}
-                        alt=""
-                        className="mr-3"
-                      />
-                      <p>{mycart.name}</p>
+        {mycart.length !== 0 && (
+          <div className="Total">
+            <h4 className="text-center">your cart ({mycart.length})</h4>
+            <div>
+              <div className="details">
+                {mycart.map((mycart) => {
+                  return (
+                    <div className="d-flex align-items-center justify-content-between mb-2 ">
+                      <div className="d-flex align-items-center  ">
+                        <img
+                          src={`http://localhost:5000/${mycart.image}`}
+                          alt=""
+                          className="mr-3"
+                        />
+                        <p>{mycart.name}</p>
+                      </div>
+                      <p className="price">
+                        ${parseFloat(mycart.price).toFixed(2)}
+                      </p>
                     </div>
-                    <p className="price">
-                      ${parseFloat(mycart.price).toFixed(2)}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="d-flex align-items-center justify-content-between mb-2">
-              <div>
-                <p>Delivery:</p>
+                  );
+                })}
               </div>
-              <p className="price">${parseFloat("5").toFixed(2)}</p>
-            </div>
-            <div className="d-flex align-items-center justify-content-between mb-2 Taxes">
-              <div>
-                <p>Taxes:</p>
+              <div className="d-flex align-items-center justify-content-between mb-2">
+                <div>
+                  <p>Delivery:</p>
+                </div>
+                <p className="price">${parseFloat("5").toFixed(2)}</p>
               </div>
-              <p className="price">${parseFloat("2").toFixed(2)}</p>
-            </div>
+              <div className="d-flex align-items-center justify-content-between mb-2 Taxes">
+                <div>
+                  <p>Taxes:</p>
+                </div>
+                <p className="price">${parseFloat("2").toFixed(2)}</p>
+              </div>
 
-            <div className="d-flex align-items-center justify-content-between mb-2">
-              <div>
-                <p>Total:</p>
+              <div className="d-flex align-items-center justify-content-between mb-2">
+                <div>
+                  <p>Total:</p>
+                </div>
+                <p className="price">
+                  $
+                  {parseFloat(
+                    mycart.reduce((partialSum, a) => partialSum + a.price, 0) +
+                      5 +
+                      2
+                  ).toFixed(2)}
+                </p>
               </div>
-              <p className="price">
-                $
-                {parseFloat(
-                  mycart.reduce((partialSum, a) => partialSum + a.price, 0) +
-                    5 +
-                    2
-                ).toFixed(2)}
-              </p>
-            </div>
-            <div className="text-center">
-              <button onClick={() => checkout()}>Checkout</button>
+              <div className="text-center">
+                <button onClick={() => checkout()}>Checkout</button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

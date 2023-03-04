@@ -65,6 +65,7 @@ export default function Dashboard() {
           console.log(err);
         });
       navigate(`/admin/${id}`);
+      window.location.reloade();
     }
     if (status === "Used") {
       formData.append("name", formValue.name);
@@ -84,6 +85,7 @@ export default function Dashboard() {
           console.log(err);
         });
       navigate(`/admin/${id}`);
+      window.location.reloade();
     }
   };
 
