@@ -27,6 +27,7 @@ const Cards = () => {
           <a
             href="https://www.google.com/url?sa=i&source=web&rct=j&url=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x14f7d7f86ecaee1b:0xbf0f8eb5523d153b&ved=2ahUKEwjsprrfkKf9AhXTINMKHRVjB9QQ4kB6BAgAED8&cd&psig=AOvVaw0TIIT63l5CX5G5J71kjrC4&ust=1677086645679000"
             class="btb"
+            target="blank"
           >
             {" "}
             <FaMapMarkerAlt /> Address
@@ -53,6 +54,7 @@ const Cards = () => {
           <a
             href="https://www.bing.com/search?q=%D9%85%D8%B1%D9%83%D8%B2%20%D8%A7%D9%84%D8%A7%D9%84%D9%81%D9%8A%20%D9%84%D8%AA%D9%83%D9%8A%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%0A&form=IPRV10"
             class="btb"
+            target="blank"
           >
             {" "}
             <FaMapMarkerAlt /> Address
@@ -77,6 +79,7 @@ const Cards = () => {
           <a
             href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14f7d799e99b0dd1:0xc74e4b0d3fa5a001?ved=0CB0Q4kBqFwoTCLCE2NWRp_0CFQAAAAAdAAAAABAF"
             class="btb"
+            target="blank"
           >
             {" "}
             <FaMapMarkerAlt /> Address
@@ -101,6 +104,7 @@ const Cards = () => {
           <a
             href="https://www.bing.com/maps/directions?rtp=adr.~pos.30.46413230895996_31.184097290039062_F57M%2bMJ5%d8%8c+%d8%a8%d9%86%d9%87%d8%a7%d8%8c+%d9%82%d8%b3%d9%85+%d8%a8%d9%86%d9%87%d8%a7%d8%8c+%d8%a8%d9%86%d9%87%d8%a7%d8%8c%2c+%d8%a8%d9%86%d9%87%d8%a7%2c+%d8%a7%d9%84%d9%82%d9%84%d9%8a%d9%88%d8%a8%d9%8a%d8%a9+13511_%d9%85%d8%b1%d9%83%d8%b2+%d8%ae%d8%af%d9%85%d8%a9+%d8%a7%d9%84%d8%a3%d9%85%d8%b1%d9%8a%d9%83%d9%8a%d8%a9+%d9%84%d8%b5%d9%8a%d8%a7%d9%86%d8%a9+%d8%ac%d9%85%d9%8a%d8%b9+%d8%a3%d9%86%d9%88%d8%a7%d8%b9+%d8%a7%d9%84%d8%b3%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa_0100+920+7088"
             class="btb"
+            target="blank"
           >
             {" "}
             <FaMapMarkerAlt /> Address
@@ -124,6 +128,7 @@ const Cards = () => {
           <a
             href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14587f3688b89cef:0xb973e728e2764d8f?ved=0CEYQ4kBqFwoTCKiCo5aYp_0CFQAAAAAdAAAAABAo"
             class="btb"
+            target="blank"
           >
             {" "}
             <FaMapMarkerAlt /> Address
@@ -149,6 +154,7 @@ const Cards = () => {
           <a
             href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14f7d7c881ddbaab:0x45f0c1ebd77506cb?ved=0CB8Q4kBqFwoTCKiCo5aYp_0CFQAAAAAdAAAAABAx"
             class="btb"
+            target="blank"
           >
             {" "}
             <FaMapMarkerAlt /> Address

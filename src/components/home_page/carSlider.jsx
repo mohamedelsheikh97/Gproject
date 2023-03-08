@@ -47,7 +47,7 @@ export default function CarSlider() {
               <h1 class="display-3 q-1">Problem With Your Car?</h1>
               <h1 class="display-3 q-2">Best Car Repair Services</h1>
               <button className="btn reserve__btn mt-4">
-                <NavLink to="maintain">FROM HERE</NavLink>
+                <NavLink to="/maintenance">FROM HERE</NavLink>
               </button>
             </div>
           </Container>

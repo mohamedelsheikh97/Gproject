@@ -114,7 +114,7 @@ export default function Payment() {
   }, []);
 
   let total =
-    (mycart.reduce((partialSum, a) => partialSum + a.price, 0) + 5 + 2) * 1000;
+    (mycart.reduce((partialSum, a) => partialSum + a.price, 0) + 5 + 2) * 100;
   console.log(total);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("Pay");

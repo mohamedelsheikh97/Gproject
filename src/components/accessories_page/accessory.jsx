@@ -55,7 +55,7 @@ export default function Accessory() {
                     <div class="card-price px-2">
                       <i class="fa fa-solid fa-credit-card text-warning mr-1"></i>
                       <span class="font-weight-bold acc-price">
-                        EG {card.price}
+                        $ {card.price}
                       </span>
                     </div>
                   </div>

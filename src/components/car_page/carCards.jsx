@@ -84,10 +84,10 @@ export default function CarCards() {
                   />
                   <h4 class="text-uppercase mb-4 mt-3">{`${card.name} ${card.model}`}</h4>
                   <div class="d-flex justify-content-center mb-4 font-weight-bold">
-                    <div class="px-2">
+                    {/* <div class="px-2">
                       <i class="fa fa-car text-warning mr-1"></i>
                       <span>{card.year}</span>
-                    </div>
+                    </div> */}
                     <div class="px-2 border-left">
                       <i class="fa fa-cogs text-warning mr-1"></i>
                       <span>{card.transmission}</span>
