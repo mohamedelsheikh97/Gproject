@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
-import driverImg from "../../assets/toyota-offer-3.png";
 import "../../css/car_page/car_drive.css";
 
 export default function CarDrive() {
@@ -10,7 +9,7 @@ export default function CarDrive() {
       <Container>
         <Row>
           <Col lg="6" md="6" sm="12" className="become__driver-img">
-            <img src={driverImg} alt="" className="w-100" />
+            <img src="" alt="" className="w-100" />
           </Col>
 
           <Col lg="6" md="6" sm="12">

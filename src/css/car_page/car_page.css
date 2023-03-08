@@ -1,12 +1,10 @@
 .common__section {
-  background: linear-gradient(rgb(246, 172, 77, 0.6), rgb(246, 172, 77, 0.6)),
-    url("../../assets/drive.jpg");
+  background: linear-gradient(rgb(246, 172, 77, 0.6), rgb(246, 172, 77, 0.6));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 80px 0px;
 }
-
 
 * {
   box-sizing: border-box;
@@ -37,7 +35,7 @@
   text-decoration: none;
   font-size: 18px;
   color: black;
-  display: block
+  display: block;
 }
 
 #myUL li a:hover:not(.header) {
